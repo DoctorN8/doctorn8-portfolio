@@ -1,637 +1,315 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>Nathan St. Pierre - AI Solutions Architect Resume</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume / CV | Nathan St. Pierre</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Resume of Nathan St. Pierre - AI Solutions Architect with expertise in RAG systems, LLM integration, and AI development." />
+    <style>
+        :root {
+            --primary-brand: #aa784d;
+            --dark-text: #2a2a2a;
+            --light-bg: #f8f9fa;
+        }
 
-		
-		<link id="wsite-base-style" rel="stylesheet" type="text/css" href="http://cdn2.editmysite.com/css/sites.css?buildTime=1234" />
-<link rel="stylesheet" type="text/css" href="http://cdn2.editmysite.com/css/old/fancybox.css?1234" />
-<link rel="stylesheet" type="text/css" href="http://cdn2.editmysite.com/css/social-icons.css?buildtime=1234" media="screen,projection" />
-<link rel="stylesheet" type="text/css" href="files/main_style.css?1764084878" title="wsite-theme-css" />
-<link href='http://cdn2.editmysite.com/fonts/Josefin_Sans/font.css?2' rel='stylesheet' type='text/css' />
+        body {
+            font-family: 'Lora', serif;
+            color: #444;
+            background-color: #f5f5f5;
+            line-height: 1.6;
+        }
 
-<link href='http://cdn2.editmysite.com/fonts/Montserrat/font.css?2' rel='stylesheet' type='text/css' />
-<link href='http://cdn2.editmysite.com/fonts/Montserrat/font.css?2' rel='stylesheet' type='text/css' />
-<link href='http://cdn2.editmysite.com/fonts/Montserrat/font.css?2' rel='stylesheet' type='text/css' />
-<link href='http://cdn2.editmysite.com/fonts/Montserrat/font.css?2' rel='stylesheet' type='text/css' />
-<link href='http://cdn2.editmysite.com/fonts/Montserrat/font.css?2' rel='stylesheet' type='text/css' />
-<link href='http://cdn2.editmysite.com/fonts/Montserrat/font.css?2' rel='stylesheet' type='text/css' />
-<link href='http://cdn2.editmysite.com/fonts/Lora/font.css?2' rel='stylesheet' type='text/css' />
-<link href='http://cdn2.editmysite.com/fonts/Lora/font.css?2' rel='stylesheet' type='text/css' />
-<style type='text/css'>
-.wsite-elements.wsite-not-footer:not(.wsite-header-elements) div.paragraph, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) p, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-block .product-title, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-description, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .wsite-form-field label, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .wsite-form-field label, #wsite-content div.paragraph, #wsite-content p, #wsite-content .product-block .product-title, #wsite-content .product-description, #wsite-content .wsite-form-field label, #wsite-content .wsite-form-field label, .blog-sidebar div.paragraph, .blog-sidebar p, .blog-sidebar .wsite-form-field label, .blog-sidebar .wsite-form-field label {font-family:"Montserrat" !important;}
-#wsite-content div.paragraph, #wsite-content p, #wsite-content .product-block .product-title, #wsite-content .product-description, #wsite-content .wsite-form-field label, #wsite-content .wsite-form-field label, .blog-sidebar div.paragraph, .blog-sidebar p, .blog-sidebar .wsite-form-field label, .blog-sidebar .wsite-form-field label {color:#818181 !important;}
-.wsite-elements.wsite-footer div.paragraph, .wsite-elements.wsite-footer p, .wsite-elements.wsite-footer .product-block .product-title, .wsite-elements.wsite-footer .product-description, .wsite-elements.wsite-footer .wsite-form-field label, .wsite-elements.wsite-footer .wsite-form-field label{font-family:"Montserrat" !important;}
-.wsite-elements.wsite-not-footer:not(.wsite-header-elements) h2, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-long .product-title, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-large .product-title, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-small .product-title, #wsite-content h2, #wsite-content .product-long .product-title, #wsite-content .product-large .product-title, #wsite-content .product-small .product-title, .blog-sidebar h2 {font-family:"Montserrat" !important;font-weight:700 !important;letter-spacing: 0px !important;}
-#wsite-content h2, #wsite-content .product-long .product-title, #wsite-content .product-large .product-title, #wsite-content .product-small .product-title, .blog-sidebar h2 {}
-.wsite-elements.wsite-footer h2, .wsite-elements.wsite-footer .product-long .product-title, .wsite-elements.wsite-footer .product-large .product-title, .wsite-elements.wsite-footer .product-small .product-title{font-family:"Montserrat" !important;font-weight:400 !important;}
-#wsite-title {font-family:"Montserrat" !important;font-weight: bold !important;}
-.wsite-menu-default a {}
-.wsite-menu a {}
-.wsite-image div, .wsite-caption {}
-.galleryCaptionInnerText {}
-.fancybox-title {}
-.wslide-caption-text {}
-.wsite-phone {}
-.wsite-headline,.wsite-header-section .wsite-content-title {font-family:"Montserrat" !important;font-weight:700 !important;letter-spacing: 1px !important;}
-.wsite-headline-paragraph,.wsite-header-section .paragraph {font-family:"Lora" !important;font-weight:400 !important;text-transform:  none !important;}
-.wsite-button-inner {}
-.wsite-not-footer blockquote {font-family:"Lora" !important;}
-.wsite-footer blockquote {}
-.blog-header h2 a {}
-#wsite-content h2.wsite-product-title {}
-.wsite-product .wsite-product-price a {}
-@media screen and (min-width: 767px) {.wsite-elements.wsite-not-footer:not(.wsite-header-elements) div.paragraph, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) p, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-block .product-title, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-description, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .wsite-form-field label, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .wsite-form-field label, #wsite-content div.paragraph, #wsite-content p, #wsite-content .product-block .product-title, #wsite-content .product-description, #wsite-content .wsite-form-field label, #wsite-content .wsite-form-field label, .blog-sidebar div.paragraph, .blog-sidebar p, .blog-sidebar .wsite-form-field label, .blog-sidebar .wsite-form-field label {font-size:16px !important;line-height:30px !important;}
-#wsite-content div.paragraph, #wsite-content p, #wsite-content .product-block .product-title, #wsite-content .product-description, #wsite-content .wsite-form-field label, #wsite-content .wsite-form-field label, .blog-sidebar div.paragraph, .blog-sidebar p, .blog-sidebar .wsite-form-field label, .blog-sidebar .wsite-form-field label {}
-.wsite-elements.wsite-footer div.paragraph, .wsite-elements.wsite-footer p, .wsite-elements.wsite-footer .product-block .product-title, .wsite-elements.wsite-footer .product-description, .wsite-elements.wsite-footer .wsite-form-field label, .wsite-elements.wsite-footer .wsite-form-field label{font-size:13px !important;}
-.wsite-elements.wsite-not-footer:not(.wsite-header-elements) h2, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-long .product-title, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-large .product-title, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-small .product-title, #wsite-content h2, #wsite-content .product-long .product-title, #wsite-content .product-large .product-title, #wsite-content .product-small .product-title, .blog-sidebar h2 {font-size:30px !important;line-height:21px !important;}
-#wsite-content h2, #wsite-content .product-long .product-title, #wsite-content .product-large .product-title, #wsite-content .product-small .product-title, .blog-sidebar h2 {}
-.wsite-elements.wsite-footer h2, .wsite-elements.wsite-footer .product-long .product-title, .wsite-elements.wsite-footer .product-large .product-title, .wsite-elements.wsite-footer .product-small .product-title{font-size:11px !important;}
-#wsite-title {font-size:18px !important;}
-.wsite-menu-default a {}
-.wsite-menu a {}
-.wsite-image div, .wsite-caption {}
-.galleryCaptionInnerText {}
-.fancybox-title {}
-.wslide-caption-text {}
-.wsite-phone {}
-.wsite-headline,.wsite-header-section .wsite-content-title {font-size:90px !important;}
-.wsite-headline-paragraph,.wsite-header-section .paragraph {}
-.wsite-button-inner {}
-.wsite-not-footer blockquote {font-size:30px !important;}
-.wsite-footer blockquote {}
-.blog-header h2 a {}
-#wsite-content h2.wsite-product-title {}
-.wsite-product .wsite-product-price a {}
-}</style>
+        h1, h2, h3, h4, h5, .nav-link, .btn, .badge-skill, .section-title {
+            font-family: 'Montserrat', sans-serif;
+        }
 
-		<script src='files/templateArtifacts.js?1739655363'></script>
-<script>
-var STATIC_BASE = '//cdn1.editmysite.com/';
-var ASSETS_BASE = '//cdn2.editmysite.com/';
-var STYLE_PREFIX = 'wsite';
-</script>
-<script src='https://cdn2.editmysite.com/js/jquery-1.8.3.min.js'></script>
+        /* --- Navigation --- */
+        .navbar {
+            padding: 1rem 0;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            background: rgba(255, 255, 255, 0.98);
+        }
+        
+        .navbar-brand { font-weight: 800; letter-spacing: -0.5px; color: var(--dark-text); }
+        .nav-link { font-weight: 600; color: #555 !important; margin: 0 10px; transition: color 0.3s; }
+        .nav-link:hover, .nav-link.active { color: var(--primary-brand) !important; }
 
-<script type="text/javascript" src="http://cdn2.editmysite.com/js/lang/en/stl.js?buildTime=1234&"></script>
-<script src="http://cdn2.editmysite.com/js/site/main.js?buildTime=1234"></script><script type="text/javascript">
-		function initCustomerAccountsModels() {
-					(function(){_W.setup_rpc({"url":"\/ajax\/api\/JsonRPC\/CustomerAccounts\/","actions":{"CustomerAccounts":[{"name":"login","len":2,"multiple":false,"standalone":false},{"name":"logout","len":0,"multiple":false,"standalone":false},{"name":"getSessionDetails","len":0,"multiple":false,"standalone":false},{"name":"getAccountDetails","len":0,"multiple":false,"standalone":false},{"name":"getOrders","len":0,"multiple":false,"standalone":false},{"name":"register","len":4,"multiple":false,"standalone":false},{"name":"emailExists","len":1,"multiple":false,"standalone":false},{"name":"passwordReset","len":1,"multiple":false,"standalone":false},{"name":"passwordUpdate","len":3,"multiple":false,"standalone":false},{"name":"validateSession","len":1,"multiple":false,"standalone":false}]},"namespace":"_W.CustomerAccounts.RPC"});
-_W.setup_model_rpc({"rpc_namespace":"_W.CustomerAccounts.RPC","model_namespace":"_W.CustomerAccounts.BackboneModelData","collection_namespace":"_W.CustomerAccounts.BackboneCollectionData","bootstrap_namespace":"_W.CustomerAccounts.BackboneBootstrap","models":{"CustomerAccounts":{"_class":"CustomerAccounts.Model.CustomerAccounts","defaults":null,"validation":null,"types":null,"idAttribute":null,"keydefs":null}},"collections":{"CustomerAccounts":{"_class":"CustomerAccounts.Collection.CustomerAccounts"}},"bootstrap":[]});
-})();
-		}
-		if(document.createEvent && document.addEventListener) {
-			var initEvt = document.createEvent('Event');
-			initEvt.initEvent('customerAccountsModelsInitialized', true, false);
-			document.dispatchEvent(initEvt);
-		} else if(document.documentElement.initCustomerAccountsModels === 0){
-			document.documentElement.initCustomerAccountsModels++
-		}
-		</script>
-		<script type="text/javascript"> _W = _W || {}; _W.securePrefix='UNSET'; </script><script>_W = _W || {};
-			_W.customerLocale = "en_US";
-			_W.storeName = null;
-			_W.isCheckoutReskin = false;
-			_W.storeCountry = "US";
-			_W.storeCurrency = "USD";
-			_W.storeEuPrivacyPolicyUrl = "";
-			com_currentSite = "780319414832624566";
-			com_userID = "144934983";</script><script type="text/javascript">_W.configDomain = "www.weebly.com";</script><script>_W.relinquish && _W.relinquish()</script>
-<script type="text/javascript" src="http://cdn2.editmysite.com/js/lang/en/stl.js?buildTime=1234&"></script><script> _W.themePlugins = [];</script><script type="text/javascript"> _W.recaptchaUrl = "https://www.google.com/recaptcha/api.js"; </script><script type="text/javascript"><!--
-	var IS_ARCHIVE = 1;
-	
-	function initFlyouts(){
-		initPublishedFlyoutMenus(
-			[{"id":"518462074352985997","title":"Home","url":"index.html","target":"","nav_menu":false,"nonclickable":false},{"id":"220847051528094561","title":"Portfolio","url":"portfolio.html","target":"","nav_menu":false,"nonclickable":true},{"id":"676195845722943537","title":"About Me","url":"about-me.html","target":"","nav_menu":false,"nonclickable":false},{"id":"545829422349700574","title":"R&eacute;sum&eacute;","url":"reacutesumeacute.html","target":"","nav_menu":false,"nonclickable":false}],
-			"545829422349700574",
-			'',
-			'active',
-			false,
-			{"navigation\/item":"<li {{#id}}id=\"{{id}}\"{{\/id}} class=\"wsite-menu-item-wrap\">\n\t<a\n\t\t{{^nonclickable}}\n\t\t\t{{^nav_menu}}\n\t\t\t\thref=\"{{url}}\"\n\t\t\t{{\/nav_menu}}\n\t\t{{\/nonclickable}}\n\t\t{{#target}}\n\t\t\ttarget=\"{{target}}\"\n\t\t{{\/target}}\n\t\t{{#membership_required}}\n\t\t\tdata-membership-required=\"{{.}}\"\n\t\t{{\/membership_required}}\n\t\tclass=\"wsite-menu-item\"\n\t\t>\n\t\t{{{title_html}}}\n\t<\/a>\n\t{{#has_children}}{{> navigation\/flyout\/list}}{{\/has_children}}\n<\/li>\n","navigation\/flyout\/list":"<div class=\"wsite-menu-wrap\" style=\"display:none\">\n\t<ul class=\"wsite-menu\">\n\t\t{{#children}}{{> navigation\/flyout\/item}}{{\/children}}\n\t<\/ul>\n<\/div>\n","navigation\/flyout\/item":"<li {{#id}}id=\"{{id}}\"{{\/id}}\n\tclass=\"wsite-menu-subitem-wrap {{#is_current}}wsite-nav-current{{\/is_current}}\"\n\t>\n\t<a\n\t\t{{^nonclickable}}\n\t\t\t{{^nav_menu}}\n\t\t\t\thref=\"{{url}}\"\n\t\t\t{{\/nav_menu}}\n\t\t{{\/nonclickable}}\n\t\t{{#target}}\n\t\t\ttarget=\"{{target}}\"\n\t\t{{\/target}}\n\t\tclass=\"wsite-menu-subitem\"\n\t\t>\n\t\t<span class=\"wsite-menu-title\">\n\t\t\t{{{title_html}}}\n\t\t<\/span>{{#has_children}}<span class=\"wsite-menu-arrow\">&gt;<\/span>{{\/has_children}}\n\t<\/a>\n\t{{#has_children}}{{> navigation\/flyout\/list}}{{\/has_children}}\n<\/li>\n"},
-			{"hasCustomMembership":true,"hasCustomMinicart":true}
-		)
-	}
-//-->
-</script>
-		
-		
-	</head>
-	<body class="no-header-page  wsite-page-reacutesumeacute  sticky-nav-off full-width-on header-scroll-animate-off  wsite-theme-light"><div class="wrapper">
-    <div class="unite-header">
-      <div class="nav-wrap">
+        .btn-brand {
+            background-color: var(--primary-brand);
+            border-color: var(--primary-brand);
+            color: white;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .btn-brand:hover { background-color: #8a603d; color: white; }
+
+        /* --- Resume Layout --- */
+        .resume-container {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+            overflow: hidden;
+            margin-top: 40px;
+            margin-bottom: 60px;
+        }
+
+        .resume-header {
+            background-color: var(--dark-text);
+            color: white;
+            padding: 60px 40px;
+        }
+
+        .resume-name { font-size: 3rem; font-weight: 700; line-height: 1; }
+        .resume-title { font-family: 'Lora', serif; font-size: 1.2rem; opacity: 0.9; font-style: italic; margin-top: 10px; }
+
+        .resume-body { padding: 40px; }
+
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--primary-brand);
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .job-item { margin-bottom: 30px; }
+        .job-title { font-weight: 700; font-size: 1.1rem; color: #333; margin-bottom: 2px; }
+        .job-company { font-weight: 600; color: #666; }
+        .job-date { font-family: 'Lora', serif; font-style: italic; font-size: 0.9rem; color: #888; margin-bottom: 10px; display: block; }
+        .job-details li { margin-bottom: 8px; font-size: 0.95rem; }
+
+        .badge-skill {
+            background-color: #f1f3f5;
+            color: #333;
+            font-size: 0.8rem;
+            padding: 6px 12px;
+            border-radius: 4px;
+            margin-right: 5px;
+            margin-bottom: 8px;
+            display: inline-block;
+            font-weight: 600;
+        }
+
+        /* Sidebar styles */
+        .sidebar-section { margin-bottom: 40px; }
+        .contact-link { color: #555; text-decoration: none; display: block; margin-bottom: 10px; }
+        .contact-link:hover { color: var(--primary-brand); }
+        .contact-icon { width: 20px; color: var(--primary-brand); margin-right: 10px; }
+
+        .edu-item { margin-bottom: 20px; }
+        .edu-degree { font-weight: 700; color: #333; font-size: 1rem; }
+        .edu-school { font-size: 0.95rem; color: #555; }
+        .edu-year { font-size: 0.85rem; color: #888; font-style: italic; }
+
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
-          <a class="hamburger" aria-label="Menu" href="#"><span></span></a>
-          <div class="logo"><span class="wsite-logo">
-
-	
-	<span class="wsite-title-placeholder">&nbsp;</span><span style="display:none">
-	<span style="display:none">NATHAN ST. PIERRE</span>
-	</span>
-	
-
-</span></div>
-          <div class="nav desktop-nav"><ul class="wsite-menu-default">
-		<li id="pg518462074352985997" class="wsite-menu-item-wrap">
-			<a
-						href="index.html"
-				class="wsite-menu-item"
-				>
-				Home
-			</a>
-			
-		</li>
-		<li id="pg220847051528094561" class="wsite-menu-item-wrap">
-			<a
-				class="wsite-menu-item"
-				>
-				Portfolio
-			</a>
-			<div class="wsite-menu-wrap" style="display:none">
-	<ul class="wsite-menu">
-		<li id="wsite-nav-991635792625220136"
-	class="wsite-menu-subitem-wrap "
-	>
-	<a
-				href="projects.html"
-		class="wsite-menu-subitem"
-		>
-		<span class="wsite-menu-title">
-			Projects
-		</span>
-	</a>
-	
-</li>
-<li id="wsite-nav-175287144166915335"
-	class="wsite-menu-subitem-wrap "
-	>
-	<a
-				href="publications.html"
-		class="wsite-menu-subitem"
-		>
-		<span class="wsite-menu-title">
-			Publications
-		</span>
-	</a>
-	
-</li>
-
-	</ul>
-</div>
-
-		</li>
-		<li id="pg676195845722943537" class="wsite-menu-item-wrap">
-			<a
-						href="about-me.html"
-				class="wsite-menu-item"
-				>
-				About Me
-			</a>
-			
-		</li>
-		<li id="active" class="wsite-menu-item-wrap">
-			<a
-						href="reacutesumeacute.html"
-				class="wsite-menu-item"
-				>
-				Résumé
-			</a>
-			
-		</li>
-</ul>
-</div>
-          <div class="nav membership-cart"><span id="member-login" class="wsite-custom-membership-wrapper"><a href="#" id="wsite-nav-login-a"></a></span></div>
+            <a class="navbar-brand" href="index.html">NATHAN ST. PIERRE</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="publications.html">Publications</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Me</a></li>
+                    <li class="nav-item ms-lg-2">
+                        <a class="nav-link active btn btn-brand text-white px-4" href="assets/resume.pdf" target="_blank">
+                            <i class="fas fa-download me-2"></i>Download PDF
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </div>
+    </nav>
+
+    <div class="container">
+        <div class="resume-container">
+            <div class="resume-header">
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <h1 class="resume-name">Nathan St. Pierre, Ph.D.</h1>
+                        <div class="resume-title">AI Solutions Architect | Machine Learning Engineer</div>
+                    </div>
+                    <div class="col-md-4 text-md-end mt-4 mt-md-0">
+                        <a href="mailto:nathan.stpierre@gmail.com" class="text-white text-decoration-none d-block mb-2"><i class="fas fa-envelope me-2"></i>nathan.stpierre@gmail.com</a>
+                        <a href="https://linkedin.com/in/doctorn8" target="_blank" class="text-white text-decoration-none d-block"><i class="fab fa-linkedin me-2"></i>linkedin.com/in/doctorn8</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="resume-body">
+                <div class="row">
+                    <div class="col-lg-4 pe-lg-5 border-end">
+                        
+                        <div class="sidebar-section">
+                            <h3 class="section-title">Technical Skills</h3>
+                            <div class="mb-3">
+                                <div class="fw-bold mb-2 small text-uppercase text-muted">Languages & Data</div>
+                                <span class="badge-skill">Python</span>
+                                <span class="badge-skill">SQL</span>
+                                <span class="badge-skill">R</span>
+                                <span class="badge-skill">SPSS</span>
+                            </div>
+                            <div class="mb-3">
+                                <div class="fw-bold mb-2 small text-uppercase text-muted">AI & ML</div>
+                                <span class="badge-skill">PyTorch</span>
+                                <span class="badge-skill">TensorFlow</span>
+                                <span class="badge-skill">RAG Architecture</span>
+                                <span class="badge-skill">LLM Integration</span>
+                                <span class="badge-skill">FAISS</span>
+                                <span class="badge-skill">LangChain</span>
+                            </div>
+                            <div class="mb-3">
+                                <div class="fw-bold mb-2 small text-uppercase text-muted">Cloud & Web</div>
+                                <span class="badge-skill">Azure AI</span>
+                                <span class="badge-skill">FastAPI</span>
+                                <span class="badge-skill">Docker</span>
+                                <span class="badge-skill">Git/CI/CD</span>
+                            </div>
+                        </div>
+
+                        <div class="sidebar-section">
+                            <h3 class="section-title">Certifications</h3>
+                            <ul class="list-unstyled small">
+                                <li class="mb-2"><i class="fas fa-certificate contact-icon"></i>Prompt Engineering for LLMs (Vanderbilt)</li>
+                                <li class="mb-2"><i class="fas fa-certificate contact-icon"></i>Google Data Analytics Pro</li>
+                                <li class="mb-2"><i class="fas fa-certificate contact-icon"></i>Tableau Data Visualization (UC Davis)</li>
+                                <li class="mb-2"><i class="fas fa-certificate contact-icon"></i>UX Research & Design (UMich)</li>
+                            </ul>
+                        </div>
+
+                        <div class="sidebar-section">
+                            <h3 class="section-title">Education</h3>
+                            <div class="edu-item">
+                                <div class="edu-degree">Ph.D. Music Education</div>
+                                <div class="edu-school">George Mason University</div>
+                                <div class="edu-year">2017</div>
+                            </div>
+                            <div class="edu-item">
+                                <div class="edu-degree">M.Ed. Kodály Music Edu</div>
+                                <div class="edu-school">Loyola University Maryland</div>
+                                <div class="edu-year">2011</div>
+                            </div>
+                            <div class="edu-item">
+                                <div class="edu-degree">B.M. Music Education</div>
+                                <div class="edu-school">University of Hartford</div>
+                                <div class="edu-year">2007 • Magna Cum Laude</div>
+                            </div>
+                        </div>
+
+                        <div class="sidebar-section">
+                            <h3 class="section-title">Honors</h3>
+                            <p class="small">Grammy Music Educator Award Nominee (2020)</p>
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-8 ps-lg-4">
+                        
+                        <div class="sidebar-section">
+                            <h3 class="section-title">Professional Experience</h3>
+
+                            <div class="job-item">
+                                <div class="job-title">Machine Learning SME (Subject Matter Expert)</div>
+                                <div class="job-company">SweetRush</div>
+                                <span class="job-date">May 2025 – Present</span>
+                                <ul class="job-details">
+                                    <li><strong>Microsoft AI Agents:</strong> Spearheaded design of certification for autonomous AI agents, creating labs for Azure AI Foundry and agent orchestration.</li>
+                                    <li><strong>Coursera ML Certificate:</strong> Developed screencast instruction on RAG, FAISS, Transformer fine-tuning, and MLOps (MLflow, Docker).</li>
+                                    <li><strong>QA & Validation:</strong> Audited technical scripts and code samples for production-grade AI workflows.</li>
+                                </ul>
+                            </div>
+
+                            <div class="job-item">
+                                <div class="job-title">Instructional Design Specialist</div>
+                                <div class="job-company">Learning Mate</div>
+                                <span class="job-date">Dec 2024 – April 2025</span>
+                                <ul class="job-details">
+                                    <li>Developed 4 Kadal AI agents for automated content generation.</li>
+                                    <li>Created 150+ interactive AI activities and end-to-end courses on AI for healthcare administration.</li>
+                                    <li>Reduced content creation time by 40% through strategic AI tool implementation.</li>
+                                </ul>
+                            </div>
+
+                            <div class="job-item">
+                                <div class="job-title">Learning & Research Analyst</div>
+                                <div class="job-company">ABK Learning Solutions</div>
+                                <span class="job-date">May 2022 – Dec 2024</span>
+                                <ul class="job-details">
+                                    <li><strong>AI Integration:</strong> Engineered automated data collection systems (Python/BeautifulSoup) and RAG-based chatbots.</li>
+                                    <li>Developed custom prompts for GPT-4, Claude, and Llama, improving output relevance by 25%.</li>
+                                    <li>Created 200+ aviation training modules for Boeing 737 systems compliance.</li>
+                                </ul>
+                            </div>
+
+                            <div class="job-item">
+                                <div class="job-title">Team Leader & Researcher</div>
+                                <div class="job-company">Good To Great Schools Australia</div>
+                                <span class="job-date">Nov 2023 – June 2024</span>
+                                <ul class="job-details">
+                                    <li>Implemented AI speech synthesis for multi-language lesson content.</li>
+                                    <li>Managed a remote team of 3 developers using Agile methodologies.</li>
+                                </ul>
+                            </div>
+
+                            <div class="job-item">
+                                <div class="job-title">Department Chair & Educator</div>
+                                <div class="job-company">Prince William County Schools</div>
+                                <span class="job-date">2008 – 2023</span>
+                                <ul class="job-details">
+                                    <li>Led data-driven projects utilizing machine learning to predict student learning outcomes.</li>
+                                    <li>Developed Tableau dashboards for district-wide achievement tracking.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="sidebar-section">
+                            <h3 class="section-title">Key Projects</h3>
+                            
+                            <div class="mb-3">
+                                <div class="fw-bold">Florida Masonic Law Digital Assistant</div>
+                                <p class="small text-muted">Developed a RAG-based system for querying legal documents using FAISS, Groq API, and Gradio.</p>
+                            </div>
+
+                            <div class="mb-3">
+                                <div class="fw-bold">Advanced Quiz API System</div>
+                                <p class="small text-muted">Engineered a production-ready REST API using FastAPI, PostgreSQL, and SQLAlchemy with comprehensive error handling.</p>
+                            </div>
+
+                            <div class="mb-3">
+                                <div class="fw-bold">Azure Historical Doc Processing</div>
+                                <p class="small text-muted">Scalable cloud pipeline using Azure Document Intelligence and Azure Functions for archival data.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="main-wrap">
-      <div id="wsite-content" class="wsite-elements wsite-not-footer">
-	<div class="wsite-section-wrap">
-	<div class="wsite-section wsite-body-section wsite-section-bg-gradient wsite-background-14" style="background: #e4e4e4;background: linear-gradient(180deg, #e4e4e4 0%, #ffffff 100%);" >
-		<div class="wsite-section-content">
-          <div class="container">
-			<div class="wsite-section-elements">
-				<div style="max-width: 900px; margin: 0 auto; padding: 40px 20px;">
-					<div style="text-align: center; margin-bottom: 40px;">
-						<h1 style="font-size: 48px; margin-bottom: 10px; color: #333;">Nathan St. Pierre</h1>
-						<h2 style="font-size: 24px; margin-bottom: 20px; color: #666; font-weight: 400;">Curriculum Vitae</h2>
-						<p style="font-size: 16px; color: #666;">
-							nathan.stpierre@gmail.com | +1-xxx-xxx-7559 |
-							<a href="https://www.linkedin.com/in/doctorn8/" target="_blank" style="color: #0066cc;">LinkedIn</a>
-						</p>
-					</div>
+    <footer class="text-center py-5 text-muted">
+        <div class="container">
+            <p class="mb-0">&copy; 2025 Nathan St. Pierre. All rights reserved.</p>
+        </div>
+    </footer>
 
-					<div style="margin-bottom: 40px;">
-						<h2 style="font-size: 32px; margin-bottom: 20px; color: #333; border-bottom: 2px solid #0066cc; padding-bottom: 10px;">Education</h2>
-
-						<div style="margin-bottom: 25px;">
-							<h3 style="font-size: 20px; margin-bottom: 8px; color: #333;">Doctor of Philosophy (Ph.D.) in Music Education | 2017</h3>
-							<p style="margin-bottom: 8px;"><strong>George Mason University</strong>, Fairfax, Virginia</p>
-							<p style="font-style: italic;">Dissertation: <a href="https://doi.org/10.13021/MARS/7817" target="_blank" style="color: #0066cc;">Using Achievement Goal Theory to Investigate Pre-Service Music Teachers' Attitudes Toward Grading Practices</a></p>
-						</div>
-
-						<div style="margin-bottom: 25px;">
-							<h3 style="font-size: 20px; margin-bottom: 8px; color: #333;">Master of Education (M.Ed.) in Kodály Music Education | 2011</h3>
-							<p style="margin-bottom: 8px;"><strong>Loyola University Maryland</strong>, Baltimore, Maryland</p>
-							<p style="font-style: italic;">Master's Thesis: An Indexed Collection of Pedagogical Songs, Part-work, and Vocal Warm-up Activities</p>
-						</div>
-
-						<div style="margin-bottom: 25px;">
-							<h3 style="font-size: 20px; margin-bottom: 8px; color: #333;">Bachelor of Music (B.M.) in Music Education, <em>Magna Cum Laude</em> | 2007</h3>
-							<p style="margin-bottom: 8px;"><strong>The Hartt School, University of Hartford</strong>, West Hartford, Connecticut</p>
-							<p style="font-style: italic;">Emphasis: Vocal Music Education</p>
-						</div>
-					</div>
-
-					<div style="margin-bottom: 40px;">
-						<h2 style="font-size: 32px; margin-bottom: 20px; color: #333; border-bottom: 2px solid #0066cc; padding-bottom: 10px;">Additional Certifications & Specializations</h2>
-						<ul style="list-style-type: disc; margin-left: 20px; line-height: 1.8;">
-							<li>Instructional Design Foundations and Applications, University of Illinois Urbana-Champaign</li>
-							<li>User Experience Research and Design Specialization, University of Michigan</li>
-							<li>Prompt Engineering for LLMs Certificate, Vanderbilt University</li>
-							<li>Data Visualization with Tableau Specialization, University of California, Davis</li>
-							<li>Excel Skills for Business Specialization, Macquarie University, Australia</li>
-							<li>Google Data Analytics Professional Certificate, Coursera</li>
-							<li>School Administration Endorsement Certificate (Partial), James Madison University</li>
-						</ul>
-					</div>
-
-					<div style="margin-bottom: 40px;">
-						<h2 style="font-size: 32px; margin-bottom: 20px; color: #333; border-bottom: 2px solid #0066cc; padding-bottom: 10px;">Professional Experience</h2>
-
-						<div style="margin-bottom: 30px;">
-							<h3 style="font-size: 22px; margin-bottom: 10px; color: #333;">Machine Learning SME (Subject Matter Expert) | SweetRush | May 2025 – Present</h3>
-
-							<h4 style="font-size: 18px; margin-top: 15px; margin-bottom: 10px; color: #444;">Microsoft AI Agents Professional Certificate (2025)</h4>
-							<ul style="list-style-type: disc; margin-left: 20px; line-height: 1.8;">
-								<li><strong>Curriculum Innovation:</strong> Spearheaded the design and delivery of a certification focused on autonomous AI agents, transitioning materials from legacy Azure platforms to the unified Azure AI Foundry ecosystem.</li>
-								<li><strong>Hands-On Agent Engineering:</strong> Developed, implemented, and tested production-grade AI agents within Azure AI Foundry, authoring exemplar workflows for configuration, orchestration, and chaining multi-step agent actions.</li>
-								<li><strong>Instructional Labs & Demonstrations:</strong> Created interactive labs and guided exercises enabling learners to build, deploy, and optimize custom agents for tasks such as retrieval, summarization, workflow automation, and evaluation against ground-truth data.</li>
-								<li><strong>Technical QA & Script Validation:</strong> Performed deep-dive technical audits of instructional screencast scripts and live interfaces, resolving critical UI and process discrepancies.</li>
-								<li><strong>Terminology & Brand Standardization:</strong> Enforced consistent instructional terminology and structure throughout scripts and learning content, reducing friction and elevating clarity for agent development processes.</li>
-							</ul>
-
-							<h4 style="font-size: 18px; margin-top: 15px; margin-bottom: 10px; color: #444;">Microsoft Generative AI Engineering Professional Certificate (2025)</h4>
-							<ul style="list-style-type: disc; margin-left: 20px; line-height: 1.8;">
-								<li><strong>Lead SME and Content Reviewer:</strong> Drove design, technical review, and standards compliance for Microsoft and Coursera's industry-grade AI upskilling program.</li>
-								<li><strong>Instructional Asset Development:</strong> Created/reviewed 20+ videos and 10+ labs per course, writing scripts, technical guides, assessments, labs, and capstones.</li>
-								<li><strong>Assessment and Skill Validation:</strong> Designed scenario-based quizzes, practical labs, and capstone projects emphasizing demonstration of Azure AI, text generation, and full-lifecycle MLOps in real enterprise use cases.</li>
-							</ul>
-
-							<h4 style="font-size: 18px; margin-top: 15px; margin-bottom: 10px; color: #444;">Coursera Original Machine Learning Certificate (2025)</h4>
-							<ul style="list-style-type: disc; margin-left: 20px; line-height: 1.8;">
-								<li><strong>Technical SME, Content Developer, and Screencast Instructor:</strong> Led content creation for Coursera's flagship in-house ML training, covering end-to-end machine learning and deep learning workflows.</li>
-								<li><strong>Algorithm Implementation:</strong> Developed instructional screencasts on ensemble methods (Random Forest, XGBoost, LightGBM), dimensionality reduction (PCA, t-SNE, UMAP), foundational and advanced models (GANs, VAEs, Diffusion Models), and neural network mechanics.</li>
-								<li><strong>NLP & Multimodal AI:</strong> Authored screencasts on retrieval-augmented generation (RAG) with sentence-transformers and FAISS, Transformer fine-tuning (supervised and PEFT/LoRA), TF-IDF, zero-shot image classification (CLIP), and speech-to-text (Whisper).</li>
-								<li><strong>MLOps & Deployment:</strong> Instructed on automated model selection (PyCaret, Auto-sklearn), experiment tracking (MLflow), and interactive app deployment (Streamlit, Flask).</li>
-							</ul>
-						</div>
-
-						<div style="margin-bottom: 30px;">
-							<h3 style="font-size: 22px; margin-bottom: 10px; color: #333;">Instructional Design Specialist | Learning Mate | December 2024 – April 2025</h3>
-							<ul style="list-style-type: disc; margin-left: 20px; line-height: 1.8;">
-								<li>Created two end-to-end training courses for Chegg related to the application of AI to healthcare administration</li>
-								<li>Developed and published four Kadal AI agents for structured learning content generation</li>
-								<li>Created two comprehensive Learning Modules for Practical AI for Healthcare Administration</li>
-								<li>Drafted 12+ detailed video scripts incorporating technical demonstrations and healthcare workflow insights</li>
-								<li>Developed 150+ interactive AI activities across professional training programs while maintaining 95% SME approval rate</li>
-								<li>Reduced content creation time by 40% through strategic AI tool implementation</li>
-								<li>Supported training of 500+ professionals through innovative learning solutions</li>
-							</ul>
-						</div>
-
-						<div style="margin-bottom: 30px;">
-							<h3 style="font-size: 22px; margin-bottom: 10px; color: #333;">Learning and Research Analyst | ABK Learning Solutions | May 2022 – December 2024</h3>
-
-							<h4 style="font-size: 18px; margin-top: 15px; margin-bottom: 10px; color: #444;">Training Development</h4>
-							<ul style="list-style-type: disc; margin-left: 20px; line-height: 1.8;">
-								<li>Developed comprehensive training content for Boeing 737 aircraft systems in compliance with FAA requirements</li>
-								<li>Created and formatted 200+ detailed aviation training modules with timing-annotated narration scripts</li>
-								<li>Implemented standardized instructional design templates enhancing content clarity and learner comprehension</li>
-								<li>Transformed complex technical documentation (FCOM) into structured learning modules</li>
-							</ul>
-
-							<h4 style="font-size: 18px; margin-top: 15px; margin-bottom: 10px; color: #444;">Technical Development & AI Solutions</h4>
-							<ul style="list-style-type: disc; margin-left: 20px; line-height: 1.8;">
-								<li>Engineered automated data collection system processing 670+ business records using Python and BeautifulSoup4</li>
-								<li>Developed sophisticated web scraping algorithms with advanced error handling and rate limiting capabilities</li>
-								<li>Successfully extracted 200+ previously uncollected email addresses, enabling direct business communication</li>
-								<li>Built automated CSV processing pipeline with encoding detection and flexible data handling</li>
-							</ul>
-
-							<h4 style="font-size: 18px; margin-top: 15px; margin-bottom: 10px; color: #444;">Instructional Design & AI Integration</h4>
-							<ul style="list-style-type: disc; margin-left: 20px; line-height: 1.8;">
-								<li>Developed AI-driven instructional design solutions, resulting in a 25% increase in content comprehension and retention</li>
-								<li>Developed custom AI instructions and prompts, resulting in a 25% increase in quality and relevance of AI-generated outputs</li>
-								<li>Developed custom prompts and templates for LLMs including GPT-2/3/4, QWEN, Llama, Claude, Mistral, and Gemini</li>
-								<li>Developed AI-driven scenario-based training modules, enhancing learner engagement and retention by 35%</li>
-							</ul>
-						</div>
-
-						<div style="margin-bottom: 30px;">
-							<h3 style="font-size: 22px; margin-bottom: 10px; color: #333;">Team Leader, Researcher | Good To Great Schools Australia | November 2023 – June 2024</h3>
-							<ul style="list-style-type: disc; margin-left: 20px; line-height: 1.8;">
-								<li>Created step-by-step guide for ethical best practices using generative AI</li>
-								<li>Used AI speech synthesis to translate lesson content into multiple languages</li>
-								<li>Managed team of 3 developers in Agile environment remotely</li>
-								<li>Conducted comprehensive research on student wellbeing and character strengths</li>
-								<li>Edited and adapted 250+ Bible stories for age-appropriateness</li>
-								<li>Led creative teams across multiple time zones using "The Playbook" system</li>
-							</ul>
-						</div>
-
-						<div style="margin-bottom: 30px;">
-							<h3 style="font-size: 22px; margin-bottom: 10px; color: #333;">Department Chair & Educator | Prince William County Schools | 2008 – 2023</h3>
-							<p style="margin-bottom: 10px;"><em>Multiple positions including Department Chair at Gar-Field Senior High School (2018-2023), Choral Director at Ronald Reagan Middle School (2012-2018), and Music Teacher at Montclair Elementary School (2008-2012)</em></p>
-							<ul style="list-style-type: disc; margin-left: 20px; line-height: 1.8;">
-								<li>Led data-driven projects to optimize processes and implemented machine learning for learning outcome prediction</li>
-								<li>Developed instructional screencast videos and click-through guides using Camtasia and CapCut</li>
-								<li>Created Tableau dashboards for achievement tracking</li>
-								<li>Managed department budget and resources, coordinated performances and events</li>
-								<li>Advised Tri-M Music Honor Society and served on multiple school committees</li>
-							</ul>
-						</div>
-					</div>
-
-					<div style="margin-bottom: 40px;">
-						<h2 style="font-size: 32px; margin-bottom: 20px; color: #333; border-bottom: 2px solid #0066cc; padding-bottom: 10px;">Python Development & Programming</h2>
-						<ul style="list-style-type: disc; margin-left: 20px; line-height: 1.8;">
-							<li><strong>Advanced RAG Systems & NLP:</strong> Engineered production-ready RAG systems using FAISS, sentence transformers, and sophisticated document retrieval mechanisms. Implemented comprehensive evaluation frameworks measuring both retrieval accuracy and response quality.</li>
-							<li><strong>AI-Powered Legal/Regulatory Document Systems:</strong> Developed comprehensive digital assistant for querying specialized legal documents using RAG architecture with FAISS vector search and LLM integration (Groq API, Ollama).</li>
-							<li><strong>Cloud Architecture & Deployment:</strong> Designed and implemented serverless deployment architectures using AWS Lambda with comprehensive monitoring capabilities. Developed containerized solutions with Docker for scalable cloud deployment.</li>
-							<li><strong>API Development & Backend Systems:</strong> Engineered production-ready REST APIs using FastAPI with comprehensive validation, error handling, and documentation. Implemented sophisticated database integrations using SQLAlchemy ORM with PostgreSQL.</li>
-							<li><strong>Machine Learning & AI Integration:</strong> Developed sophisticated machine learning systems utilizing PyTorch and TensorFlow frameworks. Implemented production-ready NLP systems, computer vision solutions, and adaptive learning platforms.</li>
-							<li><strong>Educational Technology Development:</strong> Engineered adaptive learning systems with real-time performance tracking, personalized study recommendations, and cluster-based analytics.</li>
-						</ul>
-					</div>
-
-					<div style="margin-bottom: 40px;">
-						<h2 style="font-size: 32px; margin-bottom: 20px; color: #333; border-bottom: 2px solid #0066cc; padding-bottom: 10px;">Technical Proficiencies</h2>
-
-						<h4 style="font-size: 18px; margin-bottom: 10px; color: #444;">Libraries & Frameworks:</h4>
-						<ul style="list-style-type: disc; margin-left: 20px; line-height: 1.8; margin-bottom: 20px;">
-							<li><strong>Web Frameworks:</strong> FastAPI, CORS middleware, uvicorn, Gradio</li>
-							<li><strong>Database:</strong> SQLAlchemy, PostgreSQL, sqlite3</li>
-							<li><strong>Deep Learning:</strong> PyTorch, TensorFlow, Keras, FastAI</li>
-							<li><strong>NLP:</strong> GPT-2, SentenceTransformers, tiktoken, Qwen, Llama, Groq API, Ollama</li>
-							<li><strong>Data Processing:</strong> pandas, numpy, BeautifulSoup4</li>
-							<li><strong>Vector Databases:</strong> HNSW, Cosine Similarity, FAISS</li>
-							<li><strong>Cloud Services:</strong> Azure Document Intelligence API, Azure Functions, Azure AI Search, Azure SQL Database, Azure Blob Storage</li>
-							<li><strong>Containerization & CI/CD:</strong> Docker, GitHub Actions</li>
-						</ul>
-
-						<h4 style="font-size: 18px; margin-bottom: 10px; color: #444;">Core Competencies:</h4>
-						<ul style="list-style-type: disc; margin-left: 20px; line-height: 1.8;">
-							<li>RAG System Development</li>
-							<li>Cloud Architecture Design</li>
-							<li>REST API Development</li>
-							<li>Database Architecture & ORM</li>
-							<li>Document Retrieval Systems</li>
-							<li>Deep Learning Model Development</li>
-							<li>Neural Network Architecture Design</li>
-							<li>Educational Technology Systems</li>
-							<li>LLM Integration & Orchestration</li>
-							<li>Semantic Search Implementation</li>
-							<li>CI/CD Pipeline Development</li>
-						</ul>
-					</div>
-
-					<div style="margin-bottom: 40px;">
-						<h2 style="font-size: 32px; margin-bottom: 20px; color: #333; border-bottom: 2px solid #0066cc; padding-bottom: 10px;">Featured Projects</h2>
-
-						<div style="margin-bottom: 20px;">
-							<h4 style="font-size: 18px; margin-bottom: 8px; color: #444;">Florida Masonic Law Digital Assistant (2025)</h4>
-							<p style="margin-bottom: 8px;">Developed an AI-powered digital assistant for querying the Digest of Masonic Law of Florida, leveraging modern NLP, semantic search, and Retrieval-Augmented Generation (RAG). Integrated LLMs (Groq API and Ollama), FAISS vector search, and a web-based Gradio interface.</p>
-							<p><a href="https://github.com/DoctorN8/florida-masonic-law-assistant" target="_blank" style="color: #0066cc;">GitHub Repository</a></p>
-						</div>
-
-						<div style="margin-bottom: 20px;">
-							<h4 style="font-size: 18px; margin-bottom: 8px; color: #444;">ABK Learning Solutions – RAG Website Chatbot (2025)</h4>
-							<p style="margin-bottom: 8px;">Built an AI-powered website chatbot using Retrieval-Augmented Generation (RAG) to answer questions about ABK's website, services, and projects. Combined FAISS-based semantic search with LLM-generated responses.</p>
-							<p><a href="https://huggingface.co/spaces/DoctorN8/ABK_Learning_Solutions" target="_blank" style="color: #0066cc;">Hugging Face Space</a></p>
-						</div>
-
-						<div style="margin-bottom: 20px;">
-							<h4 style="font-size: 18px; margin-bottom: 8px; color: #444;">Azure-Powered Historical Document Processing Framework (2025)</h4>
-							<p>Transformed a Jupyter Notebook into a scalable, cloud-based AI pipeline using Azure services. Utilized Azure Document Intelligence API, Azure Functions, Azure AI Search, and FastAPI for comprehensive document processing.</p>
-						</div>
-
-						<div style="margin-bottom: 20px;">
-							<h4 style="font-size: 18px; margin-bottom: 8px; color: #444;">Educational Content Assistant (2025)</h4>
-							<p>Developed RAG-based educational content system using transformers and FAISS for semantic search. Implemented sophisticated document retrieval system with advanced error handling and monitoring.</p>
-						</div>
-
-						<div style="margin-bottom: 20px;">
-							<h4 style="font-size: 18px; margin-bottom: 8px; color: #444;">Advanced Quiz API System (2024)</h4>
-							<p>Developed production-grade REST API using FastAPI with comprehensive validation and error handling. Implemented sophisticated database architecture using SQLAlchemy ORM with PostgreSQL.</p>
-						</div>
-					</div>
-
-					<div style="margin-bottom: 40px;">
-						<h2 style="font-size: 32px; margin-bottom: 20px; color: #333; border-bottom: 2px solid #0066cc; padding-bottom: 10px;">Non-Profit Leadership</h2>
-
-						<div style="margin-bottom: 20px;">
-							<h4 style="font-size: 18px; margin-bottom: 8px; color: #444;">Vice-President, Board of Directors | Lake Ridge Chorale | 2021-2023</h4>
-							<ul style="list-style-type: disc; margin-left: 20px; line-height: 1.8;">
-								<li>Led strategic planning and organizational development initiatives</li>
-								<li>Managed board governance and policy development</li>
-								<li>Oversaw financial planning and resource allocation</li>
-							</ul>
-						</div>
-
-						<div style="margin-bottom: 20px;">
-							<h4 style="font-size: 18px; margin-bottom: 8px; color: #444;">Master (Chief Executive) | Masonic Lodge | 2014-2018</h4>
-							<ul style="list-style-type: disc; margin-left: 20px; line-height: 1.8;">
-								<li>Served 4.5 consecutive years as chief executive officer</li>
-								<li>Led organizational operations and strategic initiatives</li>
-								<li>Managed membership development and community outreach</li>
-							</ul>
-						</div>
-					</div>
-
-					<div style="margin-bottom: 40px;">
-						<h2 style="font-size: 32px; margin-bottom: 20px; color: #333; border-bottom: 2px solid #0066cc; padding-bottom: 10px;">Academic Positions</h2>
-
-						<div style="margin-bottom: 20px;">
-							<h4 style="font-size: 18px; margin-bottom: 8px; color: #444;">Adjunct Professor | George Mason University | 2016 – 2019</h4>
-							<p style="margin-bottom: 8px;"><strong>Courses Taught:</strong> Aural Skills I, Introduction to Classical Music</p>
-							<ul style="list-style-type: disc; margin-left: 20px; line-height: 1.8;">
-								<li>Developed curriculum standards, lesson plans, and syllabi</li>
-								<li>Employed LMS for attendance and grades</li>
-								<li>Used exams, quizzes and assignments for assessment</li>
-							</ul>
-						</div>
-
-						<div style="margin-bottom: 20px;">
-							<h4 style="font-size: 18px; margin-bottom: 8px; color: #444;">Graduate Teaching Assistant | George Mason University | 2014 – 2016</h4>
-							<p style="margin-bottom: 8px;"><strong>Courses Taught:</strong> Music Administration and Management, Healing Arts Ensemble</p>
-							<ul style="list-style-type: disc; margin-left: 20px; line-height: 1.8;">
-								<li>Analyzed statistical data using modern and traditional methods</li>
-								<li>Created instructional screencast videos on topics such as standards-based grading</li>
-								<li>Performed quantitative, qualitative, and mixed-methods research</li>
-								<li>Specialized in hypothesis testing, cluster analysis, and regression modeling</li>
-								<li>Used SPSS and statistical software for data analysis</li>
-							</ul>
-						</div>
-					</div>
-
-					<div style="margin-bottom: 40px;">
-						<h2 style="font-size: 32px; margin-bottom: 20px; color: #333; border-bottom: 2px solid #0066cc; padding-bottom: 10px;">Publications</h2>
-
-						<h4 style="font-size: 18px; margin-bottom: 10px; color: #444;">Books and Book Chapters</h4>
-						<ul style="list-style-type: disc; margin-left: 20px; line-height: 1.8; margin-bottom: 20px;">
-							<li>St. Pierre, N.A. (2024). <em>Harmony in the Hive: A Vibrant Vision for Freemasonry's Future</em>. Washington, DC: Plumbstone.</li>
-							<li>St. Pierre, N.A., & Eyer, S. (under contract). <em>Sing the Art Divine: A Traditional Masonic Songster</em>. Washington, DC: Plumbstone.</li>
-							<li>St. Pierre, N.A. (2017). "Genius of Masonry: The Preservation of Masonic Tradition in the Songs of the Freemasons." In C.B. Murphy & S. Eyer (Eds.), <em>Exploring Early Grand Lodge Freemasonry</em>. Washington, DC: Plumbstone.</li>
-						</ul>
-
-						<h4 style="font-size: 18px; margin-bottom: 10px; color: #444;">Peer-Reviewed Journal Articles</h4>
-						<ul style="list-style-type: disc; margin-left: 20px; line-height: 1.8;">
-							<li>St. Pierre, N. (2024). Whilst We Enchant All Ears with Musick of the Spheres: The Esoteric Significance of "The New Fairies: Or, The Fellow-Craft's Song". <em>Philalethes</em>, 77(1), 6–21.</li>
-							<li>St. Pierre, N.A., & Wuttke, B.C. (2015). Standards-Based Grading Practices Among Practicing Music Educators: Prevalence and Rationale. <em>Update: Applications of Research in Music Education</em>, 1–8.</li>
-							<li>St. Pierre, N. (2017). For All This Lodge is Holy Ground: The Symbolism of the Floor of the Lodge. <em>Philalethes</em>, 70(3), 123–127.</li>
-						</ul>
-					</div>
-
-					<div style="margin-bottom: 40px;">
-						<h2 style="font-size: 32px; margin-bottom: 20px; color: #333; border-bottom: 2px solid #0066cc; padding-bottom: 10px;">Awards and Honors</h2>
-						<ul style="list-style-type: disc; margin-left: 20px; line-height: 1.8;">
-							<li>The Recording Academy GRAMMY Music Educator Award Nomination (2020)</li>
-							<li>Inside NoVA Best of Prince William County Nomination (2017, 2018)</li>
-							<li>Magna Cum Laude, The Hartt School, University of Hartford (2007)</li>
-							<li>Citations in 25+ peer-reviewed publications for academic contributions</li>
-						</ul>
-					</div>
-
-					<div style="margin-bottom: 40px;">
-						<h2 style="font-size: 32px; margin-bottom: 20px; color: #333; border-bottom: 2px solid #0066cc; padding-bottom: 10px;">Technical Skills</h2>
-
-						<h4 style="font-size: 18px; margin-bottom: 10px; color: #444;">Programming & Data Analysis</h4>
-						<ul style="list-style-type: disc; margin-left: 20px; line-height: 1.8; margin-bottom: 20px;">
-							<li>Python (ML, NLP, Data Processing)</li>
-							<li>R Programming</li>
-							<li>SQL</li>
-							<li>SPSS Statistics</li>
-							<li>Tableau</li>
-							<li>Excel (Advanced Analytics)</li>
-						</ul>
-
-						<h4 style="font-size: 18px; margin-bottom: 10px; color: #444;">Instructional Design & E-Learning Technologies</h4>
-						<ul style="list-style-type: disc; margin-left: 20px; line-height: 1.8;">
-							<li>Articulate Storyline 360</li>
-							<li>Adobe Captivate</li>
-							<li>Camtasia</li>
-							<li>Learning Management Systems (Canvas, Blackboard)</li>
-							<li>AI-Powered Content Generation Tools</li>
-							<li>Interactive Content Design Tools</li>
-						</ul>
-					</div>
-
-					<div style="text-align: center; margin-top: 60px; padding-top: 20px; border-top: 1px solid #ccc;">
-						<p style="font-size: 14px; color: #666;">References available upon request</p>
-					</div>
-				</div>
-			</div>
-		</div>
-      </div>
-
-	</div>
-</div>
-
-</div>
-
-    </div>
-
-    <div class="footer-wrap">
-      <div class="container">
-        <div class="footer">Create a <a target="_top" href="http://www.weebly.com/">free web site</a> with <a target="_top" href="http://www.weebly.com/" title="free web site">Weebly</a></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="nav mobile-nav">
-    <a class="hamburger" aria-label="Menu" href="#"><span></span></a>
-    <ul class="wsite-menu-default">
-    		<li id="pg518462074352985997" class="wsite-menu-item-wrap">
-    			<a
-    						href="index.html"
-    				class="wsite-menu-item"
-    				>
-    				Home
-    			</a>
-    			
-    		</li>
-    		<li id="pg220847051528094561" class="wsite-menu-item-wrap">
-    			<a
-    				class="wsite-menu-item"
-    				>
-    				Portfolio
-    			</a>
-    			<div class="wsite-menu-wrap" style="display:none">
-	<ul class="wsite-menu">
-		<li id="wsite-nav-991635792625220136"
-	class="wsite-menu-subitem-wrap "
-	>
-	<a
-				href="projects.html"
-		class="wsite-menu-subitem"
-		>
-		<span class="wsite-menu-title">
-			Projects
-		</span>
-	</a>
-	
-</li>
-<li id="wsite-nav-175287144166915335"
-	class="wsite-menu-subitem-wrap "
-	>
-	<a
-				href="publications.html"
-		class="wsite-menu-subitem"
-		>
-		<span class="wsite-menu-title">
-			Publications
-		</span>
-	</a>
-	
-</li>
-
-	</ul>
-</div>
-
-    		</li>
-    		<li id="pg676195845722943537" class="wsite-menu-item-wrap">
-    			<a
-    						href="about-me.html"
-    				class="wsite-menu-item"
-    				>
-    				About Me
-    			</a>
-    			
-    		</li>
-    		<li id="active" class="wsite-menu-item-wrap">
-    			<a
-    						href="reacutesumeacute.html"
-    				class="wsite-menu-item"
-    				>
-    				Résumé
-    			</a>
-    			
-    		</li>
-    </ul>
-  </div>
-
-
-  <script type="text/javascript" src="files/theme/plugins.js"></script>
-  <script type="text/javascript" src="files/theme/custom.js"></script>
-    <div id="customer-accounts-app"></div>
-    <script src="http://cdn2.editmysite.com/js/site/main-customer-accounts-site.js?buildTime=1234"></script>
-
-		
-	</body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
