@@ -39,7 +39,7 @@
         <p>While scrolling through YouTube I noticed something strange: Nationally recognized Art Museums rarely have more than a few <strong>hundred</strong> subscribers.</p>
         
         <div class="quote-box">
-            "The media personality Logan Paul has more than <strong>23 Million</strong> channel subscribers."
+            "As of 2022, the media personality Logan Paul has more than <strong>23 Million</strong> channel subscribers."
         </div>
 
         <p>If you have never heard of Logan Paul, but you've heard of the <strong>Isabella Stewart Gardner Museum</strong>, you understand the problem.</p>
@@ -47,20 +47,20 @@
         <h2 class="mt-5 fw-bold">Methodology</h2>
         <p>First, I created a database with data from CauseIQ. Then, I added YouTube Channel Subscribers as a variable. Using R Studio, I ran a linear regression to predict Revenue based on Subscribers.</p>
 
-        <img src="assets/model1_orig.jpeg" class="img-fluid w-100" alt="Initial Model Data">
+        <img src="images/portfolio/model1_orig.jpeg" class="img-fluid w-100" alt="Initial Model Data">
 
         <p>It didn't look like much, but I wanted to see if the math checked out... It did not. Ok, let's look at the distributions.</p>
 
         <div class="row">
-            <div class="col-md-6"><img src="assets/subhist1_orig.jpeg" class="img-fluid" alt="Histogram 1"></div>
-            <div class="col-md-6"><img src="assets/rev-hist1_orig.jpeg" class="img-fluid" alt="Histogram 2"></div>
+            <div class="col-md-6"><img src="images/portfolio/subhist1_orig.jpeg" class="img-fluid" alt="Histogram 1"></div>
+            <div class="col-md-6"><img src="images/portfolio/rev-hist1_orig.jpeg" class="img-fluid" alt="Histogram 2"></div>
         </div>
 
         <p>Those are both really skewed! Time to transform the data. With a little math magic (logarithmic transformation), we get a more normal distribution.</p>
 
         <div class="row">
-            <div class="col-md-6"><img src="assets/sub-hist2_orig.jpeg" class="img-fluid" alt="Transformed Histogram 1"></div>
-            <div class="col-md-6"><img src="assets/rev-hist2_orig.jpeg" class="img-fluid" alt="Transformed Histogram 2"></div>
+            <div class="col-md-6"><img src="images/portfolio/sub-hist2_orig.jpeg" class="img-fluid" alt="Transformed Histogram 1"></div>
+            <div class="col-md-6"><img src="images/portfolio/rev-hist2_orig.jpeg" class="img-fluid" alt="Transformed Histogram 2"></div>
         </div>
 
         <h2 class="mt-5 fw-bold">Key Findings</h2>
@@ -68,7 +68,7 @@
             "The model explains about 35% of the variation in revenue, which means that there are likely other factors that influence revenue as well."
         </div>
         
-        <img src="assets/model5_orig.jpeg" class="img-fluid w-100" alt="Final Model Output">
+        <img src="images/portfolio/model5_orig.jpeg" class="img-fluid w-100" alt="Final Model Output">
 
         <p>Based on the model output, a one-unit increase in the log number of subscribers is associated with a 0.27397 increase in the log revenue. Since both variables are in logarithmic form, this implies a power law relationship. Specifically, for every doubling of the number of subscribers, the revenue is expected to increase by a factor of approximately 2.</p>
         
@@ -79,7 +79,7 @@
     </div>
 
     <footer class="text-center py-4 bg-dark text-light mt-5">
-        <p class="mb-0">&copy; 2025 Nathan St. Pierre</p>
+        <p class="mb-0">&copy; 2023 Nathan St. Pierre</p>
     </footer>
 </body>
 </html>

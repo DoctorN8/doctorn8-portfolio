@@ -17,7 +17,7 @@
 
     <style>
         :root {
-            --primary-brand: #aa784d; /* Your Bronze/Gold */
+            --primary-brand: #aa784d;
             --dark-text: #2a2a2a;
             --light-bg: #f8f9fa;
         }
@@ -32,7 +32,6 @@
             font-family: 'Montserrat', sans-serif;
         }
 
-        /* --- Navigation --- */
         .navbar {
             padding: 1rem 0;
             box-shadow: 0 2px 15px rgba(0,0,0,0.05);
@@ -56,7 +55,6 @@
             color: var(--primary-brand) !important;
         }
 
-        /* --- Buttons --- */
         .btn-brand {
             background-color: var(--primary-brand);
             border-color: var(--primary-brand);
@@ -78,7 +76,6 @@
             font-weight: 600;
         }
 
-        /* --- Hero Section --- */
         .hero-section {
             padding: 100px 0;
             background: linear-gradient(to right, #ffffff, #f3f4f6);
@@ -92,7 +89,6 @@
             margin-bottom: 1.5rem;
         }
 
-        /* --- Cards --- */
         .project-card {
             border: none;
             border-radius: 12px;
@@ -111,7 +107,7 @@
         .card-img-top {
             height: 200px;
             object-fit: cover;
-            background-color: #eee; /* Placeholder color if image missing */
+            background-color: #eee;
         }
 
         .tech-badge {
@@ -136,7 +132,6 @@
             margin-bottom: 1rem;
         }
 
-        /* --- Footer --- */
         footer {
             background-color: var(--dark-text);
             color: #ddd;
@@ -177,7 +172,7 @@
                     <li class="nav-item"><a class="nav-link" href="publications.html">Publications</a></li>
                     <li class="nav-item"><a class="nav-link" href="about-me.html">About Me</a></li>
                     <li class="nav-item ms-lg-2">
-                        <a class="btn btn-brand btn-sm" href="assets/20250215_nsp_curriculum_vitae.pdf" target="_blank">
+                        <a class="btn btn-brand btn-sm" href="assets/resume.pdf" target="_blank">
                             <i class="fas fa-download me-2"></i>Resume
                         </a>
                     </li>
@@ -200,10 +195,10 @@
                     </div>
                 </div>
                 <div class="col-lg-5 mt-5 mt-lg-0 text-center">
-                    <img src="assets/blue-gradient-modern-technology-service-linkedin-article-cover-image-5_orig.png" 
-                         alt="Nathan St. Pierre Headshot" 
-                         class="img-fluid rounded-circle shadow-lg" 
-                         style="width: 350px; height: 350px; object-fit: cover;">
+                    <img src="images/profile/head-shot.jpg"
+                         alt="Nathan St. Pierre"
+                         class="img-fluid rounded-circle shadow-lg"
+                         style="width: 350px; height: 350px; object-fit: cover; object-position: center 10%;">
                 </div>
             </div>
         </div>
@@ -249,108 +244,98 @@
         <div class="container">
             <div class="d-flex justify-content-between align-items-end mb-5">
                 <div>
-                    <h2 class="fw-bold display-6">Featured Projects</h2>
-                    <p class="text-muted mb-0">Select case studies in AI and Data Science.</p>
+                    <h2 class="fw-bold">Featured Projects</h2>
+                    <p class="text-muted">Real-world applications of AI and data science</p>
                 </div>
-                <a href="projects.html" class="btn btn-outline-dark d-none d-md-inline-block">View All Projects</a>
+                <a href="projects.html" class="btn btn-outline-dark">View All Projects</a>
             </div>
 
             <div class="row g-4">
-                
-                <div class="col-md-4">
-                    <div class="project-card d-flex flex-column">
-                        <div class="card-img-top d-flex align-items-center justify-content-center bg-secondary text-white">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card project-card">
+                        <div class="card-img-top" style="height: 140px; display: flex; align-items: center; justify-content: center; background-color: var(--primary-brand); color: white;">
                             <i class="fas fa-gavel fa-3x"></i>
                         </div>
-                        <div class="card-body d-flex flex-column">
-                            <h3 class="card-title h5 fw-bold">AI Legal Assistant (RAG)</h3>
-                            <p class="card-text">A digital assistant for querying Florida Masonic Law, using vector embeddings to provide instant citations.</p>
-                            
-                            <div class="impact-text">
-                                "Increased legal transparency by providing instant, source-cited answers to complex queries."
-                            </div>
-
-                            <div class="mt-auto mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">AI Legal Assistant</h5>
+                            <p class="card-text">Digital assistant for Masonic Law using RAG architecture.</p>
+                            <div class="mb-3">
                                 <span class="tech-badge">RAG</span>
-                                <span class="tech-badge">Vector DB</span>
-                                <span class="tech-badge">LLM</span>
+                                <span class="tech-badge">Python</span>
                             </div>
-                            <a href="https://fabulous-tithonia-e7b.notion.site/Building-a-Specialized-AI-Legal-Assistant-with-RAG-Architecture-2b6a6b228ba480f49662f244c071858d" target="_blank" class="btn btn-outline-dark btn-sm w-100 stretched-link">View Case Study</a>
+                            <div class="impact-text">
+                                "Instant, source-cited answers to complex queries."
+                            </div>
+                            <a href="https://fabulous-tithonia-e7b.notion.site/Building-a-Specialized-AI-Legal-Assistant-with-RAG-Architecture-2b6a6b228ba480f49662f244c071858d" target="_blank" class="btn btn-brand btn-sm">View Case Study</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-md-4">
-                    <div class="project-card d-flex flex-column">
-                        <div class="card-img-top d-flex align-items-center justify-content-center bg-dark text-white">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card project-card">
+                        <div class="card-img-top" style="height: 140px; display: flex; align-items: center; justify-content: center; background-color: var(--primary-brand); color: white;">
                             <i class="fas fa-graduation-cap fa-3x"></i>
                         </div>
-                        <div class="card-body d-flex flex-column">
-                            <h3 class="card-title h5 fw-bold">Intelligent Education System</h3>
-                            <p class="card-text">An educational content system combining advanced retrieval (FAISS) with natural language generation.</p>
-                            
-                            <div class="impact-text">
-                                "Transforms static curriculum into context-aware, interactive content for students."
-                            </div>
-
-                            <div class="mt-auto mb-3">
-                                <span class="tech-badge">FAISS</span>
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Intelligent Edu System</h5>
+                            <p class="card-text">Advanced retrieval (FAISS) with NLP for contextual learning.</p>
+                            <div class="mb-3">
                                 <span class="tech-badge">PyTorch</span>
-                                <span class="tech-badge">NLP</span>
+                                <span class="tech-badge">FAISS</span>
                             </div>
-                            <a href="https://fabulous-tithonia-e7b.notion.site/RAG-Based-Learning-System-178a6b228ba480d49650fcc09e681b91" target="_blank" class="btn btn-outline-dark btn-sm w-100 stretched-link">View Case Study</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="project-card d-flex flex-column">
-                        <div class="card-img-top d-flex align-items-center justify-content-center bg-secondary text-white">
-                            <i class="fas fa-music fa-3x"></i>
-                        </div>
-                        <div class="card-body d-flex flex-column">
-                            <h3 class="card-title h5 fw-bold">Predictive Music Analytics</h3>
-                            <p class="card-text">A Machine Learning system predicting choral ensemble placement using Random Forest Classifiers.</p>
-                            
                             <div class="impact-text">
-                                "Achieved 85% accuracy in predicting audition outcomes using statistical modeling."
+                                "Bridging static curriculum and AI."
                             </div>
-
-                            <div class="mt-auto mb-3">
-                                <span class="tech-badge">Scikit-Learn</span>
-                                <span class="tech-badge">Random Forest</span>
-                                <span class="tech-badge">ANOVA</span>
-                            </div>
-                            <a href="https://fabulous-tithonia-e7b.notion.site/Using-Machine-Learning-to-Predict-Music-Ensemble-Placement-4f466269adbe4870b372043990bfc226" target="_blank" class="btn btn-outline-dark btn-sm w-100 stretched-link">View Case Study</a>
+                            <a href="https://fabulous-tithonia-e7b.notion.site/RAG-Based-Learning-System-178a6b228ba480d49650fcc09e681b91" target="_blank" class="btn btn-brand btn-sm">View Case Study</a>
                         </div>
                     </div>
                 </div>
 
-            </div>
-            
-            <div class="d-md-none text-center mt-4">
-                <a href="projects.html" class="btn btn-outline-dark">View All Projects</a>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card project-card">
+                        <div class="card-img-top" style="height: 140px; display: flex; align-items: center; justify-content: center; background-color: var(--primary-brand); color: white;">
+                            <i class="fas fa-comments fa-3x"></i>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Custom Chatbot Framework</h5>
+                            <p class="card-text">Flexible markdown-first chatbot system for business websites.</p>
+                            <div class="mb-3">
+                                <span class="tech-badge">Gradio</span>
+                                <span class="tech-badge">LLM</span>
+                            </div>
+                            <div class="impact-text">
+                                "Turnkey AI support for small business."
+                            </div>
+                            <a href="https://fabulous-tithonia-e7b.notion.site/Creating-a-Customizable-AI-Chatbot-Framework-for-Business-Websites-2b6a6b228ba480718f3cd56b2ec2e094" target="_blank" class="btn btn-brand btn-sm">View Case Study</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="py-5 bg-white border-top">
+    <section class="py-5 bg-white">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-3 offset-md-1 mb-4 mb-md-0">
-                    <img src="assets/cover-front-web-resolution-1_orig.png" alt="Harmony in the Hive Book Cover" class="img-fluid shadow border rounded">
-                </div>
-                <div class="col-md-7">
-                    <div class="ps-md-4">
-                        <span class="text-uppercase text-muted fw-bold small">Featured Publication</span>
-                        <h2 class="fw-bold mb-3">Harmony in the Hive</h2>
-                        <h4 class="h5 text-muted mb-3">A Vibrant Vision for Freemasonry's Future</h4>
-                        <p>
-                            This book presents a compelling and practical vision for the revitalization of Freemasonry through Industry, Education, and Spiritual Depth. It calls for a return to the days when the quest for knowledge was as much a part of the Craft as the rituals themselves.
-                        </p>
-                        <a href="https://www.amazon.com/Harmony-Hive-Vibrant-Vision-Freemasonrys/dp/1603020888" target="_blank" class="btn btn-brand mt-2">
-                            <i class="fab fa-amazon me-2"></i>View on Amazon
-                        </a>
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Recent Publications</h2>
+                <p class="text-muted">Research and writing on music, philosophy, and history</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="card border-0 shadow-sm mb-4">
+                        <div class="row g-0">
+                            <div class="col-md-3">
+                                <img src="images/publications/cover-front-web-resolution-1_orig.png" class="img-fluid rounded-start" alt="Harmony in the Hive book cover">
+                            </div>
+                            <div class="col-md-9">
+                                <div class="card-body p-4">
+                                    <h5 class="fw-bold mb-2">Harmony in the Hive: A Vibrant Vision for Freemasonry's Future</h5>
+                                    <p class="text-muted mb-3"><em>Published 2024</em></p>
+                                    <p>Harmony in the Hive offers a visionary roadmap for revitalizing Freemasonry by blending industrious cooperation, deep education, and spiritual renewal to restore the Craft's true intellectual and moral vitality.</p>
+                                    <a href="publications.html" class="btn btn-outline-dark btn-sm">Read More</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -360,38 +345,27 @@
     <footer>
         <div class="container">
             <div class="row">
-                <div class="col-md-4 mb-4 mb-md-0">
-                    <h5 class="footer-heading">NATHAN ST. PIERRE</h5>
-                    <p class="small text-secondary">
-                        Data Scientist | AI Developer | Machine Learning Engineer<br>
-                        Palm Bay, Florida
-                    </p>
-                    <div>
-                        <a href="https://www.linkedin.com/in/doctorn8/" class="text-white me-3" aria-label="LinkedIn"><i class="fab fa-linkedin fa-lg"></i></a>
-                        <a href="mailto:nathan.stpierre@gmail.com" class="text-white me-3" aria-label="Email"><i class="fas fa-envelope fa-lg"></i></a>
-                        <a href="#" class="text-white" aria-label="GitHub"><i class="fab fa-github fa-lg"></i></a>
-                    </div>
+                <div class="col-md-4 mb-4">
+                    <h5 class="footer-heading">Nathan St. Pierre</h5>
+                    <p>Data Scientist & AI Solutions Architect specializing in RAG systems, NLP, and predictive modeling.</p>
                 </div>
-                <div class="col-md-4 mb-4 mb-md-0">
+                <div class="col-md-4 mb-4">
                     <h5 class="footer-heading">Quick Links</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="index.html" class="footer-link">Home</a></li>
-                        <li><a href="projects.html" class="footer-link">Portfolio</a></li>
-                        <li><a href="publications.html" class="footer-link">Publications</a></li>
-                        <li><a href="about.html" class="footer-link">About Me</a></li>
-                    </ul>
+                    <a href="index.html" class="footer-link">Home</a>
+                    <a href="projects.html" class="footer-link">Projects</a>
+                    <a href="publications.html" class="footer-link">Publications</a>
+                    <a href="about-me.html" class="footer-link">About Me</a>
                 </div>
-                <div class="col-md-4">
-                    <h5 class="footer-heading">Contact</h5>
-                    <p class="small text-secondary">
-                        Open for collaborations on AI, RAG Systems, and Data Science projects.
-                    </p>
-                    <a href="mailto:nathan.stpierre@gmail.com" class="btn btn-outline-light btn-sm">Email Me</a>
+                <div class="col-md-4 mb-4">
+                    <h5 class="footer-heading">Connect</h5>
+                    <a href="mailto:nathan.stpierre@gmail.com" class="footer-link"><i class="fas fa-envelope me-2"></i>nathan.stpierre@gmail.com</a>
+                    <a href="https://linkedin.com/in/nathanstpierre" class="footer-link" target="_blank"><i class="fab fa-linkedin me-2"></i>LinkedIn</a>
+                    <a href="https://github.com/nathanstpierre" class="footer-link" target="_blank"><i class="fab fa-github me-2"></i>GitHub</a>
                 </div>
             </div>
-            <hr class="border-secondary mt-4">
-            <div class="text-center small text-secondary">
-                &copy; 2025 Nathan St. Pierre. All rights reserved.
+            <hr class="my-4" style="border-color: #555;">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 Nathan St. Pierre. All rights reserved.</p>
             </div>
         </div>
     </footer>
