@@ -1,497 +1,446 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>AI Video Storyboards and Production Workflows</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="referrer" content="strict-origin-when-cross-origin">
-  <style>
-    /* Simple, text-first styling to match your existing project pages */
-    :root {
-      --text-xs:   clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
-      --text-sm:   clamp(0.875rem,0.8rem + 0.35vw,1rem);
-      --text-base: clamp(1rem,    0.95rem + 0.25vw,1.125rem);
-      --text-lg:   clamp(1.125rem,1rem + 0.75vw,1.5rem);
-      --text-xl:   clamp(1.5rem,  1.2rem + 1.25vw,2.25rem);
-
-      --space-1: 0.25rem;
-      --space-2: 0.5rem;
-      --space-3: 0.75rem;
-      --space-4: 1rem;
-      --space-5: 1.25rem;
-      --space-6: 1.5rem;
-      --space-8: 2rem;
-      --space-10: 2.5rem;
-      --space-12: 3rem;
-
-      --color-bg: #f7f6f2;
-      --color-surface: #fbfbf9;
-      --color-border: #d4d1ca;
-      --color-text: #28251d;
-      --color-text-muted: #65635e;
-      --color-accent: #01696f;
-    }
-
-    *, *::before, *::after { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      font-size: var(--text-base);
-      line-height: 1.6;
-      color: var(--color-text);
-      background-color: var(--color-bg);
-    }
-
-    main {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: var(--space-12) var(--space-4) var(--space-12);
-    }
-
-    h1, h2, h3 {
-      font-weight: 600;
-      line-height: 1.25;
-      margin: 0 0 var(--space-3);
-      text-wrap: balance;
-    }
-
-    h1 { font-size: var(--text-xl); margin-bottom: var(--space-4); }
-    h2 { font-size: var(--text-lg); margin-top: var(--space-8); }
-    h3 { font-size: var(--text-base); margin-top: var(--space-6); }
-
-    p {
-      margin: 0 0 var(--space-3);
-      max-width: 72ch;
-      text-wrap: pretty;
-    }
-
-    .meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: var(--space-2);
-      margin-bottom: var(--space-6);
-      font-size: var(--text-sm);
-      color: var(--color-text-muted);
-    }
-
-    .meta span {
-      padding: 0.125rem 0.5rem;
-      border-radius: 999px;
-      border: 1px solid rgba(40,37,29,0.12);
-      background-color: var(--color-surface);
-    }
-
-    section {
-      margin-bottom: var(--space-10);
-    }
-
-    .video-frame {
-      margin: var(--space-4) 0 var(--space-6);
-      padding: var(--space-4);
-      background-color: var(--color-surface);
-      border-radius: 0.5rem;
-      border: 1px solid rgba(40,37,29,0.12);
-    }
-
-    .video-container {
-      position: relative;
-      width: 100%;
-      border-radius: 0.375rem;
-      overflow: hidden;
-      background-color: #000;
-    }
-
-    .video-container video {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: var(--space-4) 0 var(--space-6);
-      font-size: var(--text-sm);
-    }
-
-    th, td {
-      border: 1px solid var(--color-border);
-      padding: 0.5rem 0.75rem;
-      vertical-align: top;
-    }
-
-    th {
-      background-color: var(--color-surface);
-      font-weight: 500;
-    }
-
-    .small-note {
-      font-size: var(--text-xs);
-      color: var(--color-text-muted);
-      margin-bottom: var(--space-3);
-    }
-
-    .tools-list {
-      margin: 0 0 var(--space-4);
-      padding-left: 1.25rem;
-      font-size: var(--text-sm);
-    }
-
-    .tools-list li { margin-bottom: 0.25rem; }
-
-    .callout {
-      border-left: 3px solid var(--color-accent);
-      padding-left: var(--space-3);
-      margin: var(--space-4) 0 var(--space-6);
-      font-size: var(--text-sm);
-      color: var(--color-text-muted);
-    }
-
-    @media (max-width: 600px) {
-      main { padding-inline: var(--space-3); }
-      .video-frame { padding: var(--space-3); }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Video Storyboards and Production Workflows | Nathan St. Pierre</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Lora', serif; color: #333; background: #faf9f7; }
+        h1, h2, h3, h4, h5, th { font-family: 'Montserrat', sans-serif; }
+        .process-step { text-align: center; padding: 20px; }
+        .confidential-note {
+            background: #fcf8f3;
+            border-left: 4px solid #aa784d;
+            padding: 18px 20px;
+            border-radius: 6px;
+        }
+        .schema-wrap {
+            background: #fff;
+            border: 1px solid #e7ded4;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 .125rem .25rem rgba(0,0,0,.05);
+        }
+        .schema-header {
+            background: #f5eee7;
+            border-bottom: 1px solid #e7ded4;
+            padding: 16px 20px;
+        }
+        .schema-note {
+            font-size: .95rem;
+            color: #6b6258;
+            margin: 0;
+        }
+        .table thead th {
+            background: #f8f4ef;
+            border-bottom-width: 1px;
+            font-size: .8rem;
+            text-transform: uppercase;
+            letter-spacing: .04em;
+            color: #5f564d;
+        }
+        .ref-id {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: #aa784d;
+            white-space: nowrap;
+        }
+        .block-pill {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 999px;
+            background: #f2ebe4;
+            color: #5f564d;
+            font-family: 'Montserrat', sans-serif;
+            font-size: .74rem;
+            font-weight: 700;
+            margin-right: 4px;
+            margin-bottom: 6px;
+        }
+        .video-frame {
+            margin: 20px 0 30px;
+            padding: 16px;
+            background-color: #fff;
+            border-radius: 8px;
+            border: 1px solid #e7ded4;
+            box-shadow: 0 .125rem .25rem rgba(0,0,0,.05);
+        }
+        .video-container {
+            position: relative;
+            width: 100%;
+            border-radius: 6px;
+            overflow: hidden;
+            background-color: #000;
+        }
+        .video-container video {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        .tools-list {
+            margin: 0 0 1.5rem;
+            padding-left: 1.25rem;
+        }
+        .tools-list li { margin-bottom: 0.25rem; }
+        .row p:last-child { margin-bottom: 0; }
+    </style>
 </head>
 <body>
-<main>
-  <!-- Hero -->
-  <section aria-labelledby="page-title">
-    <h1 id="page-title">AI Video Storyboards and Production Workflows</h1>
-    <p>
-      The projects on this page explore how prompt-ready storyboards, model selection, synthetic audio,
-      and light editorial work can produce coherent short-form videos for brand storytelling and
-      training use cases. This is to demonstrate my workflow and creative process, not just the finished clips.
-    </p>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">NATHAN ST. PIERRE</a>
+            <div class="ms-auto"><a class="nav-link fw-bold" href="projects.html">Back to Projects</a></div>
+        </div>
+    </nav>
 
-    <div class="meta" aria-label="Tools and formats used">
-      <span>CapCut editing</span>
-      <span>Wan 2.6 / Wan 2.7</span>
-      <span>Hailuo 2.3 / 2.3 Fast</span>
-      <span>Suno music</span>
-      <span>ElevenLabs VO</span>
+    <header class="text-center py-5 bg-light border-bottom">
+        <div class="container">
+            <h1 class="fw-bold">AI Video Storyboards & Production Workflows</h1>
+            <p class="text-muted">Multi-Model AI Generation, Synthetic Audio, and Editorial Workflows</p>
+        </div>
+    </header>
+
+    <div class="container py-5" style="max-width: 950px;">
+        <!-- Intro & Meta Badges -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <p class="lead">
+                    The projects on this page explore how prompt-ready storyboards, model selection, synthetic audio, and light editorial work can produce coherent short-form videos for brand storytelling and training use cases. This is to demonstrate my workflow and creative process, not just the finished clips.
+                </p>
+                <div class="mb-3">
+                    <span class="block-pill">CapCut editing</span>
+                    <span class="block-pill">Wan 2.6 / Wan 2.7</span>
+                    <span class="block-pill">Hailuo 2.3 / 2.3 Fast</span>
+                    <span class="block-pill">Synthesia AI</span>
+                    <span class="block-pill">Suno music</span>
+                    <span class="block-pill">ElevenLabs VO</span>
+                </div>
+                <div class="confidential-note">
+                    <strong>What is shown here:</strong> Three short AI-generated videos (coffee brand ad, aviation safety briefing, and cognitive load theory microlearning), paired with the storyboard structures, draft logs, and production notes used to guide model prompts, VO/music integration, and final sequencing.
+                </div>
+            </div>
+        </div>
+
+        <!-- Overview -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="fw-bold mb-3">Overview of the Projects</h2>
+                <p>
+                    These projects demonstrate distinct workflows for moving from instructional goals to final video assets. Whether starting from frame-by-frame storyboards or rapid prompt-based drafts, each asset pairs visual intent with intentional editorial judgment across AI generation models, synthetic audio platforms, and editing software.
+                </p>
+                <p>
+                    The coffee spot focuses on atmosphere, macro product detail, and brand mood. The aviation briefing focuses on a consistent presenter identity and clear PPE callouts. The cognitive load microlearning demonstrates how to rapidly refine AI-generated avatar drafts into clear, beginner-focused instructional content.
+                </p>
+            </div>
+        </div>
+
+        <hr class="my-5" style="border-color: #e7ded4;">
+
+        <!-- Project 1: Ember & Ash -->
+        <section class="mb-5">
+            <h2 class="fw-bold mb-3">Project: Ember &amp; Ash Coffee Brand Ad</h2>
+
+            <h4 class="fw-bold text-secondary mt-4">Project Context</h4>
+            <p>
+                The goal was to prototype a 30 second coffee brand spot built entirely from AI video clips, while still feeling like a carefully crafted cinematic ad. The storyboard emphasized a single rustic café environment, macro pour and steam shots, human touch, and a clean logo/tagline card rather than heavy text.
+            </p>
+
+            <h4 class="fw-bold text-secondary mt-4">What I Designed</h4>
+            <p>
+                I wrote a six-shot storyboard specifying duration, camera language, lighting, and VO options for each frame. The shots move from wide café context into macro pour and steam hero shots, then out again to a hand on the cup and a broader environment, ending on a static brand card. Each prompt carried a locked environment description so models would keep the counter, light, and palette consistent across generations.
+            </p>
+
+            <h4 class="fw-bold text-secondary mt-4">Tools Used</h4>
+            <ul class="tools-list">
+                <li><strong>AI video models:</strong> Wan 2.6 / Wan 2.7 and Hailuo 2.3 / 2.3 Fast for short 6–10s clips.</li>
+                <li><strong>Music:</strong> Suno-generated acoustic / lo-fi bed aligned to the ad’s pacing.</li>
+                <li><strong>Voiceover:</strong> Optional single-line VO via ElevenLabs (“Some mornings deserve more than instant.”).</li>
+                <li><strong>Editing:</strong> CapCut for clip selection, dissolves, timing, and logo/tagline card integration.</li>
+            </ul>
+
+            <div class="video-frame">
+                <div class="video-container">
+                    <video controls preload="metadata" title="Ember &amp; Ash coffee brand ad">
+                        <source src="videos/EmberAsh.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <p class="small text-muted mt-2 mb-0">
+                    The final clip combines generated café shots, synthetic music, and optional VO into a 37 second spot that can stand alone or sit inside a broader brand demonstration.
+                </p>
+            </div>
+
+            <h4 class="fw-bold text-secondary mt-4 mb-3">Storyboard Excerpt</h4>
+            <p>
+                The table below reconstructs a portion of the storyboard used to drive prompts into Wan and Hailuo, with each row treated as a separate clip generation and later stitched in CapCut.
+            </p>
+
+            <div class="schema-wrap mb-4">
+                <div class="table-responsive">
+                    <table class="table align-middle mb-0">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Duration</th>
+                                <th>Shot Type</th>
+                                <th>Visual Intent / Prompt Summary</th>
+                                <th>VO / On-Screen Text</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="ref-id">1</span></td>
+                                <td>3s</td>
+                                <td>Wide establishing</td>
+                                <td>Rustic wood counter in a warm, sunlit café corner at golden hour. Dust motes in the light, soft bokeh shelves and pendant lights in the background, shallow depth of field on the counter. Gentle lateral camera drift to introduce the atmosphere.</td>
+                                <td>No text; the shot exists to set tone and palette.</td>
+                            </tr>
+                            <tr>
+                                <td><span class="ref-id">2</span></td>
+                                <td>3s</td>
+                                <td>Macro pour</td>
+                                <td>Extreme close-up of dark coffee pouring from a carafe into a white ceramic cup on the same counter. Backlit by the same window, steam beginning to rise, droplets catching the light. Slow-motion feeling, minimal background detail to keep focus on the pour.</td>
+                                <td>No VO, no text. Music swells slightly to let the pour breathe.</td>
+                            </tr>
+                            <tr>
+                                <td><span class="ref-id">3</span></td>
+                                <td>4s</td>
+                                <td>Steam hero</td>
+                                <td>Macro shot of the full cup as steam curls upward in slow, elegant wisps. The background café remains a soft blur; camera pushes in slowly to make this the signature hero shot for the ad.</td>
+                                <td>VO line “Some mornings deserve more than instant.” if not already used. No on-screen text.</td>
+                            </tr>
+                            <tr>
+                                <td><span class="ref-id">6</span></td>
+                                <td>4s</td>
+                                <td>Logo / tagline card</td>
+                                <td>Static brand card on a dark wood texture echoing the counter. Minimal serif logo “Ember &amp; Ash” with optional tagline “Slow-crafted coffee for better mornings.” Often built as a separate graphic and overlaid in CapCut rather than generated in the video model.</td>
+                                <td>On-screen: “Ember &amp; Ash” and tagline. Optional final VO name-read or music-only ending.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="confidential-note">
+                In practice, each storyboard row above was treated as a discrete prompt for Wan or Hailuo, with 2–3 variations generated and the best clip selected before timing and transitions were locked in CapCut.
+            </div>
+        </section>
+
+        <hr class="my-5" style="border-color: #e7ded4;">
+
+        <!-- Project 2: Aviation Ground-Crew Safety Briefing -->
+        <section class="mb-5">
+            <h2 class="fw-bold mb-3">Project: Aviation Ground-Crew Safety Briefing</h2>
+
+            <h4 class="fw-bold text-secondary mt-4">Project Context</h4>
+            <p>
+                This project explored whether a short training video, delivered by a synthetic safety officer, could maintain character consistency and instructional clarity across multiple PPE callouts and a closing reminder. The storyboard targeted a 30–45 second briefing suitable for ground-crew onboarding or shift reminders.
+            </p>
+
+            <h4 class="fw-bold text-secondary mt-4">What I Designed</h4>
+            <p>
+                I built a six-shot storyboard that keeps a single safety officer present from the establishing tarmac shot through PPE demonstrations and hazard awareness, then back to a closing call to action in the hangar. Each prompt reused a detailed character and costume description to preserve identity, while lower-third text and VO scripts were written to reinforce hearing protection, high-visibility gear, steel-toe boots, and safety zones.
+            </p>
+
+            <h4 class="fw-bold text-secondary mt-4">Tools Used</h4>
+            <ul class="tools-list">
+                <li><strong>AI video models:</strong> Wan 2.6 / 2.7 and Hailuo 2.3 variants for short presenter and environment clips.</li>
+                <li><strong>Voiceover:</strong> ElevenLabs-generated script read as a neutral corporate briefing.</li>
+                <li><strong>Music:</strong> Light, unobtrusive underscore to avoid competing with the VO.</li>
+                <li><strong>Editing:</strong> CapCut for sequencing, PPE step labels, lower-third text, and final export.</li>
+            </ul>
+
+            <div class="video-frame">
+                <div class="video-container">
+                    <video controls preload="metadata" title="Aviation ground-crew safety briefing">
+                        <source src="videos/SafetyBrief.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <p class="small text-muted mt-2 mb-0">
+                    The final piece presents a consistent safety officer introducing PPE steps and safety zones, with VO and text overlays timed to each visual callout.
+                </p>
+            </div>
+
+            <h4 class="fw-bold text-secondary mt-4 mb-3">Storyboard Excerpt</h4>
+            <p>
+                The excerpt below shows how the aviation storyboard combined character, environment, and instructional text for each shot. As with the coffee project, each row became a prompt for individual clip generation before assembly.
+            </p>
+
+            <div class="schema-wrap mb-4">
+                <div class="table-responsive">
+                    <table class="table align-middle mb-0">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Duration</th>
+                                <th>Shot Type</th>
+                                <th>Visual Intent / Prompt Summary</th>
+                                <th>VO / On-Screen Text</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="ref-id">1</span></td>
+                                <td>4s</td>
+                                <td>Wide establishing</td>
+                                <td>Airport tarmac at dusk with a generic aircraft silhouette, open hangar doors, and a single safety officer in high-visibility vest and hard hat standing in the mid-ground. Cool sky and warm hangar lights establish tone without any branded livery.</td>
+                                <td>VO introduces the briefing and invites the viewer to focus on self-protection. Lower-third label: “Ground-Crew Safety Briefing”.</td>
+                            </tr>
+                            <tr>
+                                <td><span class="ref-id">2</span></td>
+                                <td>4s</td>
+                                <td>Presenter intro</td>
+                                <td>Medium shot of the same safety officer in the hangar, clearly identifiable by face, vest, hard hat, and boots. Camera is stable with slight natural movement, emphasizing direct address to camera.</td>
+                                <td>VO line: “Before every shift, protect yourself and your crew: hearing protection, high-vis gear, and steel-toe boots are non-negotiable.” No baked text; space reserved for overlays.</td>
+                            </tr>
+                            <tr>
+                                <td><span class="ref-id">3</span></td>
+                                <td>5s</td>
+                                <td>PPE item 1 – hearing</td>
+                                <td>Close-up of the same officer putting on over-ear hearing protection headset, framed from chest up with hangar equipment blurred in the background. Motion is focused on the headset and hands to keep the action clear.</td>
+                                <td>VO explains when hearing protection is required. Lower-third text: “Step 1: Hearing Protection”.</td>
+                            </tr>
+                            <tr>
+                                <td><span class="ref-id">4</span></td>
+                                <td>5s</td>
+                                <td>PPE item 2 – high-vis &amp; boots</td>
+                                <td>Medium tarmac shot at dusk where the same officer gestures to their high-vis vest and steel-toe boots. Aircraft silhouette remains generic; hangar lighting provides rim light on the officer.</td>
+                                <td>VO reinforces visibility and foot protection. Lower-thirds: “Step 2: High-Visibility Gear” and “Steel-Toe Boots”.</td>
+                            </tr>
+                            <tr>
+                                <td><span class="ref-id">6</span></td>
+                                <td>4s</td>
+                                <td>Closing / call to action</td>
+                                <td>Medium shot back in the hangar, with the officer nodding confidently toward camera. Extra negative space at the bottom of frame leaves room for a closing text overlay.</td>
+                                <td>VO repeats the core message. On-screen text: “Safety First. Every Shift.”</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="confidential-note">
+                Character consistency across these shots depended on a single, detailed description of the safety officer and environment, reused verbatim in every prompt and supported by reference frames during generation. CapCut then handled VO alignment and lower-third timing.
+            </div>
+        </section>
+
+        <hr class="my-5" style="border-color: #e7ded4;">
+
+        <!-- Project 3: Cognitive Load Theory -->
+        <section class="mb-5">
+            <h2 class="fw-bold mb-3">Project: Cognitive Load Theory Microlearning</h2>
+
+            <h4 class="fw-bold text-secondary mt-4">Project Context</h4>
+            <p>
+                This project explores how AI avatar generation can accelerate instructional video production without sacrificing andragogical rigor. The goal was to create a focused, 1-minute microlearning asset that introduces career-switcher instructional designers to the three types of cognitive load—intrinsic, extraneous, and germane—using clear, relatable language.
+            </p>
+
+            <h4 class="fw-bold text-secondary mt-4">What I Designed</h4>
+            <p>
+                Instead of starting from a manual storyboard, I used Synthesia’s AI-powered Custom Template workflow to generate a structured first draft from a targeted prompt. I then applied targeted instructional edits to the raw script: softening academic phrasing, adding visual and concrete examples (such as cluttered slide layouts vs. medical terminology), and selecting an avatar, voice, and visual layout that reflected a supportive, accessible tone for beginners.
+            </p>
+
+            <h4 class="fw-bold text-secondary mt-4">Tools Used</h4>
+            <ul class="tools-list">
+                <li><strong>AI video &amp; avatar platform:</strong> Synthesia (Custom Template prompt-to-script workflow, avatar, and synthetic VO).</li>
+                <li><strong>Scripting &amp; ID edits:</strong> Manual script refinement for audio pacing, plain language, and concrete examples.</li>
+                <li><strong>Visual &amp; accessible design:</strong> High-contrast layout design and 60-second pacing optimization.</li>
+            </ul>
+
+            <div class="video-frame">
+                <div class="video-container">
+                    <video controls preload="metadata" title="Cognitive Load Theory microlearning">
+                        <source src="videos/CognitiveLoad.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <p class="small text-muted mt-2 mb-0">
+                    The final 60-second microlearning clip pairs an AI presenter with clear text overlays and refinement-focused script edits designed specifically for beginner instructional designers.
+                </p>
+            </div>
+
+            <h4 class="fw-bold text-secondary mt-4 mb-3">Draft Refinement Log</h4>
+            <p>
+                Because this project originated from a prompt rather than a traditional storyboard, the table below outlines the specific instructional edits applied to transform the raw AI output into a learner-centered draft.
+            </p>
+
+            <div class="schema-wrap mb-4">
+                <div class="table-responsive">
+                    <table class="table align-middle mb-0">
+                        <thead>
+                            <tr>
+                                <th>Focus Area</th>
+                                <th>Raw AI Output / Initial Intent</th>
+                                <th>Instructional Design Edit</th>
+                                <th>Rationale</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="ref-id">Opening Hook</span></td>
+                                <td>Formal academic definition of cognitive load theory.</td>
+                                <td>Smoothed the transition from the hook into a conversational lead-in.</td>
+                                <td>Lowers initial barrier to entry for career switchers unfamiliar with academic jargon.</td>
+                            </tr>
+                            <tr>
+                                <td><span class="ref-id">Intrinsic Load</span></td>
+                                <td>Abstract description of mental effort required for tasks.</td>
+                                <td>Added a concrete comparison (medical terminology vs. everyday vocabulary).</td>
+                                <td>Gives learners an immediate, tangible anchor for task complexity.</td>
+                            </tr>
+                            <tr>
+                                <td><span class="ref-id">Extraneous Load</span></td>
+                                <td>Generalized statement about poor instructional materials.</td>
+                                <td>Made language visual and specific (cluttered slides, confusing layouts).</td>
+                                <td>Focuses on directly actionable design mistakes designers can control.</td>
+                            </tr>
+                            <tr>
+                                <td><span class="ref-id">Germane Load</span></td>
+                                <td>Technical definition of schema acquisition and processing.</td>
+                                <td>Reframed as productive, positive effort that designers actively facilitate.</td>
+                                <td>Shifts perspective from passive absorption to active schema construction.</td>
+                            </tr>
+                            <tr>
+                                <td><span class="ref-id">Closing CTA</span></td>
+                                <td>Generic summary ending statement.</td>
+                                <td>Tied message directly back to the ID's core role: making learning easier.</td>
+                                <td>Reinforces professional identity and provides a clean takeaway for onboarding.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="confidential-note">
+                Rather than accepting the AI output as final footage, this workflow treats the tool as a rapid prototyping engine. The instructional value comes directly from evaluating, pruning, and shaping the draft to fit the target audience's exact needs.
+            </div>
+        </section>
+
+        <hr class="my-5" style="border-color: #e7ded4;">
+
+        <!-- Workflow & Reflection -->
+        <h2 class="fw-bold mb-4">Workflow and Production Pattern</h2>
+        
+        <h4 class="fw-bold text-secondary">How These Videos Were Built</h4>
+        <p>Across all three projects, the workflow followed a repeatable pattern:</p>
+        <ul class="list-group list-group-flush mb-5 mt-3">
+            <li class="list-group-item bg-transparent"><strong>01. Design intent first.</strong> Start with a written shot table or targeted AI prompt specifying audience, duration, visual intent, and core instructional goals.</li>
+            <li class="list-group-item bg-transparent"><strong>02. Model selection &amp; draft generation.</strong> Select Wan, Hailuo, or Synthesia depending on whether the asset requires atmosphere, presenter consistency, or structured slide-and-avatar layouts.</li>
+            <li class="list-group-item bg-transparent"><strong>03. Audio &amp; VO integration.</strong> Align synthetic narration (ElevenLabs/Synthesia) and background music beds (Suno) to specific beats rather than relying on generic narration.</li>
+            <li class="list-group-item bg-transparent"><strong>04. Editorial refinement.</strong> Apply critical design edits to raw script drafts and video clips, assembling final assets with transitions, overlays, and branding in CapCut or Synthesia.</li>
+        </ul>
+
+        <h2 class="fw-bold mb-3">What This Demonstrates</h2>
+        <p>
+            These examples show how to blend storyboard discipline, AI prompting, model selection, and instructional judgment. The coffee spot demonstrates cinematic atmosphere; the aviation briefing shows presenter consistency across procedural steps; and the cognitive load project highlights how rapid AI drafts are elevated through targeted edits.
+        </p>
     </div>
 
-    <p class="small-note">
-      What is shown here: two short AI-generated videos (coffee brand ad and aviation safety briefing),
-      paired with the storyboard structures and production notes used to guide model prompts, VO/music
-      integration, and final sequencing in CapCut.
-    </p>
-  </section>
-
-  <!-- Shared overview -->
-  <section aria-labelledby="overview-heading">
-    <h2 id="overview-heading">Overview of the projects</h2>
-    <p>
-      Both projects started from written, frame-by-frame storyboards that specified shot types, visual
-      intent, VO lines, and on-screen text. Those boards were then used to drive AI video generation
-      in Wan and Hailuo, synthetic audio production in Suno and ElevenLabs, and final assembly in CapCut.
-    </p>
-    <p>
-      The coffee spot focuses on atmosphere, macro product detail, and brand mood. The aviation briefing
-      focuses on a consistent presenter identity, clear PPE callouts, and instructional pacing suitable
-      for a short ground-crew safety message.
-    </p>
-  </section>
-
-  <!-- Project 1: Ember & Ash -->
-  <section aria-labelledby="coffee-heading">
-    <h2 id="coffee-heading">Project: Ember &amp; Ash coffee brand ad</h2>
-
-    <h3>Project context</h3>
-    <p>
-      The goal was to prototype a 30 second coffee brand spot built entirely from AI video clips,
-      while still feeling like a carefully crafted cinematic ad. The storyboard emphasized a single
-      rustic café environment, macro pour and steam shots, human touch, and a clean logo/tagline card
-      rather than heavy text.
-    </p>
-
-    <h3>What I designed</h3>
-    <p>
-      I wrote a six-shot storyboard specifying duration, camera language, lighting, and VO options for
-      each frame. The shots move from wide café context into macro pour and steam hero shots, then out
-      again to a hand on the cup and a broader environment, ending on a static brand card. Each prompt
-      carried a locked environment description so models would keep the counter, light, and palette
-      consistent across generations.
-    </p>
-
-    <h3>Tools used</h3>
-    <ul class="tools-list">
-      <li><strong>AI video models:</strong> Wan 2.6 / Wan 2.7 and Hailuo 2.3 / 2.3 Fast for short 6–10s clips.</li>
-      <li><strong>Music:</strong> Suno-generated acoustic / lo-fi bed aligned to the ad’s pacing.</li>
-      <li><strong>Voiceover:</strong> Optional single-line VO via ElevenLabs (“Some mornings deserve more than instant.”).</li>
-      <li><strong>Editing:</strong> CapCut for clip selection, dissolves, timing, and logo/tagline card integration.</li>
-    </ul>
-
-    <!-- Video element -->
-    <div class="video-frame" aria-label="Ember & Ash coffee brand ad video">
-      <div class="video-container">
-        <video controls preload="metadata" title="Ember &amp; Ash coffee brand ad">
-          <source src="videos/EmberAsh.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </div>
-      <p class="small-note">
-        The final clip combines generated café shots, synthetic music, and optional VO into a 37 second spot
-        that can stand alone or sit inside a broader brand demonstration.
-      </p>
-    </div>
-
-    <h3>Storyboard excerpt</h3>
-    <p>
-      The table below reconstructs a portion of the storyboard used to drive prompts into Wan and Hailuo,
-      with each row treated as a separate clip generation and later stitched in CapCut.
-    </p>
-
-    <table aria-label="Ember & Ash storyboard excerpt">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Duration</th>
-          <th>Shot type</th>
-          <th>Visual intent / prompt summary</th>
-          <th>VO / on-screen text</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>1</td>
-          <td>3s</td>
-          <td>Wide establishing</td>
-          <td>
-            Rustic wood counter in a warm, sunlit café corner at golden hour. Dust motes in the light,
-            soft bokeh shelves and pendant lights in the background, shallow depth of field on the counter.
-            Gentle lateral camera drift to introduce the atmosphere.
-          </td>
-          <td>
-            No text;
-            the shot exists to set tone and palette.
-          </td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>3s</td>
-          <td>Macro pour</td>
-          <td>
-            Extreme close-up of dark coffee pouring from a carafe into a white ceramic cup on the same
-            counter. Backlit by the same window, steam beginning to rise, droplets catching the light.
-            Slow-motion feeling, minimal background detail to keep focus on the pour.
-          </td>
-          <td>
-            No VO, no text. Music swells slightly to let the pour breathe.
-          </td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>4s</td>
-          <td>Steam hero</td>
-          <td>
-            Macro shot of the full cup as steam curls upward in slow, elegant wisps. The background café
-            remains a soft blur; camera pushes in slowly to make this the signature hero shot for the ad.
-          </td>
-          <td>
-            VO line “Some mornings deserve more than instant.” if not already used. No on-screen text.
-          </td>
-        </tr>
-        <tr>
-          <td>6</td>
-          <td>4s</td>
-          <td>Logo / tagline card</td>
-          <td>
-            Static brand card on a dark wood texture echoing the counter. Minimal serif logo “Ember &amp; Ash”
-            with optional tagline “Slow-crafted coffee for better mornings.” Often built as a separate graphic
-            and overlaid in CapCut rather than generated in the video model.
-          </td>
-          <td>
-            On-screen: “Ember &amp; Ash” and tagline. Optional final VO name-read or music-only ending.
-          </td>
-        </tr>
-      </tbody>
-    </table>
-
-    <div class="callout">
-      In practice, each storyboard row above was treated as a discrete prompt for Wan or Hailuo,
-      with 2–3 variations generated and the best clip selected before timing and transitions were
-      locked in CapCut.
-    </div>
-  </section>
-
-  <!-- Project 2: Aviation ground-crew safety briefing -->
-  <section aria-labelledby="aviation-heading">
-    <h2 id="aviation-heading">Project: Aviation ground-crew safety briefing</h2>
-
-    <h3>Project context</h3>
-    <p>
-      This project explored whether a short training video, delivered by a synthetic safety officer,
-      could maintain character consistency and instructional clarity across multiple PPE callouts and
-      a closing reminder. The storyboard targeted a 30–45 second briefing suitable for ground-crew
-      onboarding or shift reminders.
-    </p>
-
-    <h3>What I designed</h3>
-    <p>
-      I built a six-shot storyboard that keeps a single safety officer present from the establishing
-      tarmac shot through PPE demonstrations and hazard awareness, then back to a closing call to action
-      in the hangar. Each prompt reused a detailed character and costume description to preserve identity,
-      while lower-third text and VO scripts were written to reinforce hearing protection, high-visibility
-      gear, steel-toe boots, and safety zones.
-    </p>
-
-    <h3>Tools used</h3>
-    <ul class="tools-list">
-      <li><strong>AI video models:</strong> Wan 2.6 / 2.7 and Hailuo 2.3 variants for short presenter and environment clips.</li>
-      <li><strong>Voiceover:</strong> ElevenLabs-generated script read as a neutral corporate briefing.</li>
-      <li><strong>Music:</strong> Light, unobtrusive underscore to avoid competing with the VO.</li>
-      <li><strong>Editing:</strong> CapCut for sequencing, PPE step labels, lower-third text, and final export.</li>
-    </ul>
-
-    <!-- Video element -->
-    <div class="video-frame" aria-label="Aviation ground-crew safety briefing video">
-      <div class="video-container">
-        <video controls preload="metadata" title="Aviation ground-crew safety briefing">
-          <source src="videos/SafetyBrief.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </div>
-      <p class="small-note">
-        The final piece presents a consistent safety officer introducing PPE steps and safety zones, with
-        VO and text overlays timed to each visual callout.
-      </p>
-    </div>
-
-    <h3>Storyboard excerpt</h3>
-    <p>
-      The excerpt below shows how the aviation storyboard combined character, environment, and instructional
-      text for each shot. As with the coffee project, each row became a prompt for individual clip generation
-      before assembly.
-    </p>
-
-    <table aria-label="Aviation safety briefing storyboard excerpt">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Duration</th>
-          <th>Shot type</th>
-          <th>Visual intent / prompt summary</th>
-          <th>VO / on-screen text</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>1</td>
-          <td>4s</td>
-          <td>Wide establishing</td>
-          <td>
-            Airport tarmac at dusk with a generic aircraft silhouette, open hangar doors, and a single
-            safety officer in high-visibility vest and hard hat standing in the mid-ground. Cool sky and
-            warm hangar lights establish tone without any branded livery.
-          </td>
-          <td>
-            VO introduces the briefing and invites the viewer to focus on self-protection. Lower-third
-            label: “Ground-Crew Safety Briefing”.
-          </td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>4s</td>
-          <td>Presenter intro</td>
-          <td>
-            Medium shot of the same safety officer in the hangar, clearly identifiable by face, vest,
-            hard hat, and boots. Camera is stable with slight natural movement, emphasizing direct address
-            to camera.
-          </td>
-          <td>
-            VO line: “Before every shift, protect yourself and your crew: hearing protection, high-vis
-            gear, and steel-toe boots are non-negotiable.” No baked text; space reserved for overlays.
-          </td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>5s</td>
-          <td>PPE item 1 – hearing</td>
-          <td>
-            Close-up of the same officer putting on over-ear hearing protection headset, framed from chest
-            up with hangar equipment blurred in the background. Motion is focused on the headset and hands
-            to keep the action clear.
-          </td>
-          <td>
-            VO explains when hearing protection is required. Lower-third text: “Step 1: Hearing Protection”.
-          </td>
-        </tr>
-        <tr>
-          <td>4</td>
-          <td>5s</td>
-          <td>PPE item 2 – high-vis &amp; boots</td>
-          <td>
-            Medium tarmac shot at dusk where the same officer gestures to their high-vis vest and steel-toe
-            boots. Aircraft silhouette remains generic; hangar lighting provides rim light on the officer.
-          </td>
-          <td>
-            VO reinforces visibility and foot protection. Lower-thirds: “Step 2: High-Visibility Gear”
-            and “Steel-Toe Boots”.
-          </td>
-        </tr>
-        <tr>
-          <td>6</td>
-          <td>4s</td>
-          <td>Closing / call to action</td>
-          <td>
-            Medium shot back in the hangar, with the officer nodding confidently toward camera. Extra
-            negative space at the bottom of frame leaves room for a closing text overlay.
-          </td>
-          <td>
-            VO repeats the core message. On-screen text: “Safety First. Every Shift.”
-          </td>
-        </tr>
-      </tbody>
-    </table>
-
-    <div class="callout">
-      Character consistency across these shots depended on a single, detailed description of the safety
-      officer and environment, reused verbatim in every prompt and supported by reference frames during
-      generation. CapCut then handled VO alignment and lower-third timing.
-    </div>
-  </section>
-
-  <!-- Shared workflow and reflection -->
-  <section aria-labelledby="workflow-heading">
-    <h2 id="workflow-heading">Workflow and production pattern</h2>
-
-    <h3>How these videos were built</h3>
-    <p>
-      Across both projects, the workflow followed a repeatable pattern:
-    </p>
-    <ol class="tools-list" style="list-style: decimal;">
-      <li>
-        <strong>Storyboard first.</strong> Write a shot table describing duration, shot type, visual intent,
-        VO, and on-screen text, in a format that can be copied almost directly into model prompts.
-      </li>
-      <li>
-        <strong>Model selection and prompting.</strong> Choose Wan or Hailuo variants based on the type of
-        motion and realism required, then generate multiple versions per shot using locked environment or
-        character descriptions.
-      </li>
-      <li>
-        <strong>Audio and VO.</strong> Produce Suno music beds and ElevenLabs VO for scripts that match the
-        storyboard, ensuring VO lines align with specific shots rather than generic narration.
-      </li>
-      <li>
-        <strong>Editorial assembly.</strong> Use CapCut to select clips, set timing, add transitions, and
-        layer logo/tagline cards or lower-thirds, treating AI-generated clips as raw footage rather than
-        final outputs.
-      </li>
-    </ol>
-
-    <h3>What this demonstrates</h3>
-    <p>
-      These examples are less about any single tool and more about the combination of storyboard discipline,
-      prompt design, model selection, and editorial judgment. The coffee spot shows how to push atmosphere
-      and product detail with constrained duration. The aviation briefing shows how to maintain a credible,
-      instructional presenter across multiple steps while still working within current AI video limitations.
-    </p>
-  </section>
-</main>
+    <footer class="text-center py-4 bg-dark text-light">
+        <p class="mb-0">&copy; 2026 Nathan St. Pierre</p>
+    </footer>
 </body>
 </html>
