@@ -4,42 +4,200 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects | Nathan St. Pierre</title>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@400;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+    <link
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        rel="stylesheet"
+    >
+
     <style>
-        :root { --primary-brand: #aa784d; --dark-text: #2a2a2a; --seo-accent: #20c997; --research-accent: #0d6efd; --instructional-accent: #FA9BCF; }
-        body { font-family: 'Lora', serif; color: #444; line-height: 1.7; background-color: #f9f9f9; }
-        h1, h2, h3, h4, h5, .nav-link, .btn, .tech-badge { font-family: 'Montserrat', sans-serif; }
-        .navbar { padding: 1rem 0; box-shadow: 0 2px 15px rgba(0,0,0,0.05); background: rgba(255, 255, 255, 0.98); }
-        .navbar-brand { font-weight: 800; letter-spacing: -0.5px; color: var(--dark-text); }
-        .nav-link { font-weight: 600; color: #555 !important; margin: 0 10px; transition: color 0.3s; }
-        .nav-link:hover, .nav-link.active { color: var(--primary-brand) !important; }
-        .btn-brand { background-color: var(--primary-brand); color: white; padding: 8px 20px; border-radius: 6px; }
-        .btn-brand:hover { background-color: #8a603d; color: white; }
-        footer { background-color: var(--dark-text); color: #ddd; padding: 60px 0 30px 0; margin-top: 80px; }
-        .btn-filter { border: 2px solid #e0e0e0; background: white; color: #555; margin: 5px; border-radius: 50px; padding: 8px 25px; font-weight: 600; transition: all 0.2s ease; }
-        .btn-filter:hover, .btn-filter.active { background-color: var(--dark-text); color: white; border-color: var(--dark-text); }
-        .project-card { border: none; border-radius: 12px; background: white; transition: transform 0.3s ease, box-shadow 0.3s ease; height: 100%; box-shadow: 0 5px 15px rgba(0,0,0,0.05); display: flex; flex-direction: column; overflow: hidden; }
-        .project-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
-        .card-header-icon { height: 140px; display: flex; align-items: center; justify-content: center; background-color: #eee; color: #888; }
-        .card-body { padding: 2rem; display: flex; flex-direction: column; flex-grow: 1; }
-        .tech-badge { font-size: 0.75rem; background-color: #f1f3f5; color: #495057; padding: 4px 10px; border-radius: 4px; margin-right: 5px; font-weight: 600; display: inline-block; margin-bottom: 5px; }
-        .impact-text { border-left: 3px solid var(--primary-brand); padding-left: 10px; font-style: italic; font-size: 0.9rem; color: #666; margin: 1rem 0; }
+        :root {
+            --primary-brand: #aa784d;
+            --dark-text: #2a2a2a;
+            --seo-accent: #20c997;
+            --research-accent: #0d6efd;
+            --instructional-accent: #FA9BCF;
+        }
+
+        body {
+            font-family: "Lora", serif;
+            color: #444;
+            line-height: 1.7;
+            background-color: #f9f9f9;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        .nav-link,
+        .btn,
+        .tech-badge {
+            font-family: "Montserrat", sans-serif;
+        }
+
+        .navbar {
+            padding: 1rem 0;
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .navbar-brand {
+            color: var(--dark-text);
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-link {
+            margin: 0 10px;
+            color: #555 !important;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary-brand) !important;
+        }
+
+        .btn-brand {
+            padding: 8px 20px;
+            border-radius: 6px;
+            background-color: var(--primary-brand);
+            color: #ffffff;
+        }
+
+        .btn-brand:hover {
+            background-color: #8a603d;
+            color: #ffffff;
+        }
+
+        footer {
+            margin-top: 80px;
+            padding: 60px 0 30px;
+            background-color: var(--dark-text);
+            color: #dddddd;
+        }
+
+        .btn-filter {
+            margin: 5px;
+            padding: 8px 25px;
+            border: 2px solid #e0e0e0;
+            border-radius: 50px;
+            background: #ffffff;
+            color: #555;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .btn-filter:hover,
+        .btn-filter.active {
+            border-color: var(--dark-text);
+            background-color: var(--dark-text);
+            color: #ffffff;
+        }
+
+        .project-card {
+            display: flex;
+            overflow: hidden;
+            height: 100%;
+            flex-direction: column;
+            border: none;
+            border-radius: 12px;
+            background: #ffffff;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .card-header-icon {
+            display: flex;
+            height: 140px;
+            align-items: center;
+            justify-content: center;
+            background-color: #eeeeee;
+            color: #888888;
+        }
+
+        .card-body {
+            display: flex;
+            flex-grow: 1;
+            flex-direction: column;
+            padding: 2rem;
+        }
+
+        .tech-badge {
+            display: inline-block;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            padding: 4px 10px;
+            border-radius: 4px;
+            background-color: #f1f3f5;
+            color: #495057;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .impact-text {
+            margin: 1rem 0;
+            padding-left: 10px;
+            border-left: 3px solid var(--primary-brand);
+            color: #666666;
+            font-size: 0.9rem;
+            font-style: italic;
+        }
     </style>
 </head>
+
 <body>
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">NATHAN ST. PIERRE</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"><span class="navbar-toggler-icon"></span></button>
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#mainNav"
+                aria-controls="mainNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
             <div class="collapse navbar-collapse" id="mainNav">
                 <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="projects.html">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="publications.html">Publications</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About Me</a></li>
-                    <li class="nav-item ms-lg-2"><a class="btn btn-brand btn-sm" href="reacutesumeacute.html">Resume</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="projects.html">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="publications.html">Publications</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Me</a>
+                    </li>
+                    <li class="nav-item ms-lg-2">
+                        <a class="btn btn-brand btn-sm" href="reacutesumeacute.html">
+                            Resume
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -48,13 +206,51 @@
     <section class="bg-white py-5 border-bottom">
         <div class="container text-center">
             <h1 class="fw-bold display-5">Project Portfolio</h1>
-            <p class="text-muted lead">A collection of my work in Artificial Intelligence, UX Research, and Search Optimization.</p>
+            <p class="text-muted lead">
+                A collection of my work in Artificial Intelligence, UX Research,
+                and Search Optimization.
+            </p>
+
             <div class="filter-buttons mt-4">
-                <button class="btn btn-filter active" onclick="filterProjects('all', event)">All Projects</button>
-                <button class="btn btn-filter" onclick="filterProjects('ai', event)">AI & Data Science</button>
-                <button class="btn btn-filter" onclick="filterProjects('research', event)">Research & UX</button>
-                <button class="btn btn-filter" onclick="filterProjects('instructional', event)">Instructional Design</button>
-                <button class="btn btn-filter" onclick="filterProjects('seo', event)">SEO & Heuristics</button>
+                <button
+                    class="btn btn-filter active"
+                    type="button"
+                    onclick="filterProjects('all', event)"
+                >
+                    All Projects
+                </button>
+
+                <button
+                    class="btn btn-filter"
+                    type="button"
+                    onclick="filterProjects('ai', event)"
+                >
+                    AI &amp; Data Science
+                </button>
+
+                <button
+                    class="btn btn-filter"
+                    type="button"
+                    onclick="filterProjects('research', event)"
+                >
+                    Research &amp; UX
+                </button>
+
+                <button
+                    class="btn btn-filter"
+                    type="button"
+                    onclick="filterProjects('instructional', event)"
+                >
+                    Instructional Design
+                </button>
+
+                <button
+                    class="btn btn-filter"
+                    type="button"
+                    onclick="filterProjects('seo', event)"
+                >
+                    SEO &amp; Heuristics
+                </button>
             </div>
         </div>
     </section>
@@ -62,241 +258,622 @@
     <section class="py-5">
         <div class="container">
             <div class="row g-4" id="projectGrid">
+
+                <!-- AI & Data Science -->
+
                 <div class="col-md-6 col-lg-4 project-item ai">
                     <div class="project-card">
-                        <div class="card-header-icon" style="background-color: var(--primary-brand); color: white;"><i class="fas fa-chart-line fa-3x"></i></div>
+                        <div
+                            class="card-header-icon"
+                            style="background-color: var(--primary-brand); color: white;"
+                        >
+                            <i class="fas fa-chart-line fa-3x"></i>
+                        </div>
+
                         <div class="card-body">
                             <h3 class="h5 fw-bold">Operational Performance Dashboard</h3>
-                            <p class="card-text">Defense-focused analytics & predictive maintenance across Air, Ground, and Sea platforms.</p>
-                            <div class="impact-text">"Visualizing MTTR and reliability for mission-critical assets."</div>
+                            <p class="card-text">
+                                Defense-focused analytics and predictive maintenance across
+                                Air, Ground, and Sea platforms.
+                            </p>
+                            <div class="impact-text">
+                                “Visualizing MTTR and reliability for mission-critical assets.”
+                            </div>
                             <div class="mb-3">
                                 <span class="tech-badge">Python</span>
                                 <span class="tech-badge">DuckDB</span>
                                 <span class="tech-badge">Tableau</span>
                                 <span class="tech-badge">ETL</span>
                             </div>
-                            <a href="operational-dashboard.html" class="btn btn-outline-dark btn-sm w-100 mt-auto">View Case Study</a>
+                            <a
+                                href="operational-dashboard.html"
+                                class="btn btn-outline-dark btn-sm w-100 mt-auto"
+                            >
+                                View Case Study
+                            </a>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-6 col-lg-4 project-item ai">
                     <div class="project-card">
-                        <div class="card-header-icon" style="background-color: var(--primary-brand); color: white;"><i class="fas fa-gavel fa-3x"></i></div>
+                        <div
+                            class="card-header-icon"
+                            style="background-color: var(--primary-brand); color: white;"
+                        >
+                            <i class="fas fa-gavel fa-3x"></i>
+                        </div>
+
                         <div class="card-body">
                             <h3 class="h5 fw-bold">AI Legal Assistant</h3>
-                            <p class="card-text">Digital assistant for Masonic Law using RAG architecture.</p>
-                            <div class="impact-text">"Instant, source-cited answers to complex queries."</div>
-                            <div class="mb-3"><span class="tech-badge">RAG</span><span class="tech-badge">Python</span></div>
-                            <a href="https://fabulous-tithonia-e7b.notion.site/Building-a-Specialized-AI-Legal-Assistant-with-RAG-Architecture-2b6a6b228ba480f49662f244c071858d" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark btn-sm w-100 mt-auto">View Case Study</a>
+                            <p class="card-text">
+                                Digital assistant for Masonic Law using RAG architecture.
+                            </p>
+                            <div class="impact-text">
+                                “Instant, source-cited answers to complex queries.”
+                            </div>
+                            <div class="mb-3">
+                                <span class="tech-badge">RAG</span>
+                                <span class="tech-badge">Python</span>
+                            </div>
+                            <a
+                                href="https://fabulous-tithonia-e7b.notion.site/Building-a-Specialized-AI-Legal-Assistant-with-RAG-Architecture-2b6a6b228ba480f49662f244c071858d"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="btn btn-outline-dark btn-sm w-100 mt-auto"
+                            >
+                                View Case Study
+                            </a>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-6 col-lg-4 project-item ai">
                     <div class="project-card">
-                        <div class="card-header-icon" style="background-color: var(--primary-brand); color: white;"><i class="fas fa-graduation-cap fa-3x"></i></div>
+                        <div
+                            class="card-header-icon"
+                            style="background-color: var(--primary-brand); color: white;"
+                        >
+                            <i class="fas fa-graduation-cap fa-3x"></i>
+                        </div>
+
                         <div class="card-body">
                             <h3 class="h5 fw-bold">Intelligent Edu System</h3>
-                            <p class="card-text">Advanced retrieval (FAISS) with NLP for contextual learning.</p>
-                            <div class="impact-text">"Bridging static curriculum and AI."</div>
-                            <div class="mb-3"><span class="tech-badge">PyTorch</span><span class="tech-badge">FAISS</span></div>
-                            <a href="https://fabulous-tithonia-e7b.notion.site/RAG-Based-Learning-System-178a6b228ba480d49650fcc09e681b91" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark btn-sm w-100 mt-auto">View Case Study</a>
+                            <p class="card-text">
+                                Advanced retrieval (FAISS) with NLP for contextual learning.
+                            </p>
+                            <div class="impact-text">
+                                “Bridging static curriculum and AI.”
+                            </div>
+                            <div class="mb-3">
+                                <span class="tech-badge">PyTorch</span>
+                                <span class="tech-badge">FAISS</span>
+                            </div>
+                            <a
+                                href="https://fabulous-tithonia-e7b.notion.site/RAG-Based-Learning-System-178a6b228ba480d49650fcc09e681b91"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="btn btn-outline-dark btn-sm w-100 mt-auto"
+                            >
+                                View Case Study
+                            </a>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-6 col-lg-4 project-item ai">
                     <div class="project-card">
-                        <div class="card-header-icon" style="background-color: var(--primary-brand); color: white;"><i class="fas fa-comments fa-3x"></i></div>
+                        <div
+                            class="card-header-icon"
+                            style="background-color: var(--primary-brand); color: white;"
+                        >
+                            <i class="fas fa-comments fa-3x"></i>
+                        </div>
+
                         <div class="card-body">
                             <h3 class="h5 fw-bold">Custom Chatbot Framework</h3>
-                            <p class="card-text">Flexible markdown-first chatbot system for business websites.</p>
-                            <div class="impact-text">"Turnkey AI support for small business."</div>
-                            <div class="mb-3"><span class="tech-badge">Gradio</span><span class="tech-badge">LLM</span></div>
-                            <a href="https://fabulous-tithonia-e7b.notion.site/Creating-a-Customizable-AI-Chatbot-Framework-for-Business-Websites-2b6a6b228ba480718f3cd56b2ec2e094" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark btn-sm w-100 mt-auto">View Case Study</a>
+                            <p class="card-text">
+                                Flexible markdown-first chatbot system for business websites.
+                            </p>
+                            <div class="impact-text">
+                                “Turnkey AI support for small business.”
+                            </div>
+                            <div class="mb-3">
+                                <span class="tech-badge">Gradio</span>
+                                <span class="tech-badge">LLM</span>
+                            </div>
+                            <a
+                                href="https://fabulous-tithonia-e7b.notion.site/Creating-a-Customizable-AI-Chatbot-Framework-for-Business-Websites-2b6a6b228ba480718f3cd56b2ec2e094"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="btn btn-outline-dark btn-sm w-100 mt-auto"
+                            >
+                                View Case Study
+                            </a>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-6 col-lg-4 project-item ai">
                     <div class="project-card">
-                        <div class="card-header-icon" style="background-color: var(--primary-brand); color: white;"><i class="fas fa-music fa-3x"></i></div>
+                        <div
+                            class="card-header-icon"
+                            style="background-color: var(--primary-brand); color: white;"
+                        >
+                            <i class="fas fa-music fa-3x"></i>
+                        </div>
+
                         <div class="card-body">
                             <h3 class="h5 fw-bold">Predictive Music Analytics</h3>
-                            <p class="card-text">Predicting ensemble placement with 85% accuracy using Random Forest.</p>
-                            <div class="impact-text">"Data-driven insights into auditions."</div>
-                            <div class="mb-3"><span class="tech-badge">Scikit-Learn</span><span class="tech-badge">RF</span></div>
-                            <a href="https://fabulous-tithonia-e7b.notion.site/Using-Machine-Learning-to-Predict-Music-Ensemble-Placement-4f466269adbe4870b372043990bfc226" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark btn-sm w-100 mt-auto">View Case Study</a>
+                            <p class="card-text">
+                                Predicting ensemble placement with 85% accuracy using Random Forest.
+                            </p>
+                            <div class="impact-text">
+                                “Data-driven insights into auditions.”
+                            </div>
+                            <div class="mb-3">
+                                <span class="tech-badge">Scikit-Learn</span>
+                                <span class="tech-badge">RF</span>
+                            </div>
+                            <a
+                                href="https://fabulous-tithonia-e7b.notion.site/Using-Machine-Learning-to-Predict-Music-Ensemble-Placement-4f466269adbe4870b372043990bfc226"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="btn btn-outline-dark btn-sm w-100 mt-auto"
+                            >
+                                View Case Study
+                            </a>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-6 col-lg-4 project-item ai">
                     <div class="project-card">
-                        <div class="card-header-icon" style="background-color: var(--primary-brand); color: white;"><i class="fab fa-youtube fa-3x"></i></div>
+                        <div
+                            class="card-header-icon"
+                            style="background-color: var(--primary-brand); color: white;"
+                        >
+                            <i class="fab fa-youtube fa-3x"></i>
+                        </div>
+
                         <div class="card-body">
                             <h3 class="h5 fw-bold">YouTube Revenue Model</h3>
-                            <p class="card-text">Linear regression exploring the correlation between subscribers and revenue.</p>
-                            <div class="impact-text">"A 2.3x revenue increase per doubling of subs."</div>
-                            <div class="mb-3"><span class="tech-badge">R Studio</span><span class="tech-badge">Regression</span></div>
-                            <a href="museums.html" class="btn btn-outline-dark btn-sm w-100 mt-auto">View Case Study</a>
+                            <p class="card-text">
+                                Linear regression exploring the correlation between subscribers
+                                and revenue.
+                            </p>
+                            <div class="impact-text">
+                                “A 2.3x revenue increase per doubling of subs.”
+                            </div>
+                            <div class="mb-3">
+                                <span class="tech-badge">R Studio</span>
+                                <span class="tech-badge">Regression</span>
+                            </div>
+                            <a
+                                href="museums.html"
+                                class="btn btn-outline-dark btn-sm w-100 mt-auto"
+                            >
+                                View Case Study
+                            </a>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-6 col-lg-4 project-item ai">
                     <div class="project-card">
-                        <div class="card-header-icon" style="background-color: var(--primary-brand); color: white;"><i class="fas fa-headset fa-3x"></i></div>
+                        <div
+                            class="card-header-icon"
+                            style="background-color: var(--primary-brand); color: white;"
+                        >
+                            <i class="fas fa-headset fa-3x"></i>
+                        </div>
+
                         <div class="card-body">
                             <h3 class="h5 fw-bold">Service Desk Analytics</h3>
-                            <p class="card-text">End-to-end DuckDB and Streamlit pipeline for service desk efficiency metrics.</p>
-                            <div class="impact-text">"Turning raw ticket logs into VP-ready insights."</div>
-                            <div class="mb-3"><span class="tech-badge">Python</span><span class="tech-badge">DuckDB</span><span class="tech-badge">Streamlit</span></div>
-                            <a href="service-desk-analytics.html" class="btn btn-outline-dark btn-sm w-100 mt-auto">View Case Study</a>
+                            <p class="card-text">
+                                End-to-end DuckDB and Streamlit pipeline for service desk
+                                efficiency metrics.
+                            </p>
+                            <div class="impact-text">
+                                “Turning raw ticket logs into VP-ready insights.”
+                            </div>
+                            <div class="mb-3">
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">DuckDB</span>
+                                <span class="tech-badge">Streamlit</span>
+                            </div>
+                            <a
+                                href="service-desk-analytics.html"
+                                class="btn btn-outline-dark btn-sm w-100 mt-auto"
+                            >
+                                View Case Study
+                            </a>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-6 col-lg-4 project-item ai">
                     <div class="project-card">
-                        <div class="card-header-icon" style="background-color: var(--primary-brand); color: white;"><i class="fas fa-brain fa-3x"></i></div>
+                        <div
+                            class="card-header-icon"
+                            style="background-color: var(--primary-brand); color: white;"
+                        >
+                            <i class="fas fa-brain fa-3x"></i>
+                        </div>
+
                         <div class="card-body">
-                            <h3 class="h5 fw-bold">Long‑Context Diagnostics</h3>
-                            <p class="card-text">Gemini vs GPT‑4o‑mini needle‑in‑a‑haystack reliability study.</p>
-                            <div class="impact-text">"Measuring and mitigating context window reliability curves."</div>
-                            <div class="mb-3"><span class="tech-badge">Gemini</span><span class="tech-badge">GPT‑4o‑mini</span><span class="tech-badge">Python</span></div>
-                            <a href="long-context-notebook.html" class="btn btn-outline-dark btn-sm w-100 mt-auto">View Case Study</a>
+                            <h3 class="h5 fw-bold">Long-Context Diagnostics</h3>
+                            <p class="card-text">
+                                Gemini vs. GPT-4o-mini needle-in-a-haystack reliability study.
+                            </p>
+                            <div class="impact-text">
+                                “Measuring and mitigating context-window reliability curves.”
+                            </div>
+                            <div class="mb-3">
+                                <span class="tech-badge">Gemini</span>
+                                <span class="tech-badge">GPT-4o-mini</span>
+                                <span class="tech-badge">Python</span>
+                            </div>
+                            <a
+                                href="long-context-notebook.html"
+                                class="btn btn-outline-dark btn-sm w-100 mt-auto"
+                            >
+                                View Case Study
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SEO & Heuristics -->
+
+                <div class="col-md-6 col-lg-4 project-item seo">
+                    <div class="project-card">
+                        <div
+                            class="card-header-icon"
+                            style="background-color: var(--seo-accent); color: white;"
+                        >
+                            <i class="fas fa-search-plus fa-3x"></i>
+                        </div>
+
+                        <div class="card-body">
+                            <h3 class="h5 fw-bold">ABK Heuristic &amp; SEO</h3>
+                            <p class="card-text">
+                                Comprehensive usability and search visibility evaluation for
+                                ABK platforms.
+                            </p>
+                            <div class="impact-text">
+                                “Identifying friction points in the user journey.”
+                            </div>
+                            <div class="mb-3">
+                                <span class="tech-badge">Heuristics</span>
+                                <span class="tech-badge">SEO Audit</span>
+                            </div>
+                            <a
+                                href="abk-heuristic-seo.html"
+                                class="btn btn-outline-dark btn-sm w-100 mt-auto"
+                            >
+                                View Case Study
+                            </a>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-6 col-lg-4 project-item seo">
                     <div class="project-card">
-                        <div class="card-header-icon" style="background-color: var(--seo-accent); color: white;"><i class="fas fa-search-plus fa-3x"></i></div>
-                        <div class="card-body">
-                            <h3 class="h5 fw-bold">ABK Heuristic & SEO</h3>
-                            <p class="card-text">Comprehensive usability and search visibility evaluation for ABK platforms.</p>
-                            <div class="impact-text">"Identifying friction points in the user journey."</div>
-                            <div class="mb-3"><span class="tech-badge">Heuristics</span><span class="tech-badge">SEO Audit</span></div>
-                            <a href="abk-heuristic-seo.html" class="btn btn-outline-dark btn-sm w-100 mt-auto">View Case Study</a>
+                        <div
+                            class="card-header-icon"
+                            style="background-color: var(--seo-accent); color: white;"
+                        >
+                            <i class="fas fa-chart-line fa-3x"></i>
                         </div>
-                    </div>
-                </div>
 
-                <div class="col-md-6 col-lg-4 project-item seo">
-                    <div class="project-card">
-                        <div class="card-header-icon" style="background-color: var(--seo-accent); color: white;"><i class="fas fa-chart-line fa-3x"></i></div>
                         <div class="card-body">
                             <h3 class="h5 fw-bold">ABK SEO Audit v2</h3>
-                            <p class="card-text">Technical SEO deep-dive focusing on indexability and keyword performance.</p>
-                            <div class="impact-text">"Data-backed strategy for organic growth."</div>
-                            <div class="mb-3"><span class="tech-badge">Technical SEO</span><span class="tech-badge">Strategy</span></div>
-                            <a href="abk-seo-audit-v2.html" class="btn btn-outline-dark btn-sm w-100 mt-auto">View Case Study</a>
+                            <p class="card-text">
+                                Technical SEO deep-dive focusing on indexability and keyword
+                                performance.
+                            </p>
+                            <div class="impact-text">
+                                “Data-backed strategy for organic growth.”
+                            </div>
+                            <div class="mb-3">
+                                <span class="tech-badge">Technical SEO</span>
+                                <span class="tech-badge">Strategy</span>
+                            </div>
+                            <a
+                                href="abk-seo-audit-v2.html"
+                                class="btn btn-outline-dark btn-sm w-100 mt-auto"
+                            >
+                                View Case Study
+                            </a>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-6 col-lg-4 project-item seo">
                     <div class="project-card">
-                        <div class="card-header-icon" style="background-color: var(--seo-accent); color: white;"><i class="fab fa-github fa-3x"></i></div>
+                        <div
+                            class="card-header-icon"
+                            style="background-color: var(--seo-accent); color: white;"
+                        >
+                            <i class="fab fa-github fa-3x"></i>
+                        </div>
+
                         <div class="card-body">
                             <h3 class="h5 fw-bold">GitHub SEO Audit</h3>
-                            <p class="card-text">Analyzing repository visibility and technical optimizations for GitHub projects.</p>
-                            <div class="impact-text">"Optimizing developer discovery."</div>
-                            <div class="mb-3"><span class="tech-badge">SEO</span><span class="tech-badge">Metadata</span></div>
-                            <a href="github-seo-audit-v2.html" class="btn btn-outline-dark btn-sm w-100 mt-auto">View Case Study</a>
+                            <p class="card-text">
+                                Analyzing repository visibility and technical optimizations for
+                                GitHub projects.
+                            </p>
+                            <div class="impact-text">
+                                “Optimizing developer discovery.”
+                            </div>
+                            <div class="mb-3">
+                                <span class="tech-badge">SEO</span>
+                                <span class="tech-badge">Metadata</span>
+                            </div>
+                            <a
+                                href="github-seo-audit-v2.html"
+                                class="btn btn-outline-dark btn-sm w-100 mt-auto"
+                            >
+                                View Case Study
+                            </a>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-6 col-lg-4 project-item seo">
                     <div class="project-card">
-                        <div class="card-header-icon" style="background-color: var(--seo-accent); color: white;"><i class="fas fa-map-marked-alt fa-3x"></i></div>
+                        <div
+                            class="card-header-icon"
+                            style="background-color: var(--seo-accent); color: white;"
+                        >
+                            <i class="fas fa-map-marked-alt fa-3x"></i>
+                        </div>
+
                         <div class="card-body">
                             <h3 class="h5 fw-bold">Melbourne 143 Audit</h3>
-                            <p class="card-text">Full-scale SEO audit for the Melbourne 143 initiative to improve reach.</p>
-                            <div class="impact-text">"Scaling local visibility through technical excellence."</div>
-                            <div class="mb-3"><span class="tech-badge">Audit</span><span class="tech-badge">Local SEO</span></div>
-                            <a href="melbourne143-seo-audit-v2.html" class="btn btn-outline-dark btn-sm w-100 mt-auto">View Case Study</a>
+                            <p class="card-text">
+                                Full-scale SEO audit for the Melbourne 143 initiative to
+                                improve reach.
+                            </p>
+                            <div class="impact-text">
+                                “Scaling local visibility through technical excellence.”
+                            </div>
+                            <div class="mb-3">
+                                <span class="tech-badge">Audit</span>
+                                <span class="tech-badge">Local SEO</span>
+                            </div>
+                            <a
+                                href="melbourne143-seo-audit-v2.html"
+                                class="btn btn-outline-dark btn-sm w-100 mt-auto"
+                            >
+                                View Case Study
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Research & UX -->
+
+                <div class="col-md-6 col-lg-4 project-item research">
+                    <div class="project-card">
+                        <div
+                            class="card-header-icon"
+                            style="background-color: var(--research-accent); color: white;"
+                        >
+                            <i class="fas fa-shield-halved fa-3x"></i>
+                        </div>
+
+                        <div class="card-body">
+                            <h3 class="h5 fw-bold">AI Decision Coach</h3>
+                            <p class="card-text">
+                                Scenario-based learning prototype for practicing responsible
+                                AI-use judgment around data handling, authorized tools,
+                                verification, human review, and escalation.
+                            </p>
+                            <div class="impact-text">
+                                “A functional decision-to-feedback-to-revision loop with
+                                transparent, rubric-based coaching.”
+                            </div>
+                            <div class="mb-3">
+                                <span class="tech-badge">UX / Learning Design</span>
+                                <span class="tech-badge">Responsible AI</span>
+                                <span class="tech-badge">JavaScript</span>
+                                <span class="tech-badge">Assessment Design</span>
+                            </div>
+                            <a
+                                href="AI_prototype_project/ai-decision-coach-case-study.html"
+                                class="btn btn-outline-dark btn-sm w-100 mt-auto"
+                            >
+                                View Case Study
+                            </a>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-6 col-lg-4 project-item research">
                     <div class="project-card">
-                        <div class="card-header-icon" style="background-color: var(--research-accent); color: white;"><i class="fas fa-list-check fa-3x"></i></div>
+                        <div
+                            class="card-header-icon"
+                            style="background-color: var(--research-accent); color: white;"
+                        >
+                            <i class="fas fa-list-check fa-3x"></i>
+                        </div>
+
                         <div class="card-body">
                             <h3 class="h5 fw-bold">Vocal Audition Rubric</h3>
-                            <p class="card-text">Redesigned assessment system via interviews, card sorting, and prototyping.</p>
-                            <div class="impact-text">"Standardizing evaluation for District IX."</div>
-                            <div class="mb-3"><span class="tech-badge">UX Research</span><span class="tech-badge">Prototyping</span></div>
-                            <a href="vocal-rubric.html" class="btn btn-outline-dark btn-sm w-100 mt-auto">View Case Study</a>
+                            <p class="card-text">
+                                Redesigned assessment system via interviews, card sorting,
+                                and prototyping.
+                            </p>
+                            <div class="impact-text">
+                                “Standardizing evaluation for District IX.”
+                            </div>
+                            <div class="mb-3">
+                                <span class="tech-badge">UX Research</span>
+                                <span class="tech-badge">Prototyping</span>
+                            </div>
+                            <a
+                                href="vocal-rubric.html"
+                                class="btn btn-outline-dark btn-sm w-100 mt-auto"
+                            >
+                                View Case Study
+                            </a>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-6 col-lg-4 project-item research">
                     <div class="project-card">
-                        <div class="card-header-icon" style="background-color: var(--research-accent); color: white;"><i class="fas fa-users fa-3x"></i></div>
+                        <div
+                            class="card-header-icon"
+                            style="background-color: var(--research-accent); color: white;"
+                        >
+                            <i class="fas fa-users fa-3x"></i>
+                        </div>
+
                         <div class="card-body">
-                            <h3 class="h5 fw-bold">Music Lessons & Community</h3>
-                            <p class="card-text">Qualitative research on reduced-fee music programs for low-income students.</p>
-                            <div class="impact-text">"Uncovering longitudinal benefits of arts education."</div>
-                            <div class="mb-3"><span class="tech-badge">Qualitative Analysis</span><span class="tech-badge">Interviews</span></div>
-                            <a href="music-lessons.html" class="btn btn-outline-dark btn-sm w-100 mt-auto">View Case Study</a>
+                            <h3 class="h5 fw-bold">Music Lessons &amp; Community</h3>
+                            <p class="card-text">
+                                Qualitative research on reduced-fee music programs for
+                                low-income students.
+                            </p>
+                            <div class="impact-text">
+                                “Uncovering longitudinal benefits of arts education.”
+                            </div>
+                            <div class="mb-3">
+                                <span class="tech-badge">Qualitative Analysis</span>
+                                <span class="tech-badge">Interviews</span>
+                            </div>
+                            <a
+                                href="music-lessons.html"
+                                class="btn btn-outline-dark btn-sm w-100 mt-auto"
+                            >
+                                View Case Study
+                            </a>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-6 col-lg-4 project-item research">
                     <div class="project-card">
-                        <div class="card-header-icon" style="background-color: var(--research-accent); color: white;"><i class="fas fa-chart-pie fa-3x"></i></div>
+                        <div
+                            class="card-header-icon"
+                            style="background-color: var(--research-accent); color: white;"
+                        >
+                            <i class="fas fa-chart-pie fa-3x"></i>
+                        </div>
+
                         <div class="card-body">
                             <h3 class="h5 fw-bold">Grading Attitudes</h3>
-                            <p class="card-text">Cluster analysis identifying user personas to improve grading practices.</p>
-                            <div class="impact-text">“Revealing distinct educator mindsets toward grading.”</div>
-                            <div class="mb-3"><span class="tech-badge">Cluster Analysis</span></div>
-                            <a href="http://mars.gmu.edu/handle/1920/11333" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark btn-sm w-100 mt-auto">Read Paper</a>
+                            <p class="card-text">
+                                Cluster analysis identifying user personas to improve grading
+                                practices.
+                            </p>
+                            <div class="impact-text">
+                                “Revealing distinct educator mindsets toward grading.”
+                            </div>
+                            <div class="mb-3">
+                                <span class="tech-badge">Cluster Analysis</span>
+                            </div>
+                            <a
+                                href="http://mars.gmu.edu/handle/1920/11333"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="btn btn-outline-dark btn-sm w-100 mt-auto"
+                            >
+                                Read Paper
+                            </a>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-6 col-lg-4 project-item research">
                     <div class="project-card">
-                        <div class="card-header-icon" style="background-color: var(--research-accent); color: white;"><i class="fas fa-scroll fa-3x"></i></div>
+                        <div
+                            class="card-header-icon"
+                            style="background-color: var(--research-accent); color: white;"
+                        >
+                            <i class="fas fa-scroll fa-3x"></i>
+                        </div>
+
                         <div class="card-body">
                             <h3 class="h5 fw-bold">Standards-Based Grading</h3>
-                            <p class="card-text">Widely cited study (N=96) on assessment methods among educators.</p>
-                            <div class="impact-text">“Evidence-backed insights shaping modern grading policy.”</div>
-                            <div class="mb-3"><span class="tech-badge">Survey Design</span></div>
-                            <a href="https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=faa626cf6ae0bf06964bc30d53c88fc02d9d4e27" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark btn-sm w-100 mt-auto">Read Paper</a>
+                            <p class="card-text">
+                                Widely cited study (N=96) on assessment methods among educators.
+                            </p>
+                            <div class="impact-text">
+                                “Evidence-backed insights shaping modern grading policy.”
+                            </div>
+                            <div class="mb-3">
+                                <span class="tech-badge">Survey Design</span>
+                            </div>
+                            <a
+                                href="https://citeseerx.ist.psu.edu/document?repid=rep1&amp;type=pdf&amp;doi=faa626cf6ae0bf06964bc30d53c88fc02d9d4e27"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="btn btn-outline-dark btn-sm w-100 mt-auto"
+                            >
+                                Read Paper
+                            </a>
                         </div>
                     </div>
                 </div>
 
+                <!-- Instructional Design -->
+
                 <div class="col-md-6 col-lg-4 project-item instructional">
                     <div class="project-card">
-                        <div class="card-header-icon" style="background-color: var(--instructional-accent); color: white;"><i class="fas fa-chalkboard-teacher fa-3x"></i></div>
+                        <div
+                            class="card-header-icon"
+                            style="background-color: var(--instructional-accent); color: white;"
+                        >
+                            <i class="fas fa-chalkboard-teacher fa-3x"></i>
+                        </div>
+
                         <div class="card-body">
                             <h3 class="h5 fw-bold">What is a Vegan Diet</h3>
-                            <p class="card-text">Interactive course module introducing core concepts of a vegan diet.</p>
-                            <div class="impact-text">"Short, accessible learning module for general audiences."</div>
-                            <div class="mb-3"><span class="tech-badge">Articulate</span><span class="tech-badge">eLearning</span></div>
-                            <a href="vegan-diet-case-study.html" class="btn btn-outline-dark btn-sm w-100 mt-auto">View Case Study</a>
+                            <p class="card-text">
+                                Interactive course module introducing core concepts of a vegan diet.
+                            </p>
+                            <div class="impact-text">
+                                “Short, accessible learning module for general audiences.”
+                            </div>
+                            <div class="mb-3">
+                                <span class="tech-badge">Articulate</span>
+                                <span class="tech-badge">eLearning</span>
+                            </div>
+                            <a
+                                href="vegan-diet-case-study.html"
+                                class="btn btn-outline-dark btn-sm w-100 mt-auto"
+                            >
+                                View Case Study
+                            </a>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-6 col-lg-4 project-item instructional">
                     <div class="project-card">
-                        <div class="card-header-icon" style="background-color: var(--instructional-accent); color: white;">
+                        <div
+                            class="card-header-icon"
+                            style="background-color: var(--instructional-accent); color: white;"
+                        >
                             <i class="fas fa-sitemap fa-3x"></i>
                         </div>
+
                         <div class="card-body">
                             <h3 class="h5 fw-bold">Florida CTE AI Foundations Storyboard</h3>
-                            <p class="card-text">Standards-aligned storyboard and eLearning blueprint for a high school AI Foundations module built for Florida CTE implementation.</p>
-                            <div class="impact-text">"Turning a prototype into a SCORM-ready, standards-mapped learning blueprint."</div>
+                            <p class="card-text">
+                                Standards-aligned storyboard and eLearning blueprint for a
+                                high-school AI Foundations module built for Florida CTE
+                                implementation.
+                            </p>
+                            <div class="impact-text">
+                                “Turning a prototype into a SCORM-ready, standards-mapped
+                                learning blueprint.”
+                            </div>
                             <div class="mb-3">
                                 <span class="tech-badge">Instructional Design</span>
                                 <span class="tech-badge">Articulate Rise</span>
@@ -304,20 +881,35 @@
                                 <span class="tech-badge">SCORM</span>
                                 <span class="tech-badge">Standards Alignment</span>
                             </div>
-                            <a href="florida-cte-ai-foundations-storyboard.html" class="btn btn-outline-dark btn-sm w-100 mt-auto">View Case Study</a>
+                            <a
+                                href="florida-cte-ai-foundations-storyboard.html"
+                                class="btn btn-outline-dark btn-sm w-100 mt-auto"
+                            >
+                                View Case Study
+                            </a>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-6 col-lg-4 project-item instructional">
                     <div class="project-card">
-                        <div class="card-header-icon" style="background-color: var(--instructional-accent); color: white;">
+                        <div
+                            class="card-header-icon"
+                            style="background-color: var(--instructional-accent); color: white;"
+                        >
                             <i class="fas fa-video fa-3x"></i>
                         </div>
+
                         <div class="card-body">
-                            <h3 class="h5 fw-bold">AI Video Storyboards & Workflows</h3>
-                            <p class="card-text">Prompt-ready storyboards, synthetic avatars, and editorial workflows across coffee branding, safety, and cognitive load theory.</p>
-                            <div class="impact-text">"Demonstrating creative process and instructional workflow alongside short-form AI video."</div>
+                            <h3 class="h5 fw-bold">AI Video Storyboards &amp; Workflows</h3>
+                            <p class="card-text">
+                                Prompt-ready storyboards, synthetic avatars, and editorial
+                                workflows across coffee branding, safety, and cognitive-load theory.
+                            </p>
+                            <div class="impact-text">
+                                “Demonstrating creative process and instructional workflow
+                                alongside short-form AI video.”
+                            </div>
                             <div class="mb-3">
                                 <span class="tech-badge">Storyboarding</span>
                                 <span class="tech-badge">Synthesia</span>
@@ -325,7 +917,12 @@
                                 <span class="tech-badge">ElevenLabs</span>
                                 <span class="tech-badge">CapCut</span>
                             </div>
-                            <a href="AIvideo.html" class="btn btn-outline-dark btn-sm w-100 mt-auto">View Case Study</a>
+                            <a
+                                href="AIvideo.html"
+                                class="btn btn-outline-dark btn-sm w-100 mt-auto"
+                            >
+                                View Case Study
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -336,26 +933,46 @@
     <footer class="text-center">
         <div class="container">
             <div class="mb-4">
-                <a href="https://www.linkedin.com/in/doctorn8/" class="text-white mx-2" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin fa-lg"></i></a>
-                <a href="mailto:nathan.stpierre@gmail.com" class="text-white mx-2"><i class="fas fa-envelope fa-lg"></i></a>
+                <a
+                    href="https://www.linkedin.com/in/doctorn8/"
+                    class="text-white mx-2"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Nathan St. Pierre on LinkedIn"
+                >
+                    <i class="fab fa-linkedin fa-lg"></i>
+                </a>
+
+                <a
+                    href="mailto:nathan.stpierre@gmail.com"
+                    class="text-white mx-2"
+                    aria-label="Email Nathan St. Pierre"
+                >
+                    <i class="fas fa-envelope fa-lg"></i>
+                </a>
             </div>
+
             <p class="mb-0">&copy; 2025 Nathan St. Pierre. All rights reserved.</p>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
     <script>
         function filterProjects(category, event) {
-            document.querySelectorAll('.btn-filter').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll(".btn-filter").forEach((button) => {
+                button.classList.remove("active");
+            });
+
             if (event) {
-                event.target.classList.add('active');
+                event.target.classList.add("active");
             }
-            document.querySelectorAll('.project-item').forEach(item => {
-                if (category === 'all' || item.classList.contains(category)) {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
-                }
+
+            document.querySelectorAll(".project-item").forEach((item) => {
+                const shouldShow =
+                    category === "all" || item.classList.contains(category);
+
+                item.style.display = shouldShow ? "block" : "none";
             });
         }
     </script>
