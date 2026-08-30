@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Decision Coach | Nathan St. Pierre</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@400;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+        :root {
+            --ink: #333333;
+            --muted: #6b6258;
+            --canvas: #faf9f7;
+            --surface: #ffffff;
+            --surface-soft: #fcf8f3;
+            --surface-muted: #f5eee7;
+            --table-head: #f8f4ef;
+            --line: #e7ded4;
+            --accent: #aa784d;
+            --accent-dark: #815932;
+        }
+
+        body {
+            font-family: "Lora", serif;
+            color: var(--ink);
+            background: var(--canvas);
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        th,
+        .navbar-brand,
+        .btn,
+        .eyebrow,
+        .block-pill,
+        .fact-label {
+            font-family: "Montserrat", sans-serif;
+        }
+
+        .navbar {
+            border-bottom: 1px solid rgba(231, 222, 212, 0.8);
+        }
+
+        .navbar-brand {
+            letter-spacing: 0.01em;
+        }
+
+        .nav-link {
+            color: var(--ink) !important;
+            font-family: "Montserrat", sans-serif;
+            font-size: 0.92rem;
+        }
+
+        .nav-link:hover,
+        .nav-link:focus {
+            color: var(--accent-dark) !important;
+            text-decoration: underline;
+            text-underline-offset: 0.22rem;
+        }
+
+        .hero {
+            border-bottom: 1px solid var(--line);
+            background:
+                linear-gradient(180deg, rgba(245, 238, 231, 0.72), rgba(250, 249, 247, 0));
+        }
+
+        .eyebrow {
+            margin: 0 0 0.55rem;
+            color: var(--accent);
+            font-size: 0.76rem;
+            font-weight: 800;
+            letter-spacing: 0.09em;
+            text-transform: uppercase;
+        }
+
+        .hero-title {
+            font-size: clamp(2.35rem, 5vw, 4.25rem);
+            font-weight: 800;
+            letter-spacing: -0.04em;
+        }
+
+        .hero-subtitle {
+            max-width: 760px;
+            color: var(--muted);
+            font-size: clamp(1.12rem, 2vw, 1.42rem);
+        }
+
+        .block-pill {
+            display: inline-block;
+            margin-right: 0.35rem;
+            margin-bottom: 0.45rem;
+            padding: 0.34rem 0.72rem;
+            border-radius: 999px;
+            background: #f2ebe4;
+            color: #5f564d;
+            font-size: 0.71rem;
+            font-weight: 700;
+        }
+
+        .scope-note {
+            padding: 1rem 1.15rem;
+            border-left: 4px solid var(--accent);
+            border-radius: 6px;
+            background: var(--surface-soft);
+            color: #5f564d;
+        }
+
+        .scope-note strong {
+            color: var(--ink);
+        }
+
+        .fact-strip {
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .fact-item {
+            padding: 1rem 0.85rem;
+        }
+
+        .fact-label {
+            display: block;
+            margin-bottom: 0.35rem;
+            color: var(--accent-dark);
+            font-size: 0.69rem;
+            font-weight: 800;
+            letter-spacing: 0.07em;
+            text-transform: uppercase;
+        }
+
+        .fact-value {
+            margin: 0;
+            font-size: 0.94rem;
+        }
+
+        .content-card,
+        .screenshot-card,
+        .architecture-card {
+            overflow: hidden;
+            height: 100%;
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            background: var(--surface);
+            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.05);
+        }
+
+        .content-card-body {
+            padding: 1.2rem;
+        }
+
+        .content-card h3 {
+            font-size: 1.05rem;
+            font-weight: 800;
+        }
+
+        .content-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .screenshot-card img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .screenshot-caption {
+            padding: 0.95rem 1.1rem 1.05rem;
+        }
+
+        .screenshot-caption h3 {
+            margin-bottom: 0.35rem;
+            font-size: 1rem;
+            font-weight: 800;
+        }
+
+        .screenshot-caption p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 0.93rem;
+        }
+
+        .architecture-card {
+            padding: 1.35rem;
+            background: linear-gradient(135deg, #ffffff 0%, #fcf8f3 100%);
+        }
+
+        .architecture-flow {
+            display: grid;
+            gap: 0.7rem;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .architecture-flow li {
+            position: relative;
+            padding: 0.85rem 1rem;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--surface);
+            font-family: "Montserrat", sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .architecture-flow li:not(:last-child)::after {
+            position: absolute;
+            bottom: -0.78rem;
+            left: 50%;
+            content: "↓";
+            color: var(--accent-dark);
+            font-size: 1.1rem;
+            transform: translateX(-50%);
+        }
+
+        details {
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--surface);
+        }
+
+        details summary {
+            padding: 1rem 1.15rem;
+            cursor: pointer;
+            font-family: "Montserrat", sans-serif;
+            font-weight: 700;
+        }
+
+        details > div {
+            padding: 0 1.15rem 1.15rem;
+        }
+
+        .table thead th {
+            border-bottom-width: 1px;
+            background: var(--table-head);
+            color: #5f564d;
+            font-size: 0.74rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .btn {
+            border-radius: 6px;
+            font-family: "Montserrat", sans-serif;
+            font-size: 0.86rem;
+            font-weight: 700;
+        }
+
+        .btn-primary {
+            border-color: var(--accent-dark);
+            background: var(--accent-dark);
+        }
+
+        .btn-primary:hover,
+        .btn-primary:focus {
+            border-color: #654424;
+            background: #654424;
+        }
+
+        .btn-outline-secondary {
+            border-color: #a39a90;
+            color: #5f564d;
+        }
+
+        .btn-outline-secondary:hover,
+        .btn-outline-secondary:focus {
+            border-color: #5f564d;
+            background: #5f564d;
+            color: #ffffff;
+        }
+
+        footer {
+            margin-top: 4rem;
+        }
+
+        a:focus-visible,
+        button:focus-visible,
+        summary:focus-visible {
+            outline: 3px solid rgba(170, 120, 77, 0.45);
+            outline-offset: 3px;
+        }
+
+        @media (max-width: 767.98px) {
+            .hero {
+                padding-top: 3.5rem !important;
+                padding-bottom: 3.5rem !important;
+            }
+
+            .fact-item {
+                padding: 0.9rem 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">NATHAN ST. PIERRE</a>
+            <div class="ms-auto">
+                <a class="nav-link fw-bold" href="projects.html">Back to Projects</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero py-5">
+        <div class="container" style="max-width: 1100px;">
+            <p class="eyebrow">Independent concept prototype</p>
+            <h1 class="hero-title mb-3">AI Decision Coach</h1>
+            <p class="hero-subtitle mb-4">
+                Responsible AI Practice for Enterprise Teams
+            </p>
+
+            <p class="lead mb-4" style="max-width: 850px;">
+                A scenario-based learning prototype that lets employees make,
+                explain, revise, and reflect on responsible AI-use decisions.
+            </p>
+
+            <div class="mb-4">
+                <span class="block-pill">Learning strategy</span>
+                <span class="block-pill">UX/UI design</span>
+                <span class="block-pill">Responsible AI</span>
+                <span class="block-pill">Vanilla JavaScript</span>
+            </div>
+
+            <a class="btn btn-primary px-4 me-2 mb-2" href="index.html">
+                Launch prototype
+            </a>
+            <a class="btn btn-outline-secondary px-4 mb-2" href="#screens">
+                View screens
+            </a>
+        </div>
+    </header>
+
+    <main class="container py-5" style="max-width: 1100px;">
+
+        <section class="scope-note mb-5" aria-label="Independent concept disclosure">
+            <strong>Design basis:</strong> This independent concept uses stated
+            enterprise-learning assumptions, responsible-AI principles, and
+            learning-design practice. It is not client-sponsored research or a
+            production system.
+        </section>
+
+        <section class="fact-strip mb-5" aria-label="Project facts">
+            <div class="row g-0">
+                <div class="col-sm-6 col-lg-3">
+                    <div class="fact-item">
+                        <span class="fact-label">Role</span>
+                        <p class="fact-value">Learning Experience Designer, UX/UI Designer, and AI Prototype Developer</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="fact-item">
+                        <span class="fact-label">Built</span>
+                        <p class="fact-value">One complete decision, feedback, revision, and reflection loop</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="fact-item">
+                        <span class="fact-label">Stack</span>
+                        <p class="fact-value">HTML, CSS, Bootstrap 5, vanilla JavaScript, localStorage</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="fact-item">
+                        <span class="fact-label">Policy basis</span>
+                        <p class="fact-value">Fictional Northstar Enterprise AI Use Standard</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-5" aria-labelledby="challenge-heading">
+            <p class="eyebrow">The challenge</p>
+            <h2 id="challenge-heading" class="fw-bold mb-3">
+                Responsible AI use requires judgment, not just prompt skill.
+            </h2>
+
+            <div class="row g-4 align-items-stretch">
+                <div class="col-lg-7">
+                    <p class="mb-0">
+                        In a risk-sensitive enterprise, operational teams may understand
+                        basic prompting but still need to decide what data can be used,
+                        whether a tool is approved, how output should be verified, and
+                        when to involve a human reviewer or internal owner. This prototype
+                        turns that judgment into brief, observable practice.
+                    </p>
+                </div>
+
+                <div class="col-lg-5">
+                    <div class="content-card">
+                        <div class="content-card-body">
+                            <h3>What I built</h3>
+                            <p class="mb-0">
+                                One customer-complaint-summary scenario with pathway
+                                selection, rationale and confidence capture, safeguard
+                                choices, policy-mapped rubric feedback, revision, transfer
+                                practice, and browser-local event capture.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="screens" class="mb-5" aria-labelledby="screens-heading">
+            <p class="eyebrow">The experience</p>
+            <h2 id="screens-heading" class="fw-bold mb-4">
+                A five-step learning loop
+            </h2>
+
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <figure class="screenshot-card mb-0">
+                        <img
+                            src="assets/screenshots/01-scenario-briefing.png"
+                            alt="Scenario briefing for the AI Decision Coach, showing an operations-manager role, executive-summary task, risk areas, prototype boundary, and start button."
+                        >
+                        <figcaption class="screenshot-caption">
+                            <h3>1. Briefing</h3>
+                            <p>Sets role, task, time estimate, and risk context without revealing a preferred answer.</p>
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <div class="col-lg-6">
+                    <figure class="screenshot-card mb-0">
+                        <img
+                            src="assets/screenshots/02-decision-workspace.png"
+                            alt="Decision workspace with Use AI as proposed selected, learner rationale, risk-factor selection, and confidence rating."
+                        >
+                        <figcaption class="screenshot-caption">
+                            <h3>2. Decide</h3>
+                            <p>Requires a pathway, rationale, risk selection, and confidence rating before feedback.</p>
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <div class="col-lg-6">
+                    <figure class="screenshot-card mb-0">
+                        <img
+                            src="assets/screenshots/03a-safeguard-builder.png"
+                            alt="Safeguard builder showing choices for raw customer tickets, ticket metadata, and de-identified complaint themes."
+                        >
+                        <figcaption class="screenshot-caption">
+                            <h3>3. Build safeguards</h3>
+                            <p>Turns data-handling, tool, and review principles into concrete workflow choices.</p>
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <div class="col-lg-6">
+                    <figure class="screenshot-card mb-0">
+                        <img
+                            src="assets/screenshots/04a-coach-feedback-overview.png"
+                            alt="AI Coach feedback showing the learner's initial decision and diagnostic feedback about privacy, tool authorization, and reliability."
+                        >
+                        <figcaption class="screenshot-caption">
+                            <h3>4. Receive coach feedback</h3>
+                            <p>Provides diagnostic feedback by risk dimension rather than a single safe/unsafe score.</p>
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <div class="col-lg-6">
+                    <figure class="screenshot-card mb-0">
+                        <img
+                            src="assets/screenshots/05a-revised-decision.png"
+                            alt="Revision screen showing the learner's original AI-use decision and a revised Use AI with safeguards pathway."
+                        >
+                        <figcaption class="screenshot-caption">
+                            <h3>5. Revise and reflect</h3>
+                            <p>Makes changed reasoning and confidence visible, then asks the learner to transfer the decision process.</p>
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <div class="col-lg-6">
+                    <figure class="screenshot-card mb-0">
+                        <img
+                            src="assets/screenshots/06-completion-event-log.png"
+                            alt="Completion summary with response coverage and an expanded browser-local prototype event log."
+                        >
+                        <figcaption class="screenshot-caption">
+                            <h3>Completion and event model</h3>
+                            <p>Shows response coverage and the structured event history captured during a prototype session.</p>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-5" aria-labelledby="choices-heading">
+            <p class="eyebrow">Design choices</p>
+            <h2 id="choices-heading" class="fw-bold mb-4">
+                Three deliberate decisions
+            </h2>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <article class="content-card">
+                        <div class="content-card-body">
+                            <h3>Decision before coaching</h3>
+                            <p>
+                                The learner commits before guidance appears, preserving
+                                judgment practice and creating a baseline for revision.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-md-4">
+                    <article class="content-card">
+                        <div class="content-card-body">
+                            <h3>Diagnostic feedback</h3>
+                            <p>
+                                Privacy, authorization, reliability, fairness, and human
+                                accountability remain distinct so feedback is actionable.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-md-4">
+                    <article class="content-card">
+                        <div class="content-card-body">
+                            <h3>Bounded automation</h3>
+                            <p>
+                                Deterministic rubric logic is mapped to fictional policy
+                                guidance; no LLM is treated as the authority for evaluation.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-5" aria-labelledby="architecture-heading">
+            <p class="eyebrow">Technical approach</p>
+            <h2 id="architecture-heading" class="fw-bold mb-4">
+                A transparent prototype architecture
+            </h2>
+
+            <div class="row g-4 align-items-start">
+                <div class="col-lg-5">
+                    <div class="architecture-card">
+                        <ol class="architecture-flow">
+                            <li>Learner interaction</li>
+                            <li>Scenario state + event capture</li>
+                            <li>Deterministic rubric check</li>
+                            <li>Fictional policy guidance mapping</li>
+                            <li>Feedback + revision loop</li>
+                            <li>Browser-local event data</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="col-lg-7">
+                    <div class="scope-note mb-3">
+                        <strong>Implemented stack:</strong> HTML, CSS, Bootstrap 5,
+                        vanilla JavaScript, deterministic rubric logic, and
+                        browser-local <code>localStorage</code>.
+                    </div>
+
+                    <p class="mb-0">
+                        The coach is a learning aid, not an operational decision-maker.
+                        All scenario and policy content is fictional; the prototype does
+                        not use customer, employee, health, or proprietary data.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-5" aria-labelledby="details-heading">
+            <p class="eyebrow">For reviewers</p>
+            <h2 id="details-heading" class="fw-bold mb-4">
+                Technical and research details
+            </h2>
+
+            <div class="d-grid gap-3">
+                <details>
+                    <summary>Prototype event model</summary>
+                    <div>
+                        <p>
+                            The browser-local event model records
+                            <code>scenario_started</code>,
+                            <code>decision_submitted</code>,
+                            <code>safeguards_submitted</code>,
+                            <code>feedback_viewed</code>,
+                            <code>decision_revised</code>, and
+                            <code>transfer_completed</code>.
+                        </p>
+
+                        <div class="table-responsive">
+                            <table class="table table-sm mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>Event</th>
+                                        <th>Captured data</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>decision_submitted</code></td>
+                                        <td>Pathway, selected risk factors, confidence</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>feedback_viewed</code></td>
+                                        <td>Risk dimensions flagged by the rubric</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>decision_revised</code></td>
+                                        <td>Original/revised pathway and confidence</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>transfer_completed</code></td>
+                                        <td>Transfer response and calculated time on task</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <p class="small text-muted mt-3 mb-0">
+                            This is a prototype event model, not enterprise telemetry,
+                            xAPI, LMS, or LRS implementation.
+                        </p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Fictional policy guidance and safeguards</summary>
+                    <div>
+                        <p>
+                            The Northstar Enterprise AI Use Standard supplies a transparent
+                            fictional policy basis for feedback:
+                        </p>
+                        <ul class="mb-3">
+                            <li>Data Classification and Approved Tools</li>
+                            <li>Human Review and Accountability</li>
+                            <li>Reliability and Source Verification</li>
+                            <li>Fairness, Bias, and Escalation</li>
+                            <li>Accessibility and Inclusive Communication</li>
+                        </ul>
+                        <p class="mb-0">
+                            The prototype does not provide operational, legal, security,
+                            privacy, HR, or compliance decisions.
+                        </p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Research and validation plan</summary>
+                    <div>
+                        <p>
+                            Before production development, I would conduct 5–7 discovery
+                            interviews with representative operational staff,
+                            privacy/security partners, and managers. Findings would inform
+                            scenario realism, vocabulary, available decision paths, and
+                            escalation ownership.
+                        </p>
+                        <p class="mb-0">
+                            A subsequent evaluation would examine decision reasoning,
+                            risk-signal recognition, confidence calibration, usability,
+                            and keyboard/screen-reader-informed accessibility.
+                        </p>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <section class="scope-note" aria-label="Project summary">
+            I designed and built a scenario-based AI
+            learning prototype that combines learning strategy, visible UX decisions,
+            bounded rubric-based coaching, human-review safeguards, and a prototype
+            measurement model.
+        </section>
+
+        <div class="text-center mt-5">
+            <a class="btn btn-primary px-4 me-2 mb-2" href="index.html">
+                Launch prototype
+            </a>
+            <a class="btn btn-outline-secondary px-4 mb-2" href="projects.html">
+                Back to Projects
+            </a>
+        </div>
+    </main>
+
+    <footer class="text-center py-4 bg-dark text-light">
+        <p class="mb-0">&copy; 2026 Nathan St. Pierre</p>
+    </footer>
+</body>
+</html>

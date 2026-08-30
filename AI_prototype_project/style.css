@@ -1,0 +1,284 @@
+:root {
+    --ink: #333333;
+    --muted: #6b6258;
+    --canvas: #faf9f7;
+    --surface: #ffffff;
+    --surface-soft: #fcf8f3;
+    --surface-muted: #f5eee7;
+    --table-head: #f8f4ef;
+    --line: #e7ded4;
+    --accent: #aa784d;
+    --accent-dark: #815932;
+    --footer: #212529;
+    --safe-bg: #eaf4eb;
+    --safe-ink: #2d6236;
+}
+
+/* Portfolio foundation — matches your existing project page */
+html {
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: "Lora", serif;
+    color: var(--ink);
+    background: var(--canvas);
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+th,
+.navbar-brand,
+.btn,
+.app-kicker,
+.screen-eyebrow,
+.progress-step,
+.block-pill {
+    font-family: "Montserrat", sans-serif;
+}
+
+/* Existing portfolio navigation */
+.navbar {
+    border-bottom: 1px solid rgba(231, 222, 212, 0.8);
+}
+
+.navbar-brand {
+    letter-spacing: 0.01em;
+}
+
+.nav-link {
+    color: var(--ink) !important;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.92rem;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    color: var(--accent-dark) !important;
+    text-decoration: underline;
+    text-underline-offset: 0.22rem;
+}
+
+/* Prototype page heading */
+.prototype-intro {
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 1.75rem;
+}
+
+.app-kicker,
+.screen-eyebrow {
+    margin: 0 0 0.45rem;
+    color: var(--accent);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.09em;
+    line-height: 1.3;
+    text-transform: uppercase;
+}
+
+/* App frame */
+.app-shell {
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--surface);
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.05);
+}
+
+.app-topbar {
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid var(--line);
+    background: var(--surface-muted);
+}
+
+.app-title {
+    margin: 0;
+    font-size: clamp(1.45rem, 3vw, 2rem);
+    line-height: 1.2;
+}
+
+/* Horizontal step tracker — the missing visual structure */
+.progress-steps {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 0.45rem;
+    margin: 0;
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid var(--line);
+    background: var(--surface);
+}
+
+.progress-step {
+    min-width: 0;
+    color: var(--muted);
+    font-size: 0.7rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.progress-step::before {
+    display: grid;
+    width: 1.8rem;
+    height: 1.8rem;
+    margin: 0 auto 0.4rem;
+    place-items: center;
+    content: attr(data-step);
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    background: var(--surface);
+    color: var(--muted);
+    font-size: 0.75rem;
+    font-weight: 800;
+}
+
+.progress-step.is-active {
+    color: var(--ink);
+}
+
+.progress-step.is-active::before {
+    border-color: var(--accent);
+    background: var(--accent);
+    color: #ffffff;
+}
+
+.progress-step.is-complete {
+    color: var(--ink);
+}
+
+.progress-step.is-complete::before {
+    content: "✓";
+    border-color: var(--safe-ink);
+    background: var(--safe-bg);
+    color: var(--safe-ink);
+}
+
+/* Learner-screen canvas */
+.app-screen {
+    padding: clamp(1.5rem, 4vw, 2.75rem);
+}
+
+.app-screen[hidden] {
+    display: none !important;
+}
+
+/* Reusable project-page-style components */
+.scenario-card,
+.scope-note {
+    border-radius: 6px;
+}
+
+.scenario-card {
+    padding: 1.15rem 1.25rem;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.04);
+}
+
+.block-pill {
+    display: inline-block;
+    margin-right: 0.3rem;
+    margin-bottom: 0.4rem;
+    padding: 0.28rem 0.65rem;
+    border-radius: 999px;
+    background: #f2ebe4;
+    color: #5f564d;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+}
+
+.scope-note {
+    padding: 1rem 1.1rem;
+    border-left: 4px solid var(--accent);
+    background: var(--surface-soft);
+    color: #5f564d;
+}
+
+.scope-note strong {
+    color: var(--ink);
+}
+
+/* Buttons: retain Bootstrap behavior but match the established palette */
+.btn {
+    border-radius: 6px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.btn-primary {
+    border-color: var(--accent-dark);
+    background: var(--accent-dark);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    border-color: #654424;
+    background: #654424;
+}
+
+.btn-outline-secondary {
+    border-color: #a39a90;
+    color: #5f564d;
+}
+
+.btn-outline-secondary:hover,
+.btn-outline-secondary:focus {
+    border-color: #5f564d;
+    background: #5f564d;
+    color: #ffffff;
+}
+
+/* Footer */
+footer {
+    flex-shrink: 0;
+    margin-top: 3rem;
+}
+
+/* Visible keyboard focus */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: 3px solid rgba(170, 120, 77, 0.45);
+    outline-offset: 3px;
+}
+
+/* Mobile */
+@media (max-width: 767.98px) {
+    .app-topbar {
+        padding: 1.1rem;
+    }
+
+    .progress-steps {
+        gap: 0.15rem;
+        padding: 0.85rem 0.45rem;
+    }
+
+    .progress-step {
+        font-size: 0.58rem;
+    }
+
+    .progress-step::before {
+        width: 1.55rem;
+        height: 1.55rem;
+        margin-bottom: 0.3rem;
+        font-size: 0.68rem;
+    }
+
+    .app-screen {
+        padding: 1.25rem;
+    }
+}

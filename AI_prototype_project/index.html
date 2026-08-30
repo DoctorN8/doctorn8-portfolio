@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Decision Coach | Nathan St. Pierre</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@400;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="../index.html">NATHAN ST. PIERRE</a>
+            <div class="ms-auto">
+                <a class="nav-link fw-bold" href="../projects.html">Back to Projects</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-5" style="max-width: 950px;">
+        <section class="mb-4">
+            <p class="app-kicker">Independent concept prototype</p>
+            <h1 class="fw-bold">AI Decision Coach</h1>
+            <p class="lead text-muted mb-0">
+                Responsible AI Practice for Enterprise Teams
+            </p>
+        </section>
+
+        <section class="app-shell" aria-labelledby="prototype-title">
+            <div class="app-topbar">
+                <div class="d-flex flex-column flex-md-row justify-content-between gap-2">
+                    <div>
+                        <p class="app-kicker">Scenario-based learning prototype</p>
+                        <h2 id="prototype-title" class="app-title fw-bold">
+                            Customer complaint summary
+                        </h2>
+                    </div>
+                    <p class="mb-0 text-muted small">
+                        Estimated time: 6–8 minutes
+                    </p>
+                </div>
+            </div>
+
+            <nav class="progress-steps" aria-label="Scenario progress">
+                <div class="progress-step is-active" data-step="1" aria-current="step">
+                    Briefing
+                </div>
+                <div class="progress-step" data-step="2">Decide</div>
+                <div class="progress-step" data-step="3">Safeguards</div>
+                <div class="progress-step" data-step="4">Coach</div>
+                <div class="progress-step" data-step="5">Reflect</div>
+            </nav>
+
+            <section id="screen-briefing" class="app-screen" aria-labelledby="briefing-heading">
+                <p class="screen-eyebrow">Step 1 of 5 · Scenario briefing</p>
+                <h3 id="briefing-heading" class="fw-bold mb-3">
+                    Decide whether and how generative AI can be used responsibly
+                </h3>
+
+                <div class="scenario-card mb-4">
+                    <div class="row g-3">
+                        <div class="col-md-4">
+                            <p class="small text-uppercase text-muted fw-bold mb-1">Your role</p>
+                            <p class="mb-0">Operations manager</p>
+                        </div>
+                        <div class="col-md-8">
+                            <p class="small text-uppercase text-muted fw-bold mb-1">Your task</p>
+                            <p class="mb-0">
+                                Prepare a one-page executive summary of customer-support
+                                complaints by the end of the day.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 class="h5 fw-bold">Scenario</h4>
+                <p>
+                    A senior leader requests a concise summary of customer-support complaints.
+                    An employee proposes copying a spreadsheet of raw customer tickets into a
+                    public generative-AI tool to identify themes and draft the summary.
+                </p>
+
+                <h4 class="h5 fw-bold mt-4">Risk areas to consider</h4>
+                <div class="mb-4">
+                    <span class="block-pill">Privacy</span>
+                    <span class="block-pill">Reliability</span>
+                    <span class="block-pill">Fairness</span>
+                    <span class="block-pill">Human review</span>
+                </div>
+
+                <aside class="scope-note mb-4" aria-label="Prototype boundary">
+                    <strong>Prototype boundary:</strong> This learning experience uses fictional
+                    scenarios and policy guidance. It does not make operational, legal, security,
+                    privacy, HR, or compliance decisions.
+                </aside>
+
+                <div class="app-actions">
+                    <a class="btn btn-outline-secondary" href="../projects.html">Exit prototype</a>
+                    <button id="start-scenario" class="btn btn-primary px-4" type="button">
+                        Start scenario
+                    </button>
+                </div>
+            </section>
+
+            <section id="screen-decision" class="app-screen" hidden aria-labelledby="decision-heading">
+                <p class="screen-eyebrow">Step 2 of 5 · Decision workspace</p>
+                <h3 id="decision-heading" class="fw-bold mb-2">Make an initial decision</h3>
+                <p class="text-muted mb-4">
+                    Choose a pathway, explain your reasoning, and rate your confidence before
+                    you receive coach feedback.
+                </p>
+
+                <details class="mb-4">
+                    <summary class="fw-bold">Review scenario</summary>
+                    <div class="scenario-card mt-3">
+                        <p class="mb-0">
+                            A senior leader requests a concise summary of customer-support complaints.
+                            An employee proposes copying a spreadsheet of raw customer tickets into a
+                            public generative-AI tool to identify themes and draft the summary.
+                        </p>
+                    </div>
+                </details>
+
+                <form id="decision-form" novalidate>
+                    <fieldset class="border-0 p-0 mb-4">
+                        <legend class="h5 fw-bold mb-3">
+                            What is your initial decision?
+                        </legend>
+
+                        <div class="decision-grid">
+                            <label class="decision-card">
+                                <input
+                                    type="radio"
+                                    name="decision-path"
+                                    value="use_ai_as_proposed"
+                                    required
+                                >
+                                <span class="decision-card-title">Use AI as proposed</span>
+                                <span class="decision-card-copy">
+                                    Use the public tool with the raw customer-ticket spreadsheet.
+                                </span>
+                            </label>
+
+                            <label class="decision-card">
+                                <input
+                                    type="radio"
+                                    name="decision-path"
+                                    value="use_ai_with_safeguards"
+                                    required
+                                >
+                                <span class="decision-card-title">Use AI with safeguards</span>
+                                <span class="decision-card-copy">
+                                    Change the process, data, tool, or review steps before using AI.
+                                </span>
+                            </label>
+
+                            <label class="decision-card">
+                                <input
+                                    type="radio"
+                                    name="decision-path"
+                                    value="do_not_use_ai"
+                                    required
+                                >
+                                <span class="decision-card-title">Do not use AI for this task</span>
+                                <span class="decision-card-copy">
+                                    Complete the summary through a non-AI process.
+                                </span>
+                            </label>
+
+                            <label class="decision-card">
+                                <input
+                                    type="radio"
+                                    name="decision-path"
+                                    value="escalate"
+                                    required
+                                >
+                                <span class="decision-card-title">Escalate the decision</span>
+                                <span class="decision-card-copy">
+                                    Ask an appropriate privacy, security, legal, or business owner
+                                    to determine the safe path.
+                                </span>
+                            </label>
+                        </div>
+
+                        <p id="decision-path-error" class="text-danger small mt-2 mb-0" hidden>
+                            Choose one decision pathway before continuing.
+                        </p>
+                    </fieldset>
+
+                    <div class="mb-4">
+                        <label for="decision-rationale" class="form-label h5 fw-bold">
+                            Why is this the appropriate path?
+                        </label>
+                        <p id="rationale-help" class="form-text mt-0">
+                            Consider the data, whether the tool is authorized, how the output would
+                            be verified, and who must review it.
+                        </p>
+                        <textarea
+                            id="decision-rationale"
+                            class="form-control"
+                            rows="5"
+                            aria-describedby="rationale-help rationale-error"
+                            required
+                        ></textarea>
+                        <p id="rationale-error" class="text-danger small mt-2 mb-0" hidden>
+                            Add a short explanation before continuing.
+                        </p>
+                    </div>
+
+                    <fieldset class="border-0 p-0 mb-4">
+                        <legend class="h5 fw-bold mb-2">
+                            Which risk areas are relevant? <span class="fw-normal text-muted small">(Select all that apply)</span>
+                        </legend>
+
+                        <div class="risk-checklist">
+                            <label>
+                                <input type="checkbox" name="risk-factor" value="data_sensitivity">
+                                Data sensitivity
+                            </label>
+                            <label>
+                                <input type="checkbox" name="risk-factor" value="authorized_tools">
+                                Authorized tools
+                            </label>
+                            <label>
+                                <input type="checkbox" name="risk-factor" value="output_reliability">
+                                Output reliability
+                            </label>
+                            <label>
+                                <input type="checkbox" name="risk-factor" value="fairness_bias">
+                                Fairness or bias risk
+                            </label>
+                            <label>
+                                <input type="checkbox" name="risk-factor" value="human_review">
+                                Required human review
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="border-0 p-0">
+                        <legend class="h5 fw-bold mb-2">
+                            How confident are you in this decision?
+                        </legend>
+                        <p class="form-text mt-0 mb-3">
+                            Select 1 for very uncertain and 5 for very confident.
+                        </p>
+
+                        <div class="confidence-scale" role="radiogroup" aria-describedby="confidence-error">
+                            <label>
+                                <input type="radio" name="initial-confidence" value="1" required>
+                                1 — Very uncertain
+                            </label>
+                            <label>
+                                <input type="radio" name="initial-confidence" value="2">
+                                2
+                            </label>
+                            <label>
+                                <input type="radio" name="initial-confidence" value="3">
+                                3
+                            </label>
+                            <label>
+                                <input type="radio" name="initial-confidence" value="4">
+                                4
+                            </label>
+                            <label>
+                                <input type="radio" name="initial-confidence" value="5">
+                                5 — Very confident
+                            </label>
+                        </div>
+
+                        <p id="confidence-error" class="text-danger small mt-2 mb-0" hidden>
+                            Select a confidence rating before continuing.
+                        </p>
+                    </fieldset>
+
+                    <div class="app-actions">
+                        <button id="back-to-briefing" class="btn btn-outline-secondary" type="button">
+                            Back
+                        </button>
+                        <button class="btn btn-primary px-4" type="submit">
+                            Continue to safeguards
+                        </button>
+                    </div>
+                </form>
+            </section>
+
+            <section id="screen-safeguards" class="app-screen" hidden aria-labelledby="safeguards-heading">
+                <p class="screen-eyebrow">Step 3 of 5 · Safeguard builder</p>
+                <h3 id="safeguards-heading" class="fw-bold mb-2">Build a safer workflow</h3>
+                <p class="text-muted mb-4">
+                    Apply the scenario to specific data, tools, and review steps. Select the
+                    approach that best protects customers and supports a reliable summary.
+                </p>
+
+                <form id="safeguards-form" novalidate>
+                    <fieldset class="border-0 p-0 mb-4">
+                        <legend class="h5 fw-bold mb-3">
+                            What should happen to each component?
+                        </legend>
+
+                        <div class="workflow-card mb-3">
+                            <label for="raw-tickets" class="form-label fw-bold">
+                                Raw customer tickets
+                            </label>
+                            <select id="raw-tickets" class="form-select" required>
+                                <option value="">Select an action</option>
+                                <option value="exclude">
+                                    Exclude from any AI tool
+                                </option>
+                                <option value="deidentify">
+                                    Use only after approved de-identification
+                                </option>
+                                <option value="approved_tool">
+                                    May enter an approved internal AI workspace
+                                </option>
+                            </select>
+                            <p class="form-text mb-0">
+                                Raw tickets can include names, contact details, account information,
+                                or other sensitive details.
+                            </p>
+                            <p id="raw-tickets-error" class="text-danger small mt-2 mb-0" hidden>
+                                Select an action for raw customer tickets.
+                            </p>
+                        </div>
+
+                        <div class="workflow-card mb-3">
+                            <label for="ticket-metadata" class="form-label fw-bold">
+                                Ticket metadata
+                            </label>
+                            <select id="ticket-metadata" class="form-select" required>
+                                <option value="">Select an action</option>
+                                <option value="exclude">
+                                    Exclude from any AI tool
+                                </option>
+                                <option value="minimize_deidentify">
+                                    Minimize and de-identify before approved use
+                                </option>
+                                <option value="approved_tool">
+                                    May enter an approved internal AI workspace
+                                </option>
+                            </select>
+                            <p class="form-text mb-0">
+                                Metadata may reveal customer identity, location, account status,
+                                or other information that needs review.
+                            </p>
+                            <p id="ticket-metadata-error" class="text-danger small mt-2 mb-0" hidden>
+                                Select an action for ticket metadata.
+                            </p>
+                        </div>
+
+                        <div class="workflow-card mb-3">
+                            <label for="deidentified-themes" class="form-label fw-bold">
+                                De-identified complaint themes
+                            </label>
+                            <select id="deidentified-themes" class="form-select" required>
+                                <option value="">Select an action</option>
+                                <option value="exclude">
+                                    Exclude from any AI tool
+                                </option>
+                                <option value="approved_workspace">
+                                    May enter an approved internal AI workspace
+                                </option>
+                                <option value="review_only">
+                                    Use only after human review
+                                </option>
+                            </select>
+                            <p class="form-text mb-0">
+                                Themes should contain only the minimum information required for the task.
+                            </p>
+                            <p id="deidentified-themes-error" class="text-danger small mt-2 mb-0" hidden>
+                                Select an action for de-identified complaint themes.
+                            </p>
+                        </div>
+
+                        <div class="workflow-card mb-3">
+                            <label for="approved-workspace" class="form-label fw-bold">
+                                Approved internal AI workspace
+                            </label>
+                            <select id="approved-workspace" class="form-select" required>
+                                <option value="">Select an action</option>
+                                <option value="do_not_use">
+                                    Do not use
+                                </option>
+                                <option value="required">
+                                    Required for AI-assisted work
+                                </option>
+                                <option value="optional">
+                                    Optional
+                                </option>
+                            </select>
+                            <p class="form-text mb-0">
+                                The fictional standard distinguishes approved internal tools from public tools.
+                            </p>
+                            <p id="approved-workspace-error" class="text-danger small mt-2 mb-0" hidden>
+                                Select an action for the approved internal AI workspace.
+                            </p>
+                        </div>
+
+                        <div class="workflow-card mb-3">
+                            <label for="public-tool" class="form-label fw-bold">
+                                Public generative-AI tool
+                            </label>
+                            <select id="public-tool" class="form-select" required>
+                                <option value="">Select an action</option>
+                                <option value="permitted">
+                                    Permitted for this scenario
+                                </option>
+                                <option value="not_permitted">
+                                    Not permitted for this scenario
+                                </option>
+                                <option value="escalate">
+                                    Escalate if policy is unclear
+                                </option>
+                            </select>
+                            <p class="form-text mb-0">
+                                The employee originally proposed using a public tool with raw ticket data.
+                            </p>
+                            <p id="public-tool-error" class="text-danger small mt-2 mb-0" hidden>
+                                Select an action for the public AI tool.
+                            </p>
+                        </div>
+
+                        <div class="workflow-card mb-4">
+                            <label for="executive-summary" class="form-label fw-bold">
+                                Executive-ready summary
+                            </label>
+                            <select id="executive-summary" class="form-select" required>
+                                <option value="">Select an action</option>
+                                <option value="send_directly">
+                                    Send directly to the senior leader
+                                </option>
+                                <option value="verify_review">
+                                    Verify against source data and obtain required human review
+                                </option>
+                                <option value="store_later">
+                                    Store for later without review
+                                </option>
+                            </select>
+                            <p class="form-text mb-0">
+                                Executive-facing content needs an appropriate check for accuracy,
+                                omissions, and unintended bias before distribution.
+                            </p>
+                            <p id="executive-summary-error" class="text-danger small mt-2 mb-0" hidden>
+                                Select an action for the executive-ready summary.
+                            </p>
+                        </div>
+                    </fieldset>
+
+                    <section class="scenario-card mb-4" aria-labelledby="unsafe-prompt-heading">
+                        <p id="unsafe-prompt-heading" class="small text-uppercase text-muted fw-bold mb-2">
+                            Unsafe draft prompt
+                        </p>
+                        <blockquote class="mb-0">
+                            "Analyze these raw customer complaints and tell me what leadership should do."
+                        </blockquote>
+                    </section>
+
+                    <div class="mb-4">
+                        <label for="safer-process" class="form-label h5 fw-bold">
+                            Write a safer prompt or describe a safer process
+                        </label>
+                        <p id="safer-process-help" class="form-text mt-0">
+                            You may choose not to use AI. If AI is used, describe the approved tool,
+                            minimum necessary and de-identified inputs, verification, and human review.
+                        </p>
+                        <textarea
+                            id="safer-process"
+                            class="form-control"
+                            rows="5"
+                            aria-describedby="safer-process-help safer-process-error"
+                            required
+                        ></textarea>
+                        <p id="safer-process-error" class="text-danger small mt-2 mb-0" hidden>
+                            Describe a safer prompt or process before requesting feedback.
+                        </p>
+                    </div>
+
+                    <aside class="scope-note mb-4" aria-label="Learning coach boundary">
+                        <strong>Coach boundary:</strong> The next screen provides guidance based on a
+                        fictional policy set. It does not make operational, legal, security, privacy,
+                        HR, or compliance decisions.
+                    </aside>
+
+                    <div class="app-actions">
+                        <button id="back-to-decision" class="btn btn-outline-secondary" type="button">
+                            Back
+                        </button>
+                        <button class="btn btn-primary px-4" type="submit">
+                            Get coach feedback
+                        </button>
+                    </div>
+                </form>
+            </section>
+
+            <section id="screen-feedback" class="app-screen" hidden aria-labelledby="feedback-heading">
+                <p class="screen-eyebrow">Step 4 of 5 · AI coach and feedback</p>
+                <h3 id="feedback-heading" class="fw-bold mb-2">Review the feedback</h3>
+                <p id="feedback-summary" class="lead mb-4" aria-live="polite"></p>
+
+                <section class="scenario-card mb-4" aria-labelledby="your-decision-heading">
+                    <p id="your-decision-heading" class="small text-uppercase text-muted fw-bold mb-2">
+                        Your initial decision
+                    </p>
+                    <p id="feedback-decision-path" class="h5 fw-bold mb-2"></p>
+                    <p id="feedback-rationale" class="mb-0"></p>
+                </section>
+
+                <section aria-labelledby="risk-check-heading">
+                    <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end gap-2 mb-3">
+                        <div>
+                            <h4 id="risk-check-heading" class="h5 fw-bold mb-1">Risk check</h4>
+                            <p class="text-muted mb-0">
+                                The coach checks your response against a fictional policy set and a visible learning rubric.
+                            </p>
+                        </div>
+                        <span class="block-pill">Rubric-based prototype</span>
+                    </div>
+
+                    <div id="feedback-cards" class="row g-3"></div>
+                </section>
+
+                <details class="scenario-card mt-4">
+                    <summary class="fw-bold">Why this feedback?</summary>
+                    <div class="mt-3">
+                        <p class="mb-2">
+                            The learning coach uses the fictional <strong>Northstar Enterprise AI Use Standard</strong>.
+                            It checks for five policy-aligned considerations:
+                        </p>
+                        <ul class="mb-0">
+                            <li><strong>Data Classification and Approved Tools:</strong> Do not place raw customer or sensitive information in public tools; use only minimum necessary, approved inputs.</li>
+                            <li><strong>Human Review and Accountability:</strong> A designated human reviewer remains accountable before executive-facing output is shared.</li>
+                            <li><strong>Reliability and Source Verification:</strong> Check AI-assisted themes and summaries against available source information before relying on them.</li>
+                            <li><strong>Fairness, Bias, and Escalation:</strong> Check for incomplete representation, overlooked groups, or uncertainty that requires escalation.</li>
+                            <li><strong>Accessibility and Inclusive Communication:</strong> Present findings in clear, accessible language and avoid unsupported generalizations.</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <aside class="scope-note mt-4" aria-label="Learning coach boundary">
+                    <strong>Coach boundary:</strong> This learning coach provides guidance based on a
+                    fictional policy set and a transparent learning rubric. It does not make
+                    operational, legal, security, privacy, HR, or compliance decisions.
+                </aside>
+
+                <div class="app-actions">
+                    <button id="back-to-safeguards" class="btn btn-outline-secondary" type="button">
+                        Back to safeguards
+                    </button>
+                    <button id="revise-decision" class="btn btn-primary px-4" type="button">
+                        Revise my decision
+                    </button>
+                </div>
+            </section>
+
+            <section id="screen-reflection" class="app-screen" hidden aria-labelledby="reflection-heading">
+                <p class="screen-eyebrow">Step 5 of 5 · Revision and reflection</p>
+                <h3 id="reflection-heading" class="fw-bold mb-2">Revise and reflect</h3>
+                <p class="text-muted mb-4">
+                    Use the feedback to revise your decision. The goal is a defensible process,
+                    not a single "correct" answer.
+                </p>
+
+                <section class="scenario-card mb-4" aria-labelledby="original-decision-heading">
+                    <p id="original-decision-heading" class="small text-uppercase text-muted fw-bold mb-2">
+                        Your original response
+                    </p>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <p class="small text-uppercase text-muted fw-bold mb-1">Decision pathway</p>
+                            <p id="original-pathway" class="fw-bold mb-0"></p>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="small text-uppercase text-muted fw-bold mb-1">Initial confidence</p>
+                            <p id="original-confidence" class="mb-0"></p>
+                        </div>
+                    </div>
+                </section>
+
+                <form id="reflection-form" novalidate>
+                    <fieldset class="border-0 p-0 mb-4">
+                        <legend class="h5 fw-bold mb-3">
+                            What is your revised decision?
+                        </legend>
+
+                        <div class="decision-grid">
+                            <label class="decision-card">
+                                <input
+                                    type="radio"
+                                    name="revised-path"
+                                    value="use_ai_as_proposed"
+                                    required
+                                >
+                                <span class="decision-card-title">Use AI as proposed</span>
+                                <span class="decision-card-copy">
+                                    Use the public tool with the raw customer-ticket spreadsheet.
+                                </span>
+                            </label>
+
+                            <label class="decision-card">
+                                <input
+                                    type="radio"
+                                    name="revised-path"
+                                    value="use_ai_with_safeguards"
+                                    required
+                                >
+                                <span class="decision-card-title">Use AI with safeguards</span>
+                                <span class="decision-card-copy">
+                                    Use an approved process with data boundaries and human review.
+                                </span>
+                            </label>
+
+                            <label class="decision-card">
+                                <input
+                                    type="radio"
+                                    name="revised-path"
+                                    value="do_not_use_ai"
+                                    required
+                                >
+                                <span class="decision-card-title">Do not use AI for this task</span>
+                                <span class="decision-card-copy">
+                                    Complete the summary through a non-AI process.
+                                </span>
+                            </label>
+
+                            <label class="decision-card">
+                                <input
+                                    type="radio"
+                                    name="revised-path"
+                                    value="escalate"
+                                    required
+                                >
+                                <span class="decision-card-title">Escalate the decision</span>
+                                <span class="decision-card-copy">
+                                    Ask an appropriate internal owner to determine the safe path.
+                                </span>
+                            </label>
+                        </div>
+
+                        <p id="revised-path-error" class="text-danger small mt-2 mb-0" hidden>
+                            Choose a revised decision pathway before continuing.
+                        </p>
+                    </fieldset>
+
+                    <div class="mb-4">
+                        <label for="revised-rationale" class="form-label h5 fw-bold">
+                            Explain your revised reasoning
+                        </label>
+                        <p id="revised-rationale-help" class="form-text mt-0">
+                            Explain how your decision addresses data boundaries, tool authorization,
+                            output verification, fairness, human review, or escalation.
+                        </p>
+                        <textarea
+                            id="revised-rationale"
+                            class="form-control"
+                            rows="5"
+                            aria-describedby="revised-rationale-help revised-rationale-error"
+                            required
+                        ></textarea>
+                        <p id="revised-rationale-error" class="text-danger small mt-2 mb-0" hidden>
+                            Add a brief explanation of your revised reasoning.
+                        </p>
+                    </div>
+
+                    <fieldset class="border-0 p-0 mb-4">
+                        <legend class="h5 fw-bold mb-2">
+                            How confident are you now?
+                        </legend>
+                        <p class="form-text mt-0 mb-3">
+                            Select 1 for very uncertain and 5 for very confident.
+                        </p>
+
+                        <div class="confidence-scale" role="radiogroup" aria-describedby="revised-confidence-error">
+                            <label>
+                                <input type="radio" name="revised-confidence" value="1" required>
+                                1 — Very uncertain
+                            </label>
+                            <label>
+                                <input type="radio" name="revised-confidence" value="2">
+                                2
+                            </label>
+                            <label>
+                                <input type="radio" name="revised-confidence" value="3">
+                                3
+                            </label>
+                            <label>
+                                <input type="radio" name="revised-confidence" value="4">
+                                4
+                            </label>
+                            <label>
+                                <input type="radio" name="revised-confidence" value="5">
+                                5 — Very confident
+                            </label>
+                        </div>
+
+                        <p id="revised-confidence-error" class="text-danger small mt-2 mb-0" hidden>
+                            Select a revised confidence rating before continuing.
+                        </p>
+                    </fieldset>
+
+                    <div class="mb-4">
+                        <label for="reflection-response" class="form-label h5 fw-bold">
+                            What safeguard changed your decision most?
+                        </label>
+                        <textarea
+                            id="reflection-response"
+                            class="form-control"
+                            rows="3"
+                            required
+                            aria-describedby="reflection-error"
+                        ></textarea>
+                        <p id="reflection-error" class="text-danger small mt-2 mb-0" hidden>
+                            Add a short reflection before completing the prototype.
+                        </p>
+                    </div>
+
+                    <section class="scenario-card mb-4" aria-labelledby="transfer-heading">
+                        <p class="small text-uppercase text-muted fw-bold mb-2">Transfer scenario</p>
+                        <h4 id="transfer-heading" class="h5 fw-bold">
+                            Drafting a training outline from internal performance data
+                        </h4>
+                        <p class="mb-3">
+                            A learning team wants to use an AI assistant to draft a training-outline
+                            proposal using internal performance data. What should happen before the
+                            outline is shared with stakeholders?
+                        </p>
+
+                        <label for="transfer-decision" class="form-label fw-bold">
+                            Select the best next step
+                        </label>
+                        <select id="transfer-decision" class="form-select" required>
+                            <option value="">Select an option</option>
+                            <option value="paste_public">
+                                Paste the internal performance data into a public AI tool and use the draft as written
+                            </option>
+                            <option value="approved_safeguards">
+                                Confirm an approved tool, minimize or de-identify data, verify the draft, and obtain appropriate review
+                            </option>
+                            <option value="share_unchecked">
+                                Ask AI to draft the outline and share it immediately to save time
+                            </option>
+                            <option value="avoid_all">
+                                Never use AI for internal work under any circumstances
+                            </option>
+                        </select>
+                        <p id="transfer-error" class="text-danger small mt-2 mb-0" hidden>
+                            Select a response to the transfer scenario.
+                        </p>
+                    </section>
+
+                    <aside class="scope-note mb-4" aria-label="Prototype event note">
+                        <strong>Prototype event model:</strong> This experience stores anonymous
+                        interaction events in this browser to demonstrate an inspectable learning-data model.
+                        It is not an LMS, xAPI, LRS, or enterprise analytics implementation.
+                    </aside>
+
+                    <div class="app-actions">
+                        <button id="back-to-feedback" class="btn btn-outline-secondary" type="button">
+                            Back to feedback
+                        </button>
+                        <button class="btn btn-primary px-4" type="submit">
+                            Complete prototype
+                        </button>
+                    </div>
+                </form>
+
+                <section id="completion-summary" class="mt-5" hidden aria-labelledby="completion-heading">
+                    <hr class="my-4">
+                    <p class="screen-eyebrow">Prototype complete</p>
+                    <h4 id="completion-heading" class="fw-bold">Your learning summary</h4>
+                    <p id="completion-summary-text"></p>
+
+                    <div id="competency-summary" class="row g-3 mb-4"></div>
+
+                    <details class="scenario-card mb-4">
+                        <summary class="fw-bold">View prototype event log</summary>
+                        <pre id="event-log-output" class="mt-3 mb-0 small"></pre>
+                    </details>
+
+                    <div class="d-flex flex-wrap gap-2">
+                        <button id="restart-prototype" class="btn btn-outline-secondary" type="button">
+                            Restart prototype
+                        </button>
+
+                        <button id="clear-event-log" class="btn btn-outline-secondary" type="button">
+                            Clear event log
+                        </button>
+                    </div>
+                </section>
+            </section>
+        </section>
+    </main>
+
+    <footer class="text-center py-4 bg-dark text-light">
+        <p class="mb-0">&copy; 2026 Nathan St. Pierre</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
