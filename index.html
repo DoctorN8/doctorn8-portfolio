@@ -19,6 +19,32 @@
             --primary-brand: #aa784d;
             --dark-text: #2a2a2a;
             --light-bg: #f8f9fa;
+            --research-accent: #0d6efd;
+            --instructional-accent: #FA9BCF;
+        }
+
+        .featured-research .card-img-top {
+            background-color: var(--research-accent, #0d6efd);
+        }
+
+        .featured-research .impact-text {
+            border-left-color: var(--research-accent, #0d6efd);
+        }
+
+        .featured-ai .card-img-top {
+            background-color: var(--primary-brand);
+        }
+
+        .featured-ai .impact-text {
+            border-left-color: var(--primary-brand);
+        }
+
+        .featured-instructional .card-img-top {
+            background-color: var(--instructional-accent, #FA9BCF);
+        }
+
+        .featured-instructional .impact-text {
+            border-left-color: var(--instructional-accent, #FA9BCF);
         }
 
         body {
@@ -135,6 +161,14 @@
             color: #555;
             margin-bottom: 1.5rem;
             flex-grow: 1;
+        }
+
+        .featured-instructional .card-img-top {
+            background-color: #FA9BCF;
+        }
+
+        .featured-instructional .impact-text {
+            border-left-color: #FA9BCF;
         }
 
         footer {
@@ -257,7 +291,7 @@
 
             <div class="row g-4">
                 <div class="col-md-6 col-lg-4">
-                    <div class="card project-card">
+                    <div class="card project-card featured-card featured-research">
                         <div class="card-img-top">
                             <i class="fas fa-shield-halved fa-3x"></i>
                         </div>
@@ -277,7 +311,7 @@
                                 A functional decision-to-feedback-to-revision loop with transparent,
                                 rubric-based coaching.
                             </div>
-                            <a href="AIprototypeprojectai-decision-coach-case-study.html"
+                            <a href="AI_prototype_project/ai-decision-coach-case-study.html"
                                class="btn btn-brand btn-sm">
                                 View Case Study
                             </a>
@@ -293,15 +327,19 @@
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title fw-bold">AI Legal Assistant</h5>
                             <p class="card-text text-muted small">
-                                Digital assistant for Masonic Law using RAG architecture.
+                                Digital assistant for Masonic Law using RAG architecture. Combines retrieval-augmented generation with curated source material to
+                                support clear, traceable guidance in a specialized governance domain.
                             </p>
                             <div class="mb-3">
                                 <span class="tech-badge">RAG</span>
                                 <span class="tech-badge">Python</span>
                                 <span class="tech-badge">FAISS</span>
                             </div>
+                            <p class="card-text text-muted small mb-3">
+                                
+                            </p>
                             <div class="impact-text">
-                                Instant, source-cited answers to complex queries.
+                                Instant, source-cited answers to complex queries related to Masonic Law, with a clear audit trail for verification and review.
                             </div>
                             <a href="https://fabulous-tithonia-e7b.notion.site/Building-a-Specialized-AI-Legal-Assistant-with-RAG-Architecture-2b6a6b228ba480f49662f244c071858d"
                                target="_blank"
@@ -314,7 +352,7 @@
                 </div>
 
                 <div class="col-md-6 col-lg-4">
-                    <div class="card project-card">
+                    <div class="card project-card featured-card featured-instructional">
                         <div class="card-img-top">
                             <i class="fas fa-sitemap fa-3x"></i>
                         </div>
